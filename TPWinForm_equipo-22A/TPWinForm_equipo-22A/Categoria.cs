@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace TPWinForm_equipo_22A
 {
-    internal class Marcas
+    internal class Categoria
     {
-        public int IdMarca { get; set; }
+        public int IdCategoria { get; set; }
         public string Descripcion { get; set; }
 
-        public Marcas() { }
-        public Marcas(int IdMarca, string Descripcion)
+        public Categoria()
         {
-            this.IdMarca = IdMarca;
+        }
+        
+        public Categoria(int IdCategoria, string Descripcion)
+        {
+            this.IdCategoria = IdCategoria;
             this.Descripcion = Descripcion;
         }
     }
