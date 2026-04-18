@@ -16,5 +16,20 @@ namespace TPWinForm_equipo_22A
         {
             InitializeComponent();
         }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+        //Eliminar evento doble click 
+        }
+
+        private void txtBNombre_TextChanged(object sender, EventArgs e)
+        {
+        //Eliminar evento doble click 
+        }
+
+        private void grpBDetalleArticulo_Enter(object sender, EventArgs e)
+        {
+        //Eliminar evento doble click 
+        }
     }
 }

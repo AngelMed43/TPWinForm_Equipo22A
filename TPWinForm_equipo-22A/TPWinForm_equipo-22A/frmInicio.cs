@@ -19,24 +19,46 @@ namespace TPWinForm_equipo_22A
 
         private void btnModificarArticulo_Click(object sender, EventArgs e)
         {
-            // Instancio el formulario de modificación
-            frmModificar modify = new frmModificar();
+            Form formAabrir;
 
-            // Seteo la propiedad Toplevel en false para que pueda mostrarse dentro del panel.
-            // TopLevel es una propiedad que permite mostrar el contenido (frmModificar en este caso) en otro contenedor
-            // Al establecerlo en FALSE, determino lo anterior.
-            modify.TopLevel = false;
+            if (tabControl1.SelectedTab.Name == "Articulos")
+            {
+                formAabrir = new frmModificar();
+            }
+            else if (tabControl1.SelectedTab.Name == "Categorias")
+            {
+                formAabrir = new frmModificarCategoria();
+            }
+            else
+            {
+                return;
+            }
 
-            // Seteo la propiedad Dock en Fill para frmModificar se ajuste al tamaño del panel.
-            // Se puede hacer manualmente también.
-            // Esta es otra manera de acceder.
-            modify.Dock = DockStyle.Fill;
+            formAabrir.TopLevel = false;
+            formAabrir.Dock = DockStyle.Fill;
 
-            // Limpio el panel y agrego frmPrincipal.
             pnlUniversal.Controls.Clear();
-            pnlUniversal.Controls.Add(modify);
+            pnlUniversal.Controls.Add(formAabrir);
 
-            modify.Show();
+            formAabrir.Show();
+        }
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab.Name == "Articulos")
+            {
+                btnNuevoArticulo.Visible = true;
+                btnModificarArticulo.Visible = true;
+                btnEliminarArticulo.Visible = true;
+                btnDetallesArticulo.Visible = true;
+            }
+            else if (tabControl1.SelectedTab.Name == "Categorias")
+            {
+                btnNuevoArticulo.Visible = false;
+                btnModificarArticulo.Visible = true;
+                btnEliminarArticulo.Visible = true;
+                btnDetallesArticulo.Visible = false;
+            }
         }
     }
 }
+

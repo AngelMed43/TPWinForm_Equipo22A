@@ -40,7 +40,6 @@
             this.Marcas = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Categorias = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.grBBarraBusqueda = new System.Windows.Forms.GroupBox();
             this.lblFiltroEstado = new System.Windows.Forms.Label();
@@ -57,6 +56,8 @@
             this.btnEliminarArticulo = new System.Windows.Forms.Button();
             this.grpBUniversal = new System.Windows.Forms.GroupBox();
             this.pnlUniversal = new System.Windows.Forms.Panel();
+            this.grbCategorias = new System.Windows.Forms.GroupBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Articulos.SuspendLayout();
@@ -65,9 +66,10 @@
             this.Marcas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.Categorias.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.grBBarraBusqueda.SuspendLayout();
             this.grpBUniversal.SuspendLayout();
+            this.grbCategorias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -79,28 +81,28 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(1077, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(2154, 50);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 50);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 50);
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(851, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(1702, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(85, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Buscar:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -108,10 +110,10 @@
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(898, 4);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Location = new System.Drawing.Point(1796, 8);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
+            this.textBox1.Size = new System.Drawing.Size(288, 31);
             this.textBox1.TabIndex = 4;
             // 
             // tabControl1
@@ -122,21 +124,22 @@
             this.tabControl1.Controls.Add(this.Articulos);
             this.tabControl1.Controls.Add(this.Marcas);
             this.tabControl1.Controls.Add(this.Categorias);
-            this.tabControl1.Location = new System.Drawing.Point(0, 90);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Location = new System.Drawing.Point(0, 173);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(436, 456);
+            this.tabControl1.Size = new System.Drawing.Size(872, 877);
             this.tabControl1.TabIndex = 5;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // Articulos
             // 
             this.Articulos.Controls.Add(this.grpBListaArticulo);
-            this.Articulos.Location = new System.Drawing.Point(4, 22);
-            this.Articulos.Margin = new System.Windows.Forms.Padding(2);
+            this.Articulos.Location = new System.Drawing.Point(8, 39);
+            this.Articulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Articulos.Name = "Articulos";
-            this.Articulos.Padding = new System.Windows.Forms.Padding(2);
-            this.Articulos.Size = new System.Drawing.Size(428, 430);
+            this.Articulos.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Articulos.Size = new System.Drawing.Size(856, 830);
             this.Articulos.TabIndex = 0;
             this.Articulos.Text = "Articulos";
             this.Articulos.UseVisualStyleBackColor = true;
@@ -147,9 +150,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBListaArticulo.Controls.Add(this.dataGridView1);
-            this.grpBListaArticulo.Location = new System.Drawing.Point(5, 5);
+            this.grpBListaArticulo.Location = new System.Drawing.Point(10, 10);
+            this.grpBListaArticulo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grpBListaArticulo.Name = "grpBListaArticulo";
-            this.grpBListaArticulo.Size = new System.Drawing.Size(418, 420);
+            this.grpBListaArticulo.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grpBListaArticulo.Size = new System.Drawing.Size(836, 808);
             this.grpBListaArticulo.TabIndex = 0;
             this.grpBListaArticulo.TabStop = false;
             this.grpBListaArticulo.Text = "Listado de Articulos";
@@ -160,22 +165,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 18);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 35);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(408, 397);
+            this.dataGridView1.Size = new System.Drawing.Size(816, 763);
             this.dataGridView1.TabIndex = 0;
             // 
             // Marcas
             // 
             this.Marcas.Controls.Add(this.dataGridView2);
-            this.Marcas.Location = new System.Drawing.Point(4, 22);
-            this.Marcas.Margin = new System.Windows.Forms.Padding(2);
+            this.Marcas.Location = new System.Drawing.Point(8, 39);
+            this.Marcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Marcas.Name = "Marcas";
-            this.Marcas.Padding = new System.Windows.Forms.Padding(2);
-            this.Marcas.Size = new System.Drawing.Size(428, 430);
+            this.Marcas.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Marcas.Size = new System.Drawing.Size(856, 830);
             this.Marcas.TabIndex = 1;
             this.Marcas.Text = "Marcas";
             this.Marcas.UseVisualStyleBackColor = true;
@@ -186,46 +191,32 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 14);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView2.Location = new System.Drawing.Point(16, 27);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 82;
             this.dataGridView2.RowTemplate.Height = 33;
-            this.dataGridView2.Size = new System.Drawing.Size(394, 395);
+            this.dataGridView2.Size = new System.Drawing.Size(788, 760);
             this.dataGridView2.TabIndex = 0;
             // 
             // Categorias
             // 
-            this.Categorias.Controls.Add(this.dataGridView3);
-            this.Categorias.Location = new System.Drawing.Point(4, 22);
-            this.Categorias.Margin = new System.Windows.Forms.Padding(2);
+            this.Categorias.Controls.Add(this.grbCategorias);
+            this.Categorias.Location = new System.Drawing.Point(8, 39);
+            this.Categorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Categorias.Name = "Categorias";
-            this.Categorias.Size = new System.Drawing.Size(428, 430);
+            this.Categorias.Size = new System.Drawing.Size(856, 830);
             this.Categorias.TabIndex = 2;
             this.Categorias.Text = "Categorias";
             this.Categorias.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(8, 14);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 82;
-            this.dataGridView3.RowTemplate.Height = 33;
-            this.dataGridView3.Size = new System.Drawing.Size(396, 397);
-            this.dataGridView3.TabIndex = 0;
-            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 548);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1074);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1077, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 14, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(2154, 22);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -239,9 +230,11 @@
             this.grBBarraBusqueda.Controls.Add(this.textBox2);
             this.grBBarraBusqueda.Controls.Add(this.comboBox2);
             this.grBBarraBusqueda.Controls.Add(this.comboBox1);
-            this.grBBarraBusqueda.Location = new System.Drawing.Point(0, 28);
+            this.grBBarraBusqueda.Location = new System.Drawing.Point(0, 54);
+            this.grBBarraBusqueda.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grBBarraBusqueda.Name = "grBBarraBusqueda";
-            this.grBBarraBusqueda.Size = new System.Drawing.Size(544, 62);
+            this.grBBarraBusqueda.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grBBarraBusqueda.Size = new System.Drawing.Size(1088, 119);
             this.grBBarraBusqueda.TabIndex = 7;
             this.grBBarraBusqueda.TabStop = false;
             this.grBBarraBusqueda.Text = "Menú Filtros";
@@ -249,18 +242,20 @@
             // lblFiltroEstado
             // 
             this.lblFiltroEstado.AutoSize = true;
-            this.lblFiltroEstado.Location = new System.Drawing.Point(438, 16);
+            this.lblFiltroEstado.Location = new System.Drawing.Point(876, 31);
+            this.lblFiltroEstado.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblFiltroEstado.Name = "lblFiltroEstado";
-            this.lblFiltroEstado.Size = new System.Drawing.Size(71, 13);
+            this.lblFiltroEstado.Size = new System.Drawing.Size(144, 25);
             this.lblFiltroEstado.TabIndex = 7;
             this.lblFiltroEstado.Text = "Activar Filtro :";
             // 
             // rbFiltroEstado
             // 
             this.rbFiltroEstado.AutoSize = true;
-            this.rbFiltroEstado.Location = new System.Drawing.Point(441, 39);
+            this.rbFiltroEstado.Location = new System.Drawing.Point(882, 75);
+            this.rbFiltroEstado.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.rbFiltroEstado.Name = "rbFiltroEstado";
-            this.rbFiltroEstado.Size = new System.Drawing.Size(59, 17);
+            this.rbFiltroEstado.Size = new System.Drawing.Size(107, 29);
             this.rbFiltroEstado.TabIndex = 6;
             this.rbFiltroEstado.TabStop = true;
             this.rbFiltroEstado.Text = "Si / No";
@@ -269,59 +264,66 @@
             // lblfFiltroPrecio
             // 
             this.lblfFiltroPrecio.AutoSize = true;
-            this.lblfFiltroPrecio.Location = new System.Drawing.Point(345, 16);
+            this.lblfFiltroPrecio.Location = new System.Drawing.Point(690, 31);
+            this.lblfFiltroPrecio.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblfFiltroPrecio.Name = "lblfFiltroPrecio";
-            this.lblfFiltroPrecio.Size = new System.Drawing.Size(43, 13);
+            this.lblfFiltroPrecio.Size = new System.Drawing.Size(85, 25);
             this.lblfFiltroPrecio.TabIndex = 5;
             this.lblfFiltroPrecio.Text = "Precio :";
             // 
             // lblFiltroCategoria
             // 
             this.lblFiltroCategoria.AutoSize = true;
-            this.lblFiltroCategoria.Location = new System.Drawing.Point(204, 16);
+            this.lblFiltroCategoria.Location = new System.Drawing.Point(408, 31);
+            this.lblFiltroCategoria.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblFiltroCategoria.Name = "lblFiltroCategoria";
-            this.lblFiltroCategoria.Size = new System.Drawing.Size(60, 13);
+            this.lblFiltroCategoria.Size = new System.Drawing.Size(117, 25);
             this.lblFiltroCategoria.TabIndex = 4;
             this.lblFiltroCategoria.Text = "Categoría :";
             // 
             // lblFiltroMarca
             // 
             this.lblFiltroMarca.AutoSize = true;
-            this.lblFiltroMarca.Location = new System.Drawing.Point(46, 16);
+            this.lblFiltroMarca.Location = new System.Drawing.Point(92, 31);
+            this.lblFiltroMarca.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblFiltroMarca.Name = "lblFiltroMarca";
-            this.lblFiltroMarca.Size = new System.Drawing.Size(43, 13);
+            this.lblFiltroMarca.Size = new System.Drawing.Size(84, 25);
             this.lblFiltroMarca.TabIndex = 3;
             this.lblFiltroMarca.Text = "Marca :";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(314, 36);
+            this.textBox2.Location = new System.Drawing.Point(628, 69);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(196, 31);
             this.textBox2.TabIndex = 2;
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(171, 35);
+            this.comboBox2.Location = new System.Drawing.Point(342, 67);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.Size = new System.Drawing.Size(238, 33);
             this.comboBox2.TabIndex = 1;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 35);
+            this.comboBox1.Location = new System.Drawing.Point(12, 67);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(238, 33);
             this.comboBox1.TabIndex = 0;
             // 
             // btnNuevoArticulo
             // 
             this.btnNuevoArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevoArticulo.Location = new System.Drawing.Point(447, 220);
+            this.btnNuevoArticulo.Location = new System.Drawing.Point(894, 423);
+            this.btnNuevoArticulo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnNuevoArticulo.Name = "btnNuevoArticulo";
-            this.btnNuevoArticulo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevoArticulo.Size = new System.Drawing.Size(150, 44);
             this.btnNuevoArticulo.TabIndex = 8;
             this.btnNuevoArticulo.Text = "Nuevo";
             this.btnNuevoArticulo.UseVisualStyleBackColor = true;
@@ -329,9 +331,10 @@
             // btnModificarArticulo
             // 
             this.btnModificarArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificarArticulo.Location = new System.Drawing.Point(447, 274);
+            this.btnModificarArticulo.Location = new System.Drawing.Point(894, 527);
+            this.btnModificarArticulo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
-            this.btnModificarArticulo.Size = new System.Drawing.Size(75, 23);
+            this.btnModificarArticulo.Size = new System.Drawing.Size(150, 44);
             this.btnModificarArticulo.TabIndex = 9;
             this.btnModificarArticulo.Text = "Modificar";
             this.btnModificarArticulo.UseVisualStyleBackColor = true;
@@ -340,9 +343,10 @@
             // btnDetallesArticulo
             // 
             this.btnDetallesArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetallesArticulo.Location = new System.Drawing.Point(447, 313);
+            this.btnDetallesArticulo.Location = new System.Drawing.Point(894, 602);
+            this.btnDetallesArticulo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnDetallesArticulo.Name = "btnDetallesArticulo";
-            this.btnDetallesArticulo.Size = new System.Drawing.Size(75, 23);
+            this.btnDetallesArticulo.Size = new System.Drawing.Size(150, 44);
             this.btnDetallesArticulo.TabIndex = 10;
             this.btnDetallesArticulo.Text = "Detalles";
             this.btnDetallesArticulo.UseVisualStyleBackColor = true;
@@ -350,9 +354,10 @@
             // btnEliminarArticulo
             // 
             this.btnEliminarArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminarArticulo.Location = new System.Drawing.Point(447, 367);
+            this.btnEliminarArticulo.Location = new System.Drawing.Point(894, 706);
+            this.btnEliminarArticulo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
-            this.btnEliminarArticulo.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarArticulo.Size = new System.Drawing.Size(150, 44);
             this.btnEliminarArticulo.TabIndex = 11;
             this.btnEliminarArticulo.Text = "Eliminar";
             this.btnEliminarArticulo.UseVisualStyleBackColor = true;
@@ -362,26 +367,58 @@
             this.grpBUniversal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBUniversal.Controls.Add(this.pnlUniversal);
-            this.grpBUniversal.Location = new System.Drawing.Point(570, 112);
+            this.grpBUniversal.Location = new System.Drawing.Point(1140, 215);
+            this.grpBUniversal.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grpBUniversal.Name = "grpBUniversal";
-            this.grpBUniversal.Size = new System.Drawing.Size(502, 432);
+            this.grpBUniversal.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grpBUniversal.Size = new System.Drawing.Size(1004, 831);
             this.grpBUniversal.TabIndex = 12;
             this.grpBUniversal.TabStop = false;
             // 
             // pnlUniversal
             // 
             this.pnlUniversal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlUniversal.Location = new System.Drawing.Point(3, 16);
+            this.pnlUniversal.Location = new System.Drawing.Point(6, 30);
+            this.pnlUniversal.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pnlUniversal.Name = "pnlUniversal";
-            this.pnlUniversal.Size = new System.Drawing.Size(496, 413);
+            this.pnlUniversal.Size = new System.Drawing.Size(992, 795);
             this.pnlUniversal.TabIndex = 0;
+            // 
+            // grbCategorias
+            // 
+            this.grbCategorias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grbCategorias.Controls.Add(this.dataGridView3);
+            this.grbCategorias.Location = new System.Drawing.Point(10, 11);
+            this.grbCategorias.Margin = new System.Windows.Forms.Padding(6);
+            this.grbCategorias.Name = "grbCategorias";
+            this.grbCategorias.Padding = new System.Windows.Forms.Padding(6);
+            this.grbCategorias.Size = new System.Drawing.Size(836, 808);
+            this.grbCategorias.TabIndex = 1;
+            this.grbCategorias.TabStop = false;
+            this.grbCategorias.Text = "Listado de Categorias";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(10, 35);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 82;
+            this.dataGridView3.RowTemplate.Height = 33;
+            this.dataGridView3.Size = new System.Drawing.Size(816, 763);
+            this.dataGridView3.TabIndex = 0;
             // 
             // frmInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1077, 570);
+            this.ClientSize = new System.Drawing.Size(2154, 1096);
             this.Controls.Add(this.grpBUniversal);
             this.Controls.Add(this.btnEliminarArticulo);
             this.Controls.Add(this.btnDetallesArticulo);
@@ -393,8 +430,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(1093, 609);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(2160, 1106);
             this.Name = "frmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aplicacion de gestion";
@@ -407,10 +444,11 @@
             this.Marcas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.Categorias.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.grBBarraBusqueda.ResumeLayout(false);
             this.grBBarraBusqueda.PerformLayout();
             this.grpBUniversal.ResumeLayout(false);
+            this.grbCategorias.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,7 +467,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.GroupBox grBBarraBusqueda;
         private System.Windows.Forms.GroupBox grpBListaArticulo;
         private System.Windows.Forms.TextBox textBox2;
@@ -446,6 +483,8 @@
         private System.Windows.Forms.Button btnEliminarArticulo;
         private System.Windows.Forms.GroupBox grpBUniversal;
         private System.Windows.Forms.Panel pnlUniversal;
+        private System.Windows.Forms.GroupBox grbCategorias;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }
 
