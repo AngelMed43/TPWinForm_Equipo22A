@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TPWinForm_equipo_22A
 {
-    public partial class Form1 : Form
+    public partial class frmModificar : Form
     {
-        public Form1()
+        public frmModificar()
         {
             InitializeComponent();
         }
