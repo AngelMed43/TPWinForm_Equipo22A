@@ -15,6 +15,8 @@ namespace TPWinForm_equipo_22A
         public frmNuevoArticulo()
         {
             InitializeComponent();
+            
+            //txtBCódigo.Focus(); ----- No funciona.
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {

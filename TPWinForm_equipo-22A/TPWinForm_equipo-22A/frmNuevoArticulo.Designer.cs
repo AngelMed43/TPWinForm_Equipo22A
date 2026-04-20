@@ -219,6 +219,7 @@
             // 
             // txtBCódigo
             // 
+            this.txtBCódigo.AcceptsTab = true;
             this.txtBCódigo.Location = new System.Drawing.Point(97, 16);
             this.txtBCódigo.Name = "txtBCódigo";
             this.txtBCódigo.Size = new System.Drawing.Size(102, 20);

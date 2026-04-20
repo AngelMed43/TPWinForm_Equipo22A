@@ -23,6 +23,7 @@ namespace TPWinForm_equipo_22A
 
             formOpen.TopLevel = false;
             formOpen.Dock = DockStyle.Fill;
+            
 
             pnlUniversal.Controls.Clear();
             pnlUniversal.Controls.Add(formOpen);
@@ -32,7 +33,7 @@ namespace TPWinForm_equipo_22A
         {
             Form formAabrir;
 
-            pbLogo.Visible = false;
+            
 
             if (tcMenu.SelectedTab.Name == "Articulos")
             {
@@ -46,8 +47,6 @@ namespace TPWinForm_equipo_22A
             {
                 return;
             }
-
-            
 
             formAabrir.TopLevel = false;
             formAabrir.Dock = DockStyle.Fill;
@@ -75,6 +74,19 @@ namespace TPWinForm_equipo_22A
             }
         }
 
+        private void btnEliminarArticulo_Click(object sender, EventArgs e)
+        {
+            // Confirmar que haya seleccionado algo primero.
+            if (dgvArticulos.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un artículo para eliminar.","Atención!",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            DialogResult confirmarEliminación = MessageBox.Show("¿ Esta seguro que desea eliminar el articulo seleccionado ?", "Mensaje de Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            //Logica para eliminar
+        }
     }
 }
 
