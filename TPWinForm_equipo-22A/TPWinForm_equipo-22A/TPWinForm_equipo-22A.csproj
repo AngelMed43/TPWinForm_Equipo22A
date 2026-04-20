@@ -54,11 +54,17 @@
     <Compile Include="frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmModificar.cs">
+    <Compile Include="frmNuevoArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModificar.Designer.cs">
-      <DependentUpon>frmModificar.cs</DependentUpon>
+    <Compile Include="frmNuevoArticulo.Designer.cs">
+      <DependentUpon>frmNuevoArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarArticulo.Designer.cs">
+      <DependentUpon>frmModificarArticulo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmModificarCategoria.cs">
       <SubType>Form</SubType>
@@ -73,8 +79,11 @@
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModificar.resx">
-      <DependentUpon>frmModificar.cs</DependentUpon>
+    <EmbeddedResource Include="frmNuevoArticulo.resx">
+      <DependentUpon>frmNuevoArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarArticulo.resx">
+      <DependentUpon>frmModificarArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificarCategoria.resx">
       <DependentUpon>frmModificarCategoria.cs</DependentUpon>
@@ -87,6 +96,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -100,6 +110,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-image-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\handle-with-care-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

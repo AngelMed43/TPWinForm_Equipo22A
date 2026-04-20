@@ -17,15 +17,28 @@ namespace TPWinForm_equipo_22A
             InitializeComponent();
         }
 
+        private void btnNuevoArticulo_Click(object sender, EventArgs e)
+        {
+            Form formOpen = new frmNuevoArticulo();
+
+            formOpen.TopLevel = false;
+            formOpen.Dock = DockStyle.Fill;
+
+            pnlUniversal.Controls.Clear();
+            pnlUniversal.Controls.Add(formOpen);
+            formOpen.Show();
+        }
         private void btnModificarArticulo_Click(object sender, EventArgs e)
         {
             Form formAabrir;
 
-            if (tabControl1.SelectedTab.Name == "Articulos")
+            pbLogo.Visible = false;
+
+            if (tcMenu.SelectedTab.Name == "Articulos")
             {
-                formAabrir = new frmModificar();
+                formAabrir = new frmModificarArticulo();
             }
-            else if (tabControl1.SelectedTab.Name == "Categorias")
+            else if (tcMenu.SelectedTab.Name == "Categorias")
             {
                 formAabrir = new frmModificarCategoria();
             }
@@ -33,6 +46,8 @@ namespace TPWinForm_equipo_22A
             {
                 return;
             }
+
+            
 
             formAabrir.TopLevel = false;
             formAabrir.Dock = DockStyle.Fill;
@@ -44,14 +59,14 @@ namespace TPWinForm_equipo_22A
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedTab.Name == "Articulos")
+            if (tcMenu.SelectedTab.Name == "Articulos")
             {
                 btnNuevoArticulo.Visible = true;
                 btnModificarArticulo.Visible = true;
                 btnEliminarArticulo.Visible = true;
                 btnDetallesArticulo.Visible = true;
             }
-            else if (tabControl1.SelectedTab.Name == "Categorias")
+            else if (tcMenu.SelectedTab.Name == "Categorias")
             {
                 btnNuevoArticulo.Visible = false;
                 btnModificarArticulo.Visible = true;
@@ -59,6 +74,7 @@ namespace TPWinForm_equipo_22A
                 btnDetallesArticulo.Visible = false;
             }
         }
+
     }
 }
 
