@@ -40,6 +40,8 @@
             this.grpBListaArticulo = new System.Windows.Forms.GroupBox();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.Marcas = new System.Windows.Forms.TabPage();
+            this.grpBListaMarcas = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.Categorias = new System.Windows.Forms.TabPage();
             this.grbCategorias = new System.Windows.Forms.GroupBox();
@@ -67,6 +69,8 @@
             this.grpBListaArticulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.Marcas.SuspendLayout();
+            this.grpBListaMarcas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             this.Categorias.SuspendLayout();
             this.grbCategorias.SuspendLayout();
@@ -132,7 +136,7 @@
             this.tcMenu.Margin = new System.Windows.Forms.Padding(2);
             this.tcMenu.Name = "tcMenu";
             this.tcMenu.SelectedIndex = 0;
-            this.tcMenu.Size = new System.Drawing.Size(610, 567);
+            this.tcMenu.Size = new System.Drawing.Size(582, 498);
             this.tcMenu.TabIndex = 5;
             this.tcMenu.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -143,7 +147,7 @@
             this.Articulos.Margin = new System.Windows.Forms.Padding(2);
             this.Articulos.Name = "Articulos";
             this.Articulos.Padding = new System.Windows.Forms.Padding(2);
-            this.Articulos.Size = new System.Drawing.Size(602, 541);
+            this.Articulos.Size = new System.Drawing.Size(574, 472);
             this.Articulos.TabIndex = 0;
             this.Articulos.Text = "Articulos";
             this.Articulos.UseVisualStyleBackColor = true;
@@ -156,7 +160,7 @@
             this.grpBListaArticulo.Controls.Add(this.dgvArticulos);
             this.grpBListaArticulo.Location = new System.Drawing.Point(5, 5);
             this.grpBListaArticulo.Name = "grpBListaArticulo";
-            this.grpBListaArticulo.Size = new System.Drawing.Size(592, 521);
+            this.grpBListaArticulo.Size = new System.Drawing.Size(564, 452);
             this.grpBListaArticulo.TabIndex = 0;
             this.grpBListaArticulo.TabStop = false;
             this.grpBListaArticulo.Text = "Listado de Articulos";
@@ -174,20 +178,48 @@
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 82;
             this.dgvArticulos.RowTemplate.Height = 33;
-            this.dgvArticulos.Size = new System.Drawing.Size(582, 498);
+            this.dgvArticulos.Size = new System.Drawing.Size(554, 429);
             this.dgvArticulos.TabIndex = 0;
             // 
             // Marcas
             // 
+            this.Marcas.Controls.Add(this.grpBListaMarcas);
             this.Marcas.Controls.Add(this.dgvMarcas);
             this.Marcas.Location = new System.Drawing.Point(4, 22);
             this.Marcas.Margin = new System.Windows.Forms.Padding(2);
             this.Marcas.Name = "Marcas";
             this.Marcas.Padding = new System.Windows.Forms.Padding(2);
-            this.Marcas.Size = new System.Drawing.Size(602, 541);
+            this.Marcas.Size = new System.Drawing.Size(574, 472);
             this.Marcas.TabIndex = 1;
             this.Marcas.Text = "Marcas";
             this.Marcas.UseVisualStyleBackColor = true;
+            // 
+            // grpBListaMarcas
+            // 
+            this.grpBListaMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpBListaMarcas.Controls.Add(this.dataGridView1);
+            this.grpBListaMarcas.Location = new System.Drawing.Point(5, 5);
+            this.grpBListaMarcas.Name = "grpBListaMarcas";
+            this.grpBListaMarcas.Size = new System.Drawing.Size(592, 531);
+            this.grpBListaMarcas.TabIndex = 0;
+            this.grpBListaMarcas.TabStop = false;
+            this.grpBListaMarcas.Text = "Listado de Marcas";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(5, 18);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 82;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(554, 429);
+            this.dataGridView1.TabIndex = 1;
             // 
             // dgvMarcas
             // 
@@ -200,7 +232,7 @@
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.RowHeadersWidth = 82;
             this.dgvMarcas.RowTemplate.Height = 33;
-            this.dgvMarcas.Size = new System.Drawing.Size(568, 506);
+            this.dgvMarcas.Size = new System.Drawing.Size(540, 437);
             this.dgvMarcas.TabIndex = 0;
             // 
             // Categorias
@@ -209,7 +241,7 @@
             this.Categorias.Location = new System.Drawing.Point(4, 22);
             this.Categorias.Margin = new System.Windows.Forms.Padding(2);
             this.Categorias.Name = "Categorias";
-            this.Categorias.Size = new System.Drawing.Size(602, 541);
+            this.Categorias.Size = new System.Drawing.Size(574, 472);
             this.Categorias.TabIndex = 2;
             this.Categorias.Text = "Categorias";
             this.Categorias.UseVisualStyleBackColor = true;
@@ -222,7 +254,7 @@
             this.grbCategorias.Controls.Add(this.dgvCategorias);
             this.grbCategorias.Location = new System.Drawing.Point(5, 6);
             this.grbCategorias.Name = "grbCategorias";
-            this.grbCategorias.Size = new System.Drawing.Size(592, 531);
+            this.grbCategorias.Size = new System.Drawing.Size(564, 462);
             this.grbCategorias.TabIndex = 1;
             this.grbCategorias.TabStop = false;
             this.grbCategorias.Text = "Listado de Categorias";
@@ -238,7 +270,7 @@
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.RowHeadersWidth = 82;
             this.dgvCategorias.RowTemplate.Height = 33;
-            this.dgvCategorias.Size = new System.Drawing.Size(582, 508);
+            this.dgvCategorias.Size = new System.Drawing.Size(554, 429);
             this.dgvCategorias.TabIndex = 0;
             // 
             // stsInferior
@@ -442,6 +474,8 @@
             this.grpBListaArticulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             this.Marcas.ResumeLayout(false);
+            this.grpBListaMarcas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
             this.Categorias.ResumeLayout(false);
             this.grbCategorias.ResumeLayout(false);
@@ -487,6 +521,8 @@
         private System.Windows.Forms.GroupBox grbCategorias;
         private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.GroupBox grpBListaMarcas;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

@@ -30,6 +30,12 @@
         {
             this.grpBDetalleArticulo = new System.Windows.Forms.GroupBox();
             this.grpbDetalleActual = new System.Windows.Forms.GroupBox();
+            this.txtbPrecioActual = new System.Windows.Forms.TextBox();
+            this.txtbCategoriaActual = new System.Windows.Forms.TextBox();
+            this.txtbMarcaActual = new System.Windows.Forms.TextBox();
+            this.txtbDescripciónActual = new System.Windows.Forms.TextBox();
+            this.txtbNombreActual = new System.Windows.Forms.TextBox();
+            this.txtbCódigoActual = new System.Windows.Forms.TextBox();
             this.lblCódigoActual = new System.Windows.Forms.Label();
             this.lblPrecioActual = new System.Windows.Forms.Label();
             this.lblNombreActual = new System.Windows.Forms.Label();
@@ -55,12 +61,6 @@
             this.lblCategoría = new System.Windows.Forms.Label();
             this.lblImagenes = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.txtbCódigoActual = new System.Windows.Forms.TextBox();
-            this.txtbNombreActual = new System.Windows.Forms.TextBox();
-            this.txtbDescripciónActual = new System.Windows.Forms.TextBox();
-            this.txtbMarcaActual = new System.Windows.Forms.TextBox();
-            this.txtbCategoriaActual = new System.Windows.Forms.TextBox();
-            this.txtbPrecioActual = new System.Windows.Forms.TextBox();
             this.grpBDetalleArticulo.SuspendLayout();
             this.grpbDetalleActual.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
@@ -116,6 +116,55 @@
             this.grpbDetalleActual.TabIndex = 68;
             this.grpbDetalleActual.TabStop = false;
             this.grpbDetalleActual.Text = "Datos actuales";
+            // 
+            // txtbPrecioActual
+            // 
+            this.txtbPrecioActual.Location = new System.Drawing.Point(108, 197);
+            this.txtbPrecioActual.Name = "txtbPrecioActual";
+            this.txtbPrecioActual.ReadOnly = true;
+            this.txtbPrecioActual.Size = new System.Drawing.Size(122, 20);
+            this.txtbPrecioActual.TabIndex = 72;
+            // 
+            // txtbCategoriaActual
+            // 
+            this.txtbCategoriaActual.Location = new System.Drawing.Point(108, 171);
+            this.txtbCategoriaActual.Name = "txtbCategoriaActual";
+            this.txtbCategoriaActual.ReadOnly = true;
+            this.txtbCategoriaActual.Size = new System.Drawing.Size(122, 20);
+            this.txtbCategoriaActual.TabIndex = 71;
+            // 
+            // txtbMarcaActual
+            // 
+            this.txtbMarcaActual.Location = new System.Drawing.Point(108, 146);
+            this.txtbMarcaActual.Name = "txtbMarcaActual";
+            this.txtbMarcaActual.ReadOnly = true;
+            this.txtbMarcaActual.Size = new System.Drawing.Size(122, 20);
+            this.txtbMarcaActual.TabIndex = 70;
+            // 
+            // txtbDescripciónActual
+            // 
+            this.txtbDescripciónActual.Location = new System.Drawing.Point(108, 63);
+            this.txtbDescripciónActual.Multiline = true;
+            this.txtbDescripciónActual.Name = "txtbDescripciónActual";
+            this.txtbDescripciónActual.ReadOnly = true;
+            this.txtbDescripciónActual.Size = new System.Drawing.Size(123, 74);
+            this.txtbDescripciónActual.TabIndex = 69;
+            // 
+            // txtbNombreActual
+            // 
+            this.txtbNombreActual.Location = new System.Drawing.Point(109, 37);
+            this.txtbNombreActual.Name = "txtbNombreActual";
+            this.txtbNombreActual.ReadOnly = true;
+            this.txtbNombreActual.Size = new System.Drawing.Size(122, 20);
+            this.txtbNombreActual.TabIndex = 69;
+            // 
+            // txtbCódigoActual
+            // 
+            this.txtbCódigoActual.Location = new System.Drawing.Point(109, 11);
+            this.txtbCódigoActual.Name = "txtbCódigoActual";
+            this.txtbCódigoActual.ReadOnly = true;
+            this.txtbCódigoActual.Size = new System.Drawing.Size(122, 20);
+            this.txtbCódigoActual.TabIndex = 69;
             // 
             // lblCódigoActual
             // 
@@ -350,55 +399,6 @@
             this.lblPrecio.Size = new System.Drawing.Size(52, 16);
             this.lblPrecio.TabIndex = 48;
             this.lblPrecio.Text = "Precio :";
-            // 
-            // txtbCódigoActual
-            // 
-            this.txtbCódigoActual.Location = new System.Drawing.Point(109, 11);
-            this.txtbCódigoActual.Name = "txtbCódigoActual";
-            this.txtbCódigoActual.ReadOnly = true;
-            this.txtbCódigoActual.Size = new System.Drawing.Size(122, 20);
-            this.txtbCódigoActual.TabIndex = 69;
-            // 
-            // txtbNombreActual
-            // 
-            this.txtbNombreActual.Location = new System.Drawing.Point(109, 37);
-            this.txtbNombreActual.Name = "txtbNombreActual";
-            this.txtbNombreActual.ReadOnly = true;
-            this.txtbNombreActual.Size = new System.Drawing.Size(122, 20);
-            this.txtbNombreActual.TabIndex = 69;
-            // 
-            // txtbDescripciónActual
-            // 
-            this.txtbDescripciónActual.Location = new System.Drawing.Point(108, 63);
-            this.txtbDescripciónActual.Multiline = true;
-            this.txtbDescripciónActual.Name = "txtbDescripciónActual";
-            this.txtbDescripciónActual.ReadOnly = true;
-            this.txtbDescripciónActual.Size = new System.Drawing.Size(123, 74);
-            this.txtbDescripciónActual.TabIndex = 69;
-            // 
-            // txtbMarcaActual
-            // 
-            this.txtbMarcaActual.Location = new System.Drawing.Point(108, 146);
-            this.txtbMarcaActual.Name = "txtbMarcaActual";
-            this.txtbMarcaActual.ReadOnly = true;
-            this.txtbMarcaActual.Size = new System.Drawing.Size(122, 20);
-            this.txtbMarcaActual.TabIndex = 70;
-            // 
-            // txtbCategoriaActual
-            // 
-            this.txtbCategoriaActual.Location = new System.Drawing.Point(108, 171);
-            this.txtbCategoriaActual.Name = "txtbCategoriaActual";
-            this.txtbCategoriaActual.ReadOnly = true;
-            this.txtbCategoriaActual.Size = new System.Drawing.Size(122, 20);
-            this.txtbCategoriaActual.TabIndex = 71;
-            // 
-            // txtbPrecioActual
-            // 
-            this.txtbPrecioActual.Location = new System.Drawing.Point(108, 197);
-            this.txtbPrecioActual.Name = "txtbPrecioActual";
-            this.txtbPrecioActual.ReadOnly = true;
-            this.txtbPrecioActual.Size = new System.Drawing.Size(122, 20);
-            this.txtbPrecioActual.TabIndex = 72;
             // 
             // frmModificarArticulo
             // 

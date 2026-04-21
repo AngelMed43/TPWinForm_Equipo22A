@@ -19,7 +19,26 @@ namespace TPWinForm_equipo_22A
 
         private void btnNuevoArticulo_Click(object sender, EventArgs e)
         {
-            Form formOpen = new frmNuevoArticulo();
+            Form formOpen;
+
+            if (tcMenu.SelectedTab.Name == "Articulos")
+            {
+                formOpen = new frmNuevoArticulo();
+            }
+            //Descomentarlo cuando se agregue el frmNuevaCategoria
+            //else if (tcMenu.SelectedTab.Name == "Categorias")
+            //{
+            //    formOpen = new frmNuevaCategoria();
+            //}
+            else if (tcMenu.SelectedTab.Name == "Marcas")
+            {
+                formOpen = new frmNuevaMarca();
+            }
+            else
+            {
+                return;
+            }
+
 
             formOpen.TopLevel = false;
             formOpen.Dock = DockStyle.Fill;
@@ -42,6 +61,10 @@ namespace TPWinForm_equipo_22A
             else if (tcMenu.SelectedTab.Name == "Categorias")
             {
                 formAabrir = new frmModificarCategoria();
+            }
+            else if (tcMenu.SelectedTab.Name == "Marcas")
+            {
+                formAabrir = new frmModificarMarca();
             }
             else
             {
@@ -67,7 +90,14 @@ namespace TPWinForm_equipo_22A
             }
             else if (tcMenu.SelectedTab.Name == "Categorias")
             {
-                btnNuevoArticulo.Visible = false;
+                btnNuevoArticulo.Visible = true;
+                btnModificarArticulo.Visible = true;
+                btnEliminarArticulo.Visible = true;
+                btnDetallesArticulo.Visible = false;
+            }
+            else if (tcMenu.SelectedTab.Name == "Marcas")
+            {
+                btnNuevoArticulo.Visible = true;
                 btnModificarArticulo.Visible = true;
                 btnEliminarArticulo.Visible = true;
                 btnDetallesArticulo.Visible = false;

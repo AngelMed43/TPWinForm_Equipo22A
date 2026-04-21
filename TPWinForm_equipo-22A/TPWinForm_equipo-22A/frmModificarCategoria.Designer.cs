@@ -40,17 +40,16 @@
             // 
             // grpBDetalleArticulo
             // 
+            this.grpBDetalleArticulo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grpBDetalleArticulo.Controls.Add(this.lblNombre);
             this.grpBDetalleArticulo.Controls.Add(this.btnCancelar);
             this.grpBDetalleArticulo.Controls.Add(this.btnGuardar);
             this.grpBDetalleArticulo.Controls.Add(this.txtBDescripción);
             this.grpBDetalleArticulo.Controls.Add(this.lblDescripción);
             this.grpBDetalleArticulo.Controls.Add(this.txtBNombre);
-            this.grpBDetalleArticulo.Location = new System.Drawing.Point(15, 15);
-            this.grpBDetalleArticulo.Margin = new System.Windows.Forms.Padding(6);
+            this.grpBDetalleArticulo.Location = new System.Drawing.Point(8, 8);
             this.grpBDetalleArticulo.Name = "grpBDetalleArticulo";
-            this.grpBDetalleArticulo.Padding = new System.Windows.Forms.Padding(6);
-            this.grpBDetalleArticulo.Size = new System.Drawing.Size(892, 715);
+            this.grpBDetalleArticulo.Size = new System.Drawing.Size(446, 372);
             this.grpBDetalleArticulo.TabIndex = 63;
             this.grpBDetalleArticulo.TabStop = false;
             this.grpBDetalleArticulo.Text = "Detalle de la categoria seleccionada";
@@ -59,20 +58,18 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(12, 81);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblNombre.Location = new System.Drawing.Point(6, 42);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(205, 30);
+            this.lblNombre.Size = new System.Drawing.Size(107, 16);
             this.lblNombre.TabIndex = 44;
             this.lblNombre.Text = "ID de Categoria :";
             // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancelar.Location = new System.Drawing.Point(558, 635);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnCancelar.Location = new System.Drawing.Point(279, 330);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(154, 44);
+            this.btnCancelar.Size = new System.Drawing.Size(77, 23);
             this.btnCancelar.TabIndex = 59;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -80,51 +77,48 @@
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuardar.Location = new System.Drawing.Point(264, 635);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnGuardar.Location = new System.Drawing.Point(132, 330);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(154, 44);
+            this.btnGuardar.Size = new System.Drawing.Size(77, 23);
             this.btnGuardar.TabIndex = 58;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
             // txtBDescripción
             // 
-            this.txtBDescripción.Location = new System.Drawing.Point(17, 167);
-            this.txtBDescripción.Margin = new System.Windows.Forms.Padding(6);
+            this.txtBDescripción.Location = new System.Drawing.Point(8, 87);
             this.txtBDescripción.Multiline = true;
             this.txtBDescripción.Name = "txtBDescripción";
             this.txtBDescripción.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBDescripción.Size = new System.Drawing.Size(863, 456);
+            this.txtBDescripción.Size = new System.Drawing.Size(434, 239);
             this.txtBDescripción.TabIndex = 52;
             // 
             // lblDescripción
             // 
             this.lblDescripción.AutoSize = true;
             this.lblDescripción.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripción.Location = new System.Drawing.Point(12, 131);
-            this.lblDescripción.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblDescripción.Location = new System.Drawing.Point(6, 68);
             this.lblDescripción.Name = "lblDescripción";
-            this.lblDescripción.Size = new System.Drawing.Size(162, 30);
+            this.lblDescripción.Size = new System.Drawing.Size(85, 16);
             this.lblDescripción.TabIndex = 45;
             this.lblDescripción.Text = "Descripción :";
             // 
             // txtBNombre
             // 
-            this.txtBNombre.Location = new System.Drawing.Point(198, 83);
-            this.txtBNombre.Margin = new System.Windows.Forms.Padding(6);
+            this.txtBNombre.Location = new System.Drawing.Point(99, 43);
             this.txtBNombre.Name = "txtBNombre";
-            this.txtBNombre.Size = new System.Drawing.Size(332, 31);
+            this.txtBNombre.Size = new System.Drawing.Size(168, 20);
             this.txtBNombre.TabIndex = 51;
             // 
             // frmModificarCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(928, 738);
+            this.ClientSize = new System.Drawing.Size(464, 384);
             this.Controls.Add(this.grpBDetalleArticulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmModificarCategoria";
             this.Text = "frmModificarClase";
             this.grpBDetalleArticulo.ResumeLayout(false);
