@@ -132,6 +132,9 @@ namespace TPWinForm_equipo_22A
                 case "Marcas":
                     MostrarFormularioEnPanel(new frmNuevaMarca());
                     break;
+                case "Categorias":
+                    MostrarFormularioEnPanel(new frmNuevaCategoria());
+                    break;
             }
         }
 

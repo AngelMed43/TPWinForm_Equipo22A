@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace TPWinForm_equipo_22A
 {
-    public partial class frmModificarCategoria : Form
+    public partial class frmNuevaCategoria : Form
     {
-        public frmModificarCategoria()
+        public frmNuevaCategoria()
         {
             InitializeComponent();
         }
 
-        private void frmModificarCategoria_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancelarCategoria_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
