@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.grpBAgregarMarca = new System.Windows.Forms.GroupBox();
-            this.lblNombreNuevaMarca = new System.Windows.Forms.Label();
-            this.lblAgregarDescripcionMarca = new System.Windows.Forms.Label();
-            this.txtBAgregarNombreMarca = new System.Windows.Forms.TextBox();
-            this.txtBDescripcionNuevaMarca = new System.Windows.Forms.TextBox();
-            this.btnGuardarMarca = new System.Windows.Forms.Button();
             this.btnCancelarMarca = new System.Windows.Forms.Button();
+            this.btnGuardarMarca = new System.Windows.Forms.Button();
+            this.txtBDescripcionNuevaMarca = new System.Windows.Forms.TextBox();
+            this.txtBAgregarNombreMarca = new System.Windows.Forms.TextBox();
+            this.lblAgregarDescripcionMarca = new System.Windows.Forms.Label();
+            this.lblNombreNuevaMarca = new System.Windows.Forms.Label();
             this.grpBAgregarMarca.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,41 +54,16 @@
             this.grpBAgregarMarca.TabStop = false;
             this.grpBAgregarMarca.Text = "Agregar Marca";
             // 
-            // lblNombreNuevaMarca
+            // btnCancelarMarca
             // 
-            this.lblNombreNuevaMarca.AutoSize = true;
-            this.lblNombreNuevaMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblNombreNuevaMarca.Location = new System.Drawing.Point(6, 42);
-            this.lblNombreNuevaMarca.Name = "lblNombreNuevaMarca";
-            this.lblNombreNuevaMarca.Size = new System.Drawing.Size(59, 16);
-            this.lblNombreNuevaMarca.TabIndex = 0;
-            this.lblNombreNuevaMarca.Text = "Nombre:";
-            // 
-            // lblAgregarDescripcionMarca
-            // 
-            this.lblAgregarDescripcionMarca.AutoSize = true;
-            this.lblAgregarDescripcionMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblAgregarDescripcionMarca.Location = new System.Drawing.Point(6, 68);
-            this.lblAgregarDescripcionMarca.Name = "lblAgregarDescripcionMarca";
-            this.lblAgregarDescripcionMarca.Size = new System.Drawing.Size(82, 16);
-            this.lblAgregarDescripcionMarca.TabIndex = 1;
-            this.lblAgregarDescripcionMarca.Text = "Descripción:";
-            // 
-            // txtBAgregarNombreMarca
-            // 
-            this.txtBAgregarNombreMarca.Location = new System.Drawing.Point(71, 38);
-            this.txtBAgregarNombreMarca.Name = "txtBAgregarNombreMarca";
-            this.txtBAgregarNombreMarca.Size = new System.Drawing.Size(168, 20);
-            this.txtBAgregarNombreMarca.TabIndex = 2;
-            // 
-            // txtBDescripcionNuevaMarca
-            // 
-            this.txtBDescripcionNuevaMarca.Location = new System.Drawing.Point(8, 87);
-            this.txtBDescripcionNuevaMarca.Multiline = true;
-            this.txtBDescripcionNuevaMarca.Name = "txtBDescripcionNuevaMarca";
-            this.txtBDescripcionNuevaMarca.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBDescripcionNuevaMarca.Size = new System.Drawing.Size(434, 239);
-            this.txtBDescripcionNuevaMarca.TabIndex = 3;
+            this.btnCancelarMarca.BackColor = System.Drawing.Color.Yellow;
+            this.btnCancelarMarca.Location = new System.Drawing.Point(279, 330);
+            this.btnCancelarMarca.Name = "btnCancelarMarca";
+            this.btnCancelarMarca.Size = new System.Drawing.Size(77, 23);
+            this.btnCancelarMarca.TabIndex = 5;
+            this.btnCancelarMarca.Text = "Cancelar";
+            this.btnCancelarMarca.UseVisualStyleBackColor = false;
+            this.btnCancelarMarca.Click += new System.EventHandler(this.btnCancelarMarca_Click);
             // 
             // btnGuardarMarca
             // 
@@ -100,15 +75,41 @@
             this.btnGuardarMarca.Text = "Guardar";
             this.btnGuardarMarca.UseVisualStyleBackColor = false;
             // 
-            // btnCancelarMarca
+            // txtBDescripcionNuevaMarca
             // 
-            this.btnCancelarMarca.BackColor = System.Drawing.Color.Yellow;
-            this.btnCancelarMarca.Location = new System.Drawing.Point(279, 330);
-            this.btnCancelarMarca.Name = "btnCancelarMarca";
-            this.btnCancelarMarca.Size = new System.Drawing.Size(77, 23);
-            this.btnCancelarMarca.TabIndex = 5;
-            this.btnCancelarMarca.Text = "Cancelar";
-            this.btnCancelarMarca.UseVisualStyleBackColor = false;
+            this.txtBDescripcionNuevaMarca.Location = new System.Drawing.Point(8, 87);
+            this.txtBDescripcionNuevaMarca.Multiline = true;
+            this.txtBDescripcionNuevaMarca.Name = "txtBDescripcionNuevaMarca";
+            this.txtBDescripcionNuevaMarca.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBDescripcionNuevaMarca.Size = new System.Drawing.Size(434, 239);
+            this.txtBDescripcionNuevaMarca.TabIndex = 3;
+            // 
+            // txtBAgregarNombreMarca
+            // 
+            this.txtBAgregarNombreMarca.Location = new System.Drawing.Point(71, 38);
+            this.txtBAgregarNombreMarca.Name = "txtBAgregarNombreMarca";
+            this.txtBAgregarNombreMarca.Size = new System.Drawing.Size(168, 20);
+            this.txtBAgregarNombreMarca.TabIndex = 2;
+            // 
+            // lblAgregarDescripcionMarca
+            // 
+            this.lblAgregarDescripcionMarca.AutoSize = true;
+            this.lblAgregarDescripcionMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.lblAgregarDescripcionMarca.Location = new System.Drawing.Point(6, 68);
+            this.lblAgregarDescripcionMarca.Name = "lblAgregarDescripcionMarca";
+            this.lblAgregarDescripcionMarca.Size = new System.Drawing.Size(82, 16);
+            this.lblAgregarDescripcionMarca.TabIndex = 1;
+            this.lblAgregarDescripcionMarca.Text = "Descripción:";
+            // 
+            // lblNombreNuevaMarca
+            // 
+            this.lblNombreNuevaMarca.AutoSize = true;
+            this.lblNombreNuevaMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.lblNombreNuevaMarca.Location = new System.Drawing.Point(6, 42);
+            this.lblNombreNuevaMarca.Name = "lblNombreNuevaMarca";
+            this.lblNombreNuevaMarca.Size = new System.Drawing.Size(59, 16);
+            this.lblNombreNuevaMarca.TabIndex = 0;
+            this.lblNombreNuevaMarca.Text = "Nombre:";
             // 
             // frmNuevaMarca
             // 
