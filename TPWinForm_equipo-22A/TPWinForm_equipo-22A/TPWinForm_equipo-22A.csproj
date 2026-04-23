@@ -141,9 +141,13 @@
     <None Include="Resources\handle-with-care-100.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Clases\Clases.csproj">
+    <ProjectReference Include="..\dominio\dominio.csproj">
       <Project>{b5fe5b78-0623-4dad-8642-5e2ec3850e4d}</Project>
-      <Name>Clases</Name>
+      <Name>dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\negocio\negocio.csproj">
+      <Project>{affc445e-5e70-4347-a550-fcaa4e26f5e5}</Project>
+      <Name>negocio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

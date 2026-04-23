@@ -1,4 +1,4 @@
-ï»¿namespace TPWinForm_equipo_22A
+namespace TPWinForm_equipo_22A
 {
     partial class frmModificarCategoria
     {
@@ -123,7 +123,7 @@
             this.lblDescripcionCategoriaActual.Name = "lblDescripcionCategoriaActual";
             this.lblDescripcionCategoriaActual.Size = new System.Drawing.Size(148, 30);
             this.lblDescripcionCategoriaActual.TabIndex = 2;
-            this.lblDescripcionCategoriaActual.Text = "DescripciÃ³n";
+            this.lblDescripcionCategoriaActual.Text = "Descripción";
             // 
             // lblIDActualCategoria
             // 
@@ -178,7 +178,7 @@
             this.lblDescripcionCategoria.Name = "lblDescripcionCategoria";
             this.lblDescripcionCategoria.Size = new System.Drawing.Size(162, 30);
             this.lblDescripcionCategoria.TabIndex = 2;
-            this.lblDescripcionCategoria.Text = "DescripciÃ³n: ";
+            this.lblDescripcionCategoria.Text = "Descripción: ";
             // 
             // lblNuevoIDCategoria
             // 

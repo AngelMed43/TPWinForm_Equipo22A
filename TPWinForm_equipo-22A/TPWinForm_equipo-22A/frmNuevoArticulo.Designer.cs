@@ -1,4 +1,4 @@
-锘縩amespace TPWinForm_equipo_22A
+namespace TPWinForm_equipo_22A
 {
     partial class frmNuevoArticulo
     {
@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.grpBNuevoArticulo = new System.Windows.Forms.GroupBox();
-            this.lblC贸digo = new System.Windows.Forms.Label();
+            this.lblC骴igo = new System.Windows.Forms.Label();
             this.cbMarca = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtBPrecio = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.cbCategor铆a = new System.Windows.Forms.ComboBox();
+            this.cbCategor韆 = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtBDescripci贸n = new System.Windows.Forms.TextBox();
+            this.txtBDescripci髇 = new System.Windows.Forms.TextBox();
             this.btnDeleteImagen = new System.Windows.Forms.Button();
             this.lbxImagenes = new System.Windows.Forms.ListBox();
-            this.lblDescripci贸n = new System.Windows.Forms.Label();
+            this.lblDescripci髇 = new System.Windows.Forms.Label();
             this.txtBNombre = new System.Windows.Forms.TextBox();
             this.btnAddImagen = new System.Windows.Forms.Button();
             this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.txtBC贸digo = new System.Windows.Forms.TextBox();
-            this.lblCategor铆a = new System.Windows.Forms.Label();
+            this.txtBC骴igo = new System.Windows.Forms.TextBox();
+            this.lblCategor韆 = new System.Windows.Forms.Label();
             this.lblImagenes = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.grpBNuevoArticulo.SuspendLayout();
@@ -55,23 +55,23 @@
             // grpBNuevoArticulo
             // 
             this.grpBNuevoArticulo.AutoSize = true;
-            this.grpBNuevoArticulo.Controls.Add(this.lblC贸digo);
+            this.grpBNuevoArticulo.Controls.Add(this.lblC骴igo);
             this.grpBNuevoArticulo.Controls.Add(this.cbMarca);
             this.grpBNuevoArticulo.Controls.Add(this.lblNombre);
             this.grpBNuevoArticulo.Controls.Add(this.txtBPrecio);
             this.grpBNuevoArticulo.Controls.Add(this.btnCancelar);
-            this.grpBNuevoArticulo.Controls.Add(this.cbCategor铆a);
+            this.grpBNuevoArticulo.Controls.Add(this.cbCategor韆);
             this.grpBNuevoArticulo.Controls.Add(this.btnGuardar);
-            this.grpBNuevoArticulo.Controls.Add(this.txtBDescripci贸n);
+            this.grpBNuevoArticulo.Controls.Add(this.txtBDescripci髇);
             this.grpBNuevoArticulo.Controls.Add(this.btnDeleteImagen);
             this.grpBNuevoArticulo.Controls.Add(this.lbxImagenes);
-            this.grpBNuevoArticulo.Controls.Add(this.lblDescripci贸n);
+            this.grpBNuevoArticulo.Controls.Add(this.lblDescripci髇);
             this.grpBNuevoArticulo.Controls.Add(this.txtBNombre);
             this.grpBNuevoArticulo.Controls.Add(this.btnAddImagen);
             this.grpBNuevoArticulo.Controls.Add(this.pbxImagen);
             this.grpBNuevoArticulo.Controls.Add(this.lblMarca);
-            this.grpBNuevoArticulo.Controls.Add(this.txtBC贸digo);
-            this.grpBNuevoArticulo.Controls.Add(this.lblCategor铆a);
+            this.grpBNuevoArticulo.Controls.Add(this.txtBC骴igo);
+            this.grpBNuevoArticulo.Controls.Add(this.lblCategor韆);
             this.grpBNuevoArticulo.Controls.Add(this.lblImagenes);
             this.grpBNuevoArticulo.Controls.Add(this.lblPrecio);
             this.grpBNuevoArticulo.Location = new System.Drawing.Point(1, 1);
@@ -81,15 +81,15 @@
             this.grpBNuevoArticulo.TabStop = false;
             this.grpBNuevoArticulo.Text = "Datos del articulo";
             // 
-            // lblC贸digo
+            // lblC骴igo
             // 
-            this.lblC贸digo.AutoSize = true;
-            this.lblC贸digo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblC贸digo.Location = new System.Drawing.Point(6, 16);
-            this.lblC贸digo.Name = "lblC贸digo";
-            this.lblC贸digo.Size = new System.Drawing.Size(57, 16);
-            this.lblC贸digo.TabIndex = 43;
-            this.lblC贸digo.Text = "C贸digo :";
+            this.lblC骴igo.AutoSize = true;
+            this.lblC骴igo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblC骴igo.Location = new System.Drawing.Point(6, 16);
+            this.lblC骴igo.Name = "lblC骴igo";
+            this.lblC骴igo.Size = new System.Drawing.Size(57, 16);
+            this.lblC骴igo.TabIndex = 43;
+            this.lblC骴igo.Text = "C骴igo :";
             // 
             // cbMarca
             // 
@@ -128,13 +128,13 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // cbCategor铆a
+            // cbCategor韆
             // 
-            this.cbCategor铆a.FormattingEnabled = true;
-            this.cbCategor铆a.Location = new System.Drawing.Point(97, 121);
-            this.cbCategor铆a.Name = "cbCategor铆a";
-            this.cbCategor铆a.Size = new System.Drawing.Size(123, 21);
-            this.cbCategor铆a.TabIndex = 4;
+            this.cbCategor韆.FormattingEnabled = true;
+            this.cbCategor韆.Location = new System.Drawing.Point(97, 121);
+            this.cbCategor韆.Name = "cbCategor韆";
+            this.cbCategor韆.Size = new System.Drawing.Size(123, 21);
+            this.cbCategor韆.TabIndex = 4;
             // 
             // btnGuardar
             // 
@@ -146,12 +146,12 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
-            // txtBDescripci贸n
+            // txtBDescripci髇
             // 
-            this.txtBDescripci贸n.Location = new System.Drawing.Point(97, 68);
-            this.txtBDescripci贸n.Name = "txtBDescripci贸n";
-            this.txtBDescripci贸n.Size = new System.Drawing.Size(102, 20);
-            this.txtBDescripci贸n.TabIndex = 2;
+            this.txtBDescripci髇.Location = new System.Drawing.Point(97, 68);
+            this.txtBDescripci髇.Name = "txtBDescripci髇";
+            this.txtBDescripci髇.Size = new System.Drawing.Size(102, 20);
+            this.txtBDescripci髇.TabIndex = 2;
             // 
             // btnDeleteImagen
             // 
@@ -170,15 +170,15 @@
             this.lbxImagenes.Size = new System.Drawing.Size(122, 108);
             this.lbxImagenes.TabIndex = 56;
             // 
-            // lblDescripci贸n
+            // lblDescripci髇
             // 
-            this.lblDescripci贸n.AutoSize = true;
-            this.lblDescripci贸n.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripci贸n.Location = new System.Drawing.Point(6, 68);
-            this.lblDescripci贸n.Name = "lblDescripci贸n";
-            this.lblDescripci贸n.Size = new System.Drawing.Size(85, 16);
-            this.lblDescripci贸n.TabIndex = 45;
-            this.lblDescripci贸n.Text = "Descripci贸n :";
+            this.lblDescripci髇.AutoSize = true;
+            this.lblDescripci髇.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripci髇.Location = new System.Drawing.Point(6, 68);
+            this.lblDescripci髇.Name = "lblDescripci髇";
+            this.lblDescripci髇.Size = new System.Drawing.Size(85, 16);
+            this.lblDescripci髇.TabIndex = 45;
+            this.lblDescripci髇.Text = "Descripci髇 :";
             // 
             // txtBNombre
             // 
@@ -217,23 +217,23 @@
             this.lblMarca.TabIndex = 46;
             this.lblMarca.Text = "Marca :";
             // 
-            // txtBC贸digo
+            // txtBC骴igo
             // 
-            this.txtBC贸digo.AcceptsTab = true;
-            this.txtBC贸digo.Location = new System.Drawing.Point(97, 16);
-            this.txtBC贸digo.Name = "txtBC贸digo";
-            this.txtBC贸digo.Size = new System.Drawing.Size(102, 20);
-            this.txtBC贸digo.TabIndex = 0;
+            this.txtBC骴igo.AcceptsTab = true;
+            this.txtBC骴igo.Location = new System.Drawing.Point(97, 16);
+            this.txtBC骴igo.Name = "txtBC骴igo";
+            this.txtBC骴igo.Size = new System.Drawing.Size(102, 20);
+            this.txtBC骴igo.TabIndex = 0;
             // 
-            // lblCategor铆a
+            // lblCategor韆
             // 
-            this.lblCategor铆a.AutoSize = true;
-            this.lblCategor铆a.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategor铆a.Location = new System.Drawing.Point(6, 121);
-            this.lblCategor铆a.Name = "lblCategor铆a";
-            this.lblCategor铆a.Size = new System.Drawing.Size(72, 16);
-            this.lblCategor铆a.TabIndex = 47;
-            this.lblCategor铆a.Text = "Categor铆a :";
+            this.lblCategor韆.AutoSize = true;
+            this.lblCategor韆.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategor韆.Location = new System.Drawing.Point(6, 121);
+            this.lblCategor韆.Name = "lblCategor韆";
+            this.lblCategor韆.Size = new System.Drawing.Size(72, 16);
+            this.lblCategor韆.TabIndex = 47;
+            this.lblCategor韆.Text = "Categor韆 :";
             // 
             // lblImagenes
             // 
@@ -243,7 +243,7 @@
             this.lblImagenes.Name = "lblImagenes";
             this.lblImagenes.Size = new System.Drawing.Size(73, 16);
             this.lblImagenes.TabIndex = 49;
-            this.lblImagenes.Text = "Im谩genes :";
+            this.lblImagenes.Text = "Im醙enes :";
             // 
             // lblPrecio
             // 
@@ -278,23 +278,23 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grpBNuevoArticulo;
-        private System.Windows.Forms.Label lblC贸digo;
+        private System.Windows.Forms.Label lblC骴igo;
         private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtBPrecio;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.ComboBox cbCategor铆a;
+        private System.Windows.Forms.ComboBox cbCategor韆;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtBDescripci贸n;
+        private System.Windows.Forms.TextBox txtBDescripci髇;
         private System.Windows.Forms.Button btnDeleteImagen;
         private System.Windows.Forms.ListBox lbxImagenes;
-        private System.Windows.Forms.Label lblDescripci贸n;
+        private System.Windows.Forms.Label lblDescripci髇;
         private System.Windows.Forms.TextBox txtBNombre;
         private System.Windows.Forms.Button btnAddImagen;
         private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.TextBox txtBC贸digo;
-        private System.Windows.Forms.Label lblCategor铆a;
+        private System.Windows.Forms.TextBox txtBC骴igo;
+        private System.Windows.Forms.Label lblCategor韆;
         private System.Windows.Forms.Label lblImagenes;
         private System.Windows.Forms.Label lblPrecio;
     }

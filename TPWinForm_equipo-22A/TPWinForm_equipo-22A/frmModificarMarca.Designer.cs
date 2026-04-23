@@ -1,4 +1,4 @@
-ï»¿namespace TPWinForm_equipo_22A
+namespace TPWinForm_equipo_22A
 {
     partial class frmModificarMarca
     {
@@ -95,7 +95,7 @@
             this.lblDescripcionMarcaActual.Name = "lblDescripcionMarcaActual";
             this.lblDescripcionMarcaActual.Size = new System.Drawing.Size(79, 16);
             this.lblDescripcionMarcaActual.TabIndex = 2;
-            this.lblDescripcionMarcaActual.Text = "DescripciÃ³n";
+            this.lblDescripcionMarcaActual.Text = "Descripción";
             // 
             // lblNombreActualMarca
             // 
@@ -103,16 +103,16 @@
             this.lblNombreActualMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lblNombreActualMarca.Location = new System.Drawing.Point(6, 25);
             this.lblNombreActualMarca.Name = "lblNombreActualMarca";
-            this.lblNombreActualMarca.Size = new System.Drawing.Size(59, 16);
+            this.lblNombreActualMarca.Size = new System.Drawing.Size(23, 16);
             this.lblNombreActualMarca.TabIndex = 1;
-            this.lblNombreActualMarca.Text = "Nombre:";
+            this.lblNombreActualMarca.Text = "ID:";
             // 
             // txtBNombreActualMarca
             // 
             this.txtBNombreActualMarca.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBNombreActualMarca.Location = new System.Drawing.Point(71, 24);
+            this.txtBNombreActualMarca.Location = new System.Drawing.Point(35, 24);
             this.txtBNombreActualMarca.Name = "txtBNombreActualMarca";
-            this.txtBNombreActualMarca.Size = new System.Drawing.Size(100, 20);
+            this.txtBNombreActualMarca.Size = new System.Drawing.Size(78, 20);
             this.txtBNombreActualMarca.TabIndex = 0;
             // 
             // btnCancelarMarca
@@ -153,13 +153,13 @@
             this.lblDescripcionMarca.Name = "lblDescripcionMarca";
             this.lblDescripcionMarca.Size = new System.Drawing.Size(85, 16);
             this.lblDescripcionMarca.TabIndex = 2;
-            this.lblDescripcionMarca.Text = "DescripciÃ³n: ";
+            this.lblDescripcionMarca.Text = "Descripción: ";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 32);
+            this.textBox1.Location = new System.Drawing.Point(35, 32);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(78, 20);
             this.textBox1.TabIndex = 1;
             // 
             // lblIDMarca
@@ -168,9 +168,9 @@
             this.lblIDMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lblIDMarca.Location = new System.Drawing.Point(6, 36);
             this.lblIDMarca.Name = "lblIDMarca";
-            this.lblIDMarca.Size = new System.Drawing.Size(59, 16);
+            this.lblIDMarca.Size = new System.Drawing.Size(23, 16);
             this.lblIDMarca.TabIndex = 0;
-            this.lblIDMarca.Text = "Nombre:";
+            this.lblIDMarca.Text = "ID:";
             // 
             // frmModificarMarca
             // 

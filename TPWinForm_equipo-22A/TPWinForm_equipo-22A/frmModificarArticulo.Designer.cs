@@ -1,4 +1,4 @@
-锘縩amespace TPWinForm_equipo_22A
+namespace TPWinForm_equipo_22A
 {
     partial class frmModificarArticulo
     {
@@ -33,32 +33,32 @@
             this.txtbPrecioActual = new System.Windows.Forms.TextBox();
             this.txtbCategoriaActual = new System.Windows.Forms.TextBox();
             this.txtbMarcaActual = new System.Windows.Forms.TextBox();
-            this.txtbDescripci贸nActual = new System.Windows.Forms.TextBox();
+            this.txtbDescripci髇Actual = new System.Windows.Forms.TextBox();
             this.txtbNombreActual = new System.Windows.Forms.TextBox();
-            this.txtbC贸digoActual = new System.Windows.Forms.TextBox();
-            this.lblC贸digoActual = new System.Windows.Forms.Label();
+            this.txtbC骴igoActual = new System.Windows.Forms.TextBox();
+            this.lblC骴igoActual = new System.Windows.Forms.Label();
             this.lblPrecioActual = new System.Windows.Forms.Label();
             this.lblNombreActual = new System.Windows.Forms.Label();
             this.lblCategoriaActual = new System.Windows.Forms.Label();
-            this.lblDescripci贸nActual = new System.Windows.Forms.Label();
+            this.lblDescripci髇Actual = new System.Windows.Forms.Label();
             this.lblMarcaActual = new System.Windows.Forms.Label();
-            this.lblC贸digo = new System.Windows.Forms.Label();
+            this.lblC骴igo = new System.Windows.Forms.Label();
             this.cbMarca = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtBPrecio = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.cbCategor铆a = new System.Windows.Forms.ComboBox();
+            this.cbCategor韆 = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtBDescripci贸n = new System.Windows.Forms.TextBox();
+            this.txtBDescripci髇 = new System.Windows.Forms.TextBox();
             this.btnDeleteImagen = new System.Windows.Forms.Button();
             this.lbxImagenes = new System.Windows.Forms.ListBox();
-            this.lblDescripci贸n = new System.Windows.Forms.Label();
+            this.lblDescripci髇 = new System.Windows.Forms.Label();
             this.txtBNombre = new System.Windows.Forms.TextBox();
             this.btnAddImagen = new System.Windows.Forms.Button();
             this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.txtBC贸digo = new System.Windows.Forms.TextBox();
-            this.lblCategor铆a = new System.Windows.Forms.Label();
+            this.txtBC骴igo = new System.Windows.Forms.TextBox();
+            this.lblCategor韆 = new System.Windows.Forms.Label();
             this.lblImagenes = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.grpBDetalleArticulo.SuspendLayout();
@@ -70,23 +70,23 @@
             // 
             this.grpBDetalleArticulo.AutoSize = true;
             this.grpBDetalleArticulo.Controls.Add(this.grpbDetalleActual);
-            this.grpBDetalleArticulo.Controls.Add(this.lblC贸digo);
+            this.grpBDetalleArticulo.Controls.Add(this.lblC骴igo);
             this.grpBDetalleArticulo.Controls.Add(this.cbMarca);
             this.grpBDetalleArticulo.Controls.Add(this.lblNombre);
             this.grpBDetalleArticulo.Controls.Add(this.txtBPrecio);
             this.grpBDetalleArticulo.Controls.Add(this.btnCancelar);
-            this.grpBDetalleArticulo.Controls.Add(this.cbCategor铆a);
+            this.grpBDetalleArticulo.Controls.Add(this.cbCategor韆);
             this.grpBDetalleArticulo.Controls.Add(this.btnGuardar);
-            this.grpBDetalleArticulo.Controls.Add(this.txtBDescripci贸n);
+            this.grpBDetalleArticulo.Controls.Add(this.txtBDescripci髇);
             this.grpBDetalleArticulo.Controls.Add(this.btnDeleteImagen);
             this.grpBDetalleArticulo.Controls.Add(this.lbxImagenes);
-            this.grpBDetalleArticulo.Controls.Add(this.lblDescripci贸n);
+            this.grpBDetalleArticulo.Controls.Add(this.lblDescripci髇);
             this.grpBDetalleArticulo.Controls.Add(this.txtBNombre);
             this.grpBDetalleArticulo.Controls.Add(this.btnAddImagen);
             this.grpBDetalleArticulo.Controls.Add(this.pbxImagen);
             this.grpBDetalleArticulo.Controls.Add(this.lblMarca);
-            this.grpBDetalleArticulo.Controls.Add(this.txtBC贸digo);
-            this.grpBDetalleArticulo.Controls.Add(this.lblCategor铆a);
+            this.grpBDetalleArticulo.Controls.Add(this.txtBC骴igo);
+            this.grpBDetalleArticulo.Controls.Add(this.lblCategor韆);
             this.grpBDetalleArticulo.Controls.Add(this.lblImagenes);
             this.grpBDetalleArticulo.Controls.Add(this.lblPrecio);
             this.grpBDetalleArticulo.Location = new System.Drawing.Point(12, 14);
@@ -101,14 +101,14 @@
             this.grpbDetalleActual.Controls.Add(this.txtbPrecioActual);
             this.grpbDetalleActual.Controls.Add(this.txtbCategoriaActual);
             this.grpbDetalleActual.Controls.Add(this.txtbMarcaActual);
-            this.grpbDetalleActual.Controls.Add(this.txtbDescripci贸nActual);
+            this.grpbDetalleActual.Controls.Add(this.txtbDescripci髇Actual);
             this.grpbDetalleActual.Controls.Add(this.txtbNombreActual);
-            this.grpbDetalleActual.Controls.Add(this.txtbC贸digoActual);
-            this.grpbDetalleActual.Controls.Add(this.lblC贸digoActual);
+            this.grpbDetalleActual.Controls.Add(this.txtbC骴igoActual);
+            this.grpbDetalleActual.Controls.Add(this.lblC骴igoActual);
             this.grpbDetalleActual.Controls.Add(this.lblPrecioActual);
             this.grpbDetalleActual.Controls.Add(this.lblNombreActual);
             this.grpbDetalleActual.Controls.Add(this.lblCategoriaActual);
-            this.grpbDetalleActual.Controls.Add(this.lblDescripci贸nActual);
+            this.grpbDetalleActual.Controls.Add(this.lblDescripci髇Actual);
             this.grpbDetalleActual.Controls.Add(this.lblMarcaActual);
             this.grpbDetalleActual.Location = new System.Drawing.Point(233, 8);
             this.grpbDetalleActual.Name = "grpbDetalleActual";
@@ -141,14 +141,14 @@
             this.txtbMarcaActual.Size = new System.Drawing.Size(122, 20);
             this.txtbMarcaActual.TabIndex = 70;
             // 
-            // txtbDescripci贸nActual
+            // txtbDescripci髇Actual
             // 
-            this.txtbDescripci贸nActual.Location = new System.Drawing.Point(108, 63);
-            this.txtbDescripci贸nActual.Multiline = true;
-            this.txtbDescripci贸nActual.Name = "txtbDescripci贸nActual";
-            this.txtbDescripci贸nActual.ReadOnly = true;
-            this.txtbDescripci贸nActual.Size = new System.Drawing.Size(123, 74);
-            this.txtbDescripci贸nActual.TabIndex = 69;
+            this.txtbDescripci髇Actual.Location = new System.Drawing.Point(108, 63);
+            this.txtbDescripci髇Actual.Multiline = true;
+            this.txtbDescripci髇Actual.Name = "txtbDescripci髇Actual";
+            this.txtbDescripci髇Actual.ReadOnly = true;
+            this.txtbDescripci髇Actual.Size = new System.Drawing.Size(123, 74);
+            this.txtbDescripci髇Actual.TabIndex = 69;
             // 
             // txtbNombreActual
             // 
@@ -158,23 +158,23 @@
             this.txtbNombreActual.Size = new System.Drawing.Size(122, 20);
             this.txtbNombreActual.TabIndex = 69;
             // 
-            // txtbC贸digoActual
+            // txtbC骴igoActual
             // 
-            this.txtbC贸digoActual.Location = new System.Drawing.Point(109, 11);
-            this.txtbC贸digoActual.Name = "txtbC贸digoActual";
-            this.txtbC贸digoActual.ReadOnly = true;
-            this.txtbC贸digoActual.Size = new System.Drawing.Size(122, 20);
-            this.txtbC贸digoActual.TabIndex = 69;
+            this.txtbC骴igoActual.Location = new System.Drawing.Point(109, 11);
+            this.txtbC骴igoActual.Name = "txtbC骴igoActual";
+            this.txtbC骴igoActual.ReadOnly = true;
+            this.txtbC骴igoActual.Size = new System.Drawing.Size(122, 20);
+            this.txtbC骴igoActual.TabIndex = 69;
             // 
-            // lblC贸digoActual
+            // lblC骴igoActual
             // 
-            this.lblC贸digoActual.AutoSize = true;
-            this.lblC贸digoActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblC贸digoActual.Location = new System.Drawing.Point(6, 16);
-            this.lblC贸digoActual.Name = "lblC贸digoActual";
-            this.lblC贸digoActual.Size = new System.Drawing.Size(97, 16);
-            this.lblC贸digoActual.TabIndex = 62;
-            this.lblC贸digoActual.Text = "C贸digo Actual :";
+            this.lblC骴igoActual.AutoSize = true;
+            this.lblC骴igoActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblC骴igoActual.Location = new System.Drawing.Point(6, 16);
+            this.lblC骴igoActual.Name = "lblC骴igoActual";
+            this.lblC骴igoActual.Size = new System.Drawing.Size(97, 16);
+            this.lblC骴igoActual.TabIndex = 62;
+            this.lblC骴igoActual.Text = "C骴igo Actual :";
             // 
             // lblPrecioActual
             // 
@@ -204,17 +204,17 @@
             this.lblCategoriaActual.Name = "lblCategoriaActual";
             this.lblCategoriaActual.Size = new System.Drawing.Size(72, 16);
             this.lblCategoriaActual.TabIndex = 66;
-            this.lblCategoriaActual.Text = "Categor铆a :";
+            this.lblCategoriaActual.Text = "Categor韆 :";
             // 
-            // lblDescripci贸nActual
+            // lblDescripci髇Actual
             // 
-            this.lblDescripci贸nActual.AutoSize = true;
-            this.lblDescripci贸nActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripci贸nActual.Location = new System.Drawing.Point(6, 68);
-            this.lblDescripci贸nActual.Name = "lblDescripci贸nActual";
-            this.lblDescripci贸nActual.Size = new System.Drawing.Size(85, 16);
-            this.lblDescripci贸nActual.TabIndex = 64;
-            this.lblDescripci贸nActual.Text = "Descripci贸n :";
+            this.lblDescripci髇Actual.AutoSize = true;
+            this.lblDescripci髇Actual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripci髇Actual.Location = new System.Drawing.Point(6, 68);
+            this.lblDescripci髇Actual.Name = "lblDescripci髇Actual";
+            this.lblDescripci髇Actual.Size = new System.Drawing.Size(85, 16);
+            this.lblDescripci髇Actual.TabIndex = 64;
+            this.lblDescripci髇Actual.Text = "Descripci髇 :";
             // 
             // lblMarcaActual
             // 
@@ -226,15 +226,15 @@
             this.lblMarcaActual.TabIndex = 65;
             this.lblMarcaActual.Text = "Marca :";
             // 
-            // lblC贸digo
+            // lblC骴igo
             // 
-            this.lblC贸digo.AutoSize = true;
-            this.lblC贸digo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblC贸digo.Location = new System.Drawing.Point(6, 24);
-            this.lblC贸digo.Name = "lblC贸digo";
-            this.lblC贸digo.Size = new System.Drawing.Size(57, 16);
-            this.lblC贸digo.TabIndex = 43;
-            this.lblC贸digo.Text = "C贸digo :";
+            this.lblC骴igo.AutoSize = true;
+            this.lblC骴igo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblC骴igo.Location = new System.Drawing.Point(6, 24);
+            this.lblC骴igo.Name = "lblC骴igo";
+            this.lblC骴igo.Size = new System.Drawing.Size(57, 16);
+            this.lblC骴igo.TabIndex = 43;
+            this.lblC骴igo.Text = "C骴igo :";
             // 
             // cbMarca
             // 
@@ -273,13 +273,13 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // cbCategor铆a
+            // cbCategor韆
             // 
-            this.cbCategor铆a.FormattingEnabled = true;
-            this.cbCategor铆a.Location = new System.Drawing.Point(97, 183);
-            this.cbCategor铆a.Name = "cbCategor铆a";
-            this.cbCategor铆a.Size = new System.Drawing.Size(123, 21);
-            this.cbCategor铆a.TabIndex = 4;
+            this.cbCategor韆.FormattingEnabled = true;
+            this.cbCategor韆.Location = new System.Drawing.Point(97, 183);
+            this.cbCategor韆.Name = "cbCategor韆";
+            this.cbCategor韆.Size = new System.Drawing.Size(123, 21);
+            this.cbCategor韆.TabIndex = 4;
             // 
             // btnGuardar
             // 
@@ -291,13 +291,13 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
-            // txtBDescripci贸n
+            // txtBDescripci髇
             // 
-            this.txtBDescripci贸n.Location = new System.Drawing.Point(97, 76);
-            this.txtBDescripci贸n.Multiline = true;
-            this.txtBDescripci贸n.Name = "txtBDescripci贸n";
-            this.txtBDescripci贸n.Size = new System.Drawing.Size(123, 74);
-            this.txtBDescripci贸n.TabIndex = 2;
+            this.txtBDescripci髇.Location = new System.Drawing.Point(97, 76);
+            this.txtBDescripci髇.Multiline = true;
+            this.txtBDescripci髇.Name = "txtBDescripci髇";
+            this.txtBDescripci髇.Size = new System.Drawing.Size(123, 74);
+            this.txtBDescripci髇.TabIndex = 2;
             // 
             // btnDeleteImagen
             // 
@@ -316,15 +316,15 @@
             this.lbxImagenes.Size = new System.Drawing.Size(122, 108);
             this.lbxImagenes.TabIndex = 56;
             // 
-            // lblDescripci贸n
+            // lblDescripci髇
             // 
-            this.lblDescripci贸n.AutoSize = true;
-            this.lblDescripci贸n.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripci贸n.Location = new System.Drawing.Point(6, 76);
-            this.lblDescripci贸n.Name = "lblDescripci贸n";
-            this.lblDescripci贸n.Size = new System.Drawing.Size(85, 16);
-            this.lblDescripci贸n.TabIndex = 45;
-            this.lblDescripci贸n.Text = "Descripci贸n :";
+            this.lblDescripci髇.AutoSize = true;
+            this.lblDescripci髇.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripci髇.Location = new System.Drawing.Point(6, 76);
+            this.lblDescripci髇.Name = "lblDescripci髇";
+            this.lblDescripci髇.Size = new System.Drawing.Size(85, 16);
+            this.lblDescripci髇.TabIndex = 45;
+            this.lblDescripci髇.Text = "Descripci髇 :";
             // 
             // txtBNombre
             // 
@@ -363,22 +363,22 @@
             this.lblMarca.TabIndex = 46;
             this.lblMarca.Text = "Marca :";
             // 
-            // txtBC贸digo
+            // txtBC骴igo
             // 
-            this.txtBC贸digo.Location = new System.Drawing.Point(97, 24);
-            this.txtBC贸digo.Name = "txtBC贸digo";
-            this.txtBC贸digo.Size = new System.Drawing.Size(122, 20);
-            this.txtBC贸digo.TabIndex = 0;
+            this.txtBC骴igo.Location = new System.Drawing.Point(97, 24);
+            this.txtBC骴igo.Name = "txtBC骴igo";
+            this.txtBC骴igo.Size = new System.Drawing.Size(122, 20);
+            this.txtBC骴igo.TabIndex = 0;
             // 
-            // lblCategor铆a
+            // lblCategor韆
             // 
-            this.lblCategor铆a.AutoSize = true;
-            this.lblCategor铆a.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategor铆a.Location = new System.Drawing.Point(6, 183);
-            this.lblCategor铆a.Name = "lblCategor铆a";
-            this.lblCategor铆a.Size = new System.Drawing.Size(72, 16);
-            this.lblCategor铆a.TabIndex = 47;
-            this.lblCategor铆a.Text = "Categor铆a :";
+            this.lblCategor韆.AutoSize = true;
+            this.lblCategor韆.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategor韆.Location = new System.Drawing.Point(6, 183);
+            this.lblCategor韆.Name = "lblCategor韆";
+            this.lblCategor韆.Size = new System.Drawing.Size(72, 16);
+            this.lblCategor韆.TabIndex = 47;
+            this.lblCategor韆.Text = "Categor韆 :";
             // 
             // lblImagenes
             // 
@@ -388,7 +388,7 @@
             this.lblImagenes.Name = "lblImagenes";
             this.lblImagenes.Size = new System.Drawing.Size(73, 16);
             this.lblImagenes.TabIndex = 49;
-            this.lblImagenes.Text = "Im谩genes :";
+            this.lblImagenes.Text = "Im醙enes :";
             // 
             // lblPrecio
             // 
@@ -425,37 +425,37 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grpBDetalleArticulo;
-        private System.Windows.Forms.Label lblC贸digo;
+        private System.Windows.Forms.Label lblC骴igo;
         private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtBPrecio;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.ComboBox cbCategor铆a;
+        private System.Windows.Forms.ComboBox cbCategor韆;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtBDescripci贸n;
+        private System.Windows.Forms.TextBox txtBDescripci髇;
         private System.Windows.Forms.Button btnDeleteImagen;
         private System.Windows.Forms.ListBox lbxImagenes;
-        private System.Windows.Forms.Label lblDescripci贸n;
+        private System.Windows.Forms.Label lblDescripci髇;
         private System.Windows.Forms.TextBox txtBNombre;
         private System.Windows.Forms.Button btnAddImagen;
         private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.TextBox txtBC贸digo;
-        private System.Windows.Forms.Label lblCategor铆a;
+        private System.Windows.Forms.TextBox txtBC骴igo;
+        private System.Windows.Forms.Label lblCategor韆;
         private System.Windows.Forms.Label lblImagenes;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.GroupBox grpbDetalleActual;
-        private System.Windows.Forms.Label lblC贸digoActual;
+        private System.Windows.Forms.Label lblC骴igoActual;
         private System.Windows.Forms.Label lblPrecioActual;
         private System.Windows.Forms.Label lblNombreActual;
         private System.Windows.Forms.Label lblCategoriaActual;
-        private System.Windows.Forms.Label lblDescripci贸nActual;
+        private System.Windows.Forms.Label lblDescripci髇Actual;
         private System.Windows.Forms.Label lblMarcaActual;
         private System.Windows.Forms.TextBox txtbPrecioActual;
         private System.Windows.Forms.TextBox txtbCategoriaActual;
         private System.Windows.Forms.TextBox txtbMarcaActual;
-        private System.Windows.Forms.TextBox txtbDescripci贸nActual;
+        private System.Windows.Forms.TextBox txtbDescripci髇Actual;
         private System.Windows.Forms.TextBox txtbNombreActual;
-        private System.Windows.Forms.TextBox txtbC贸digoActual;
+        private System.Windows.Forms.TextBox txtbC骴igoActual;
     }
 }

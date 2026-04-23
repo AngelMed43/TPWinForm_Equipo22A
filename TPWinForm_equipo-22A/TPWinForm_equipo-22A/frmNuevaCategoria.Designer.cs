@@ -1,4 +1,4 @@
-锘縩amespace TPWinForm_equipo_22A
+namespace TPWinForm_equipo_22A
 {
     partial class frmNuevaCategoria
     {
@@ -33,8 +33,8 @@
             this.lblIDCategoria = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtBDescripci贸n = new System.Windows.Forms.TextBox();
-            this.lblDescripci贸n = new System.Windows.Forms.Label();
+            this.txtBDescripci髇 = new System.Windows.Forms.TextBox();
+            this.lblDescripci髇 = new System.Windows.Forms.Label();
             this.grpBDetalleCategoria.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,8 +45,8 @@
             this.grpBDetalleCategoria.Controls.Add(this.lblIDCategoria);
             this.grpBDetalleCategoria.Controls.Add(this.btnCancelar);
             this.grpBDetalleCategoria.Controls.Add(this.btnGuardar);
-            this.grpBDetalleCategoria.Controls.Add(this.txtBDescripci贸n);
-            this.grpBDetalleCategoria.Controls.Add(this.lblDescripci贸n);
+            this.grpBDetalleCategoria.Controls.Add(this.txtBDescripci髇);
+            this.grpBDetalleCategoria.Controls.Add(this.lblDescripci髇);
             this.grpBDetalleCategoria.Location = new System.Drawing.Point(16, 15);
             this.grpBDetalleCategoria.Margin = new System.Windows.Forms.Padding(6);
             this.grpBDetalleCategoria.Name = "grpBDetalleCategoria";
@@ -101,26 +101,26 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
-            // txtBDescripci贸n
+            // txtBDescripci髇
             // 
-            this.txtBDescripci贸n.Location = new System.Drawing.Point(16, 167);
-            this.txtBDescripci贸n.Margin = new System.Windows.Forms.Padding(6);
-            this.txtBDescripci贸n.Multiline = true;
-            this.txtBDescripci贸n.Name = "txtBDescripci贸n";
-            this.txtBDescripci贸n.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBDescripci贸n.Size = new System.Drawing.Size(864, 456);
-            this.txtBDescripci贸n.TabIndex = 52;
+            this.txtBDescripci髇.Location = new System.Drawing.Point(16, 167);
+            this.txtBDescripci髇.Margin = new System.Windows.Forms.Padding(6);
+            this.txtBDescripci髇.Multiline = true;
+            this.txtBDescripci髇.Name = "txtBDescripci髇";
+            this.txtBDescripci髇.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBDescripci髇.Size = new System.Drawing.Size(864, 456);
+            this.txtBDescripci髇.TabIndex = 52;
             // 
-            // lblDescripci贸n
+            // lblDescripci髇
             // 
-            this.lblDescripci贸n.AutoSize = true;
-            this.lblDescripci贸n.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripci贸n.Location = new System.Drawing.Point(12, 131);
-            this.lblDescripci贸n.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblDescripci贸n.Name = "lblDescripci贸n";
-            this.lblDescripci贸n.Size = new System.Drawing.Size(162, 30);
-            this.lblDescripci贸n.TabIndex = 45;
-            this.lblDescripci贸n.Text = "Descripci贸n :";
+            this.lblDescripci髇.AutoSize = true;
+            this.lblDescripci髇.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripci髇.Location = new System.Drawing.Point(12, 131);
+            this.lblDescripci髇.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblDescripci髇.Name = "lblDescripci髇";
+            this.lblDescripci髇.Size = new System.Drawing.Size(162, 30);
+            this.lblDescripci髇.TabIndex = 45;
+            this.lblDescripci髇.Text = "Descripci髇 :";
             // 
             // frmNuevaCategoria
             // 
@@ -144,8 +144,8 @@
         private System.Windows.Forms.Label lblIDCategoria;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtBDescripci贸n;
-        private System.Windows.Forms.Label lblDescripci贸n;
+        private System.Windows.Forms.TextBox txtBDescripci髇;
+        private System.Windows.Forms.Label lblDescripci髇;
         private System.Windows.Forms.Label IDGenerado;
     }
 }

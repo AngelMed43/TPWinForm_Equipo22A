@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,3 +25,4 @@ namespace TPWinForm_equipo_22A
         }
     }
 }
+

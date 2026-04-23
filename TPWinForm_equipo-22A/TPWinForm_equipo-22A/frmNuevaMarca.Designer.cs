@@ -1,4 +1,4 @@
-﻿namespace TPWinForm_equipo_22A
+namespace TPWinForm_equipo_22A
 {
     partial class frmNuevaMarca
     {
@@ -86,9 +86,9 @@
             // 
             // txtBAgregarNombreMarca
             // 
-            this.txtBAgregarNombreMarca.Location = new System.Drawing.Point(71, 38);
+            this.txtBAgregarNombreMarca.Location = new System.Drawing.Point(35, 38);
             this.txtBAgregarNombreMarca.Name = "txtBAgregarNombreMarca";
-            this.txtBAgregarNombreMarca.Size = new System.Drawing.Size(168, 20);
+            this.txtBAgregarNombreMarca.Size = new System.Drawing.Size(78, 20);
             this.txtBAgregarNombreMarca.TabIndex = 2;
             // 
             // lblAgregarDescripcionMarca
@@ -99,7 +99,7 @@
             this.lblAgregarDescripcionMarca.Name = "lblAgregarDescripcionMarca";
             this.lblAgregarDescripcionMarca.Size = new System.Drawing.Size(82, 16);
             this.lblAgregarDescripcionMarca.TabIndex = 1;
-            this.lblAgregarDescripcionMarca.Text = "Descripción:";
+            this.lblAgregarDescripcionMarca.Text = "Descripci�n:";
             // 
             // lblNombreNuevaMarca
             // 
@@ -107,9 +107,9 @@
             this.lblNombreNuevaMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lblNombreNuevaMarca.Location = new System.Drawing.Point(6, 42);
             this.lblNombreNuevaMarca.Name = "lblNombreNuevaMarca";
-            this.lblNombreNuevaMarca.Size = new System.Drawing.Size(59, 16);
+            this.lblNombreNuevaMarca.Size = new System.Drawing.Size(23, 16);
             this.lblNombreNuevaMarca.TabIndex = 0;
-            this.lblNombreNuevaMarca.Text = "Nombre:";
+            this.lblNombreNuevaMarca.Text = "ID:";
             // 
             // frmNuevaMarca
             // 

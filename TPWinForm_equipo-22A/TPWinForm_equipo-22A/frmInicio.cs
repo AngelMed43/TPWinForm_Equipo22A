@@ -1,4 +1,4 @@
-ï»¿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using negocio;
 
 namespace TPWinForm_equipo_22A
 {
@@ -63,7 +64,7 @@ namespace TPWinForm_equipo_22A
         }
 
         // Asocia los RadioButton de filtro a un mismo evento,
-        // para actualizar quÃ© controles quedan habilitados.
+        // para actualizar qué controles quedan habilitados.
         private void ConfigurarFiltros()
         {
             rdBFiltroXMarca.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
@@ -71,7 +72,7 @@ namespace TPWinForm_equipo_22A
             rdBFiltroXPrecio.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
         }
 
-        //Detecta quÃ© filtro quedÃ³ activo y actualiza la interfaz.
+        //Detecta qué filtro quedó activo y actualiza la interfaz.
         private void ActualizarEstadoFiltrosAlCambiar(object sender, EventArgs e)
         {
             RadioButton rb = sender as RadioButton;
@@ -91,7 +92,7 @@ namespace TPWinForm_equipo_22A
                 txtBPrecioHasta.Text = "Hasta:";
         }
 
-        //MÃ©todo que decide quÃ© controles se pueden usar y cuÃ¡les se limpian segÃºn el filtro seleccionado.
+        //Método que decide qué controles se pueden usar y cuáles se limpian según el filtro seleccionado.
         private void ActualizarEstadoFiltros()
         {
             bool filtroMarca = rdBFiltroXMarca.Checked;
@@ -156,7 +157,7 @@ namespace TPWinForm_equipo_22A
             }
         }
 
-        //Metodo que modifica atributos del Form inicio depende en que pestaÃ±a estemos situados
+        //Metodo que modifica atributos del Form inicio depende en que pestaña estemos situados
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             LimpiarPanelUniversal();
@@ -170,34 +171,34 @@ namespace TPWinForm_equipo_22A
 
             if (pestana == "Articulos" && dgvArticulos.CurrentRow == null)
             {
-                MessageBox.Show("Debe seleccionar un artÃ­culo para eliminar.", "AtenciÃ³n!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debe seleccionar un artículo para eliminar.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            else if (pestana == "Marcas" && dgvMarca.CurrentRow == null)
+            else if (pestana == "Marcas" && dgvMarcas.CurrentRow == null)
             {
-                MessageBox.Show("Debe seleccionar una marca para eliminar.", "AtenciÃ³n!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debe seleccionar una marca para eliminar.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             else if (pestana == "Categorias" && dgvCategorias.CurrentRow == null)
             {
-                MessageBox.Show("Debe seleccionar una categoria para eliminar.", "AtenciÃ³n!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debe seleccionar una categoria para eliminar.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (pestana == "Articulos")
             {
-                MessageBox.Show("Â¿EstÃ¡ seguro que desea eliminar el artÃ­culo seleccionado?", "Mensaje de ConfirmaciÃ³n", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                MessageBox.Show("¿Está seguro que desea eliminar el artículo seleccionado?", "Mensaje de Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             }
             else if (pestana == "Marcas")
             {
-                MessageBox.Show("Â¿EstÃ¡ seguro que desea eliminar la marca seleccionada?", "Mensaje de ConfirmaciÃ³n", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                MessageBox.Show("¿Está seguro que desea eliminar la marca seleccionada?", "Mensaje de Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             }
             else if (pestana == "Categorias")
             {
-                MessageBox.Show("Â¿EstÃ¡ seguro que desea eliminar la categoria seleccionada?", "Mensaje de ConfirmaciÃ³n", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                MessageBox.Show("¿Está seguro que desea eliminar la categoria seleccionada?", "Mensaje de Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             }
 
-            // LÃ³gica para eliminar
+            // Lógica para eliminar
         }
 
         //Limpia el TextBox de Precio Desde al hacer click
@@ -216,6 +217,13 @@ namespace TPWinForm_equipo_22A
             {
                 txtBPrecioHasta.Clear();
             }
+        }
+
+
+        private void frmInicio_Load(object sender, EventArgs e)
+        {
+            MarcaNegocio negocio = new MarcaNegocio();
+            dgvMarcas.DataSource = negocio.listar();
         }
     }
 }

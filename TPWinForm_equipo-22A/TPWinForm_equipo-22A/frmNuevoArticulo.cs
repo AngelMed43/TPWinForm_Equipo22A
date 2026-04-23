@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +16,7 @@ namespace TPWinForm_equipo_22A
         {
             InitializeComponent();
             
-            //txtBCódigo.Focus(); ----- No funciona.
+            //txtBC�digo.Focus(); ----- No funciona.
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -24,3 +24,4 @@ namespace TPWinForm_equipo_22A
         }
     }
 }
+

@@ -1,16 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Clases;
+using dominio;
 
 namespace TPWinForm_equipo_22A
 {
     internal static class Program
     {
         /// <summary>
-        /// Punto de entrada principal para la aplicación.
+        /// Punto de entrada principal para la aplicaci�n.
         /// </summary>
         [STAThread]
         static void Main()
@@ -21,3 +21,4 @@ namespace TPWinForm_equipo_22A
         }
     }
 }
+
