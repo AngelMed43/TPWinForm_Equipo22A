@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="Clases/Clases.csproj" Id="b5fe5b78-0623-4dad-8642-5e2ec3850e4d" />
+  <Project Path="Conexion BDD/Conexion BDD.csproj" Id="affc445e-5e70-4347-a550-fcaa4e26f5e5" />
   <Project Path="TPWinForm_equipo-22A/TPWinForm_equipo-22A.csproj" Id="3ede5e12-3dd1-454c-b6a0-639b90bf86d6" />
 </Solution>

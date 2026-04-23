@@ -46,8 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Articulo.cs" />
-    <Compile Include="Categoria.cs" />
     <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,8 +88,6 @@
     <Compile Include="frmModificarCategoria.Designer.cs">
       <DependentUpon>frmModificarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Imagen.cs" />
-    <Compile Include="Marca.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmInicio.resx">
@@ -143,6 +139,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\handle-with-care-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Clases\Clases.csproj">
+      <Project>{b5fe5b78-0623-4dad-8642-5e2ec3850e4d}</Project>
+      <Name>Clases</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
