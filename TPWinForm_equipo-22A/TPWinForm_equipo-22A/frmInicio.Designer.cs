@@ -449,9 +449,9 @@ namespace TPWinForm_equipo_22A
             // btnNuevoArticulo
             // 
             this.btnNuevoArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevoArticulo.Location = new System.Drawing.Point(13, 158);
+            this.btnNuevoArticulo.Location = new System.Drawing.Point(3, 159);
             this.btnNuevoArticulo.Name = "btnNuevoArticulo";
-            this.btnNuevoArticulo.Size = new System.Drawing.Size(56, 24);
+            this.btnNuevoArticulo.Size = new System.Drawing.Size(78, 24);
             this.btnNuevoArticulo.TabIndex = 8;
             this.btnNuevoArticulo.Text = "Nuevo";
             this.btnNuevoArticulo.UseVisualStyleBackColor = true;
@@ -460,9 +460,9 @@ namespace TPWinForm_equipo_22A
             // btnEliminarArticulo
             // 
             this.btnEliminarArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminarArticulo.Location = new System.Drawing.Point(13, 305);
+            this.btnEliminarArticulo.Location = new System.Drawing.Point(3, 306);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
-            this.btnEliminarArticulo.Size = new System.Drawing.Size(56, 24);
+            this.btnEliminarArticulo.Size = new System.Drawing.Size(78, 24);
             this.btnEliminarArticulo.TabIndex = 11;
             this.btnEliminarArticulo.Text = "Eliminar";
             this.btnEliminarArticulo.UseVisualStyleBackColor = true;
@@ -471,9 +471,9 @@ namespace TPWinForm_equipo_22A
             // btnModificarArticulo
             // 
             this.btnModificarArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificarArticulo.Location = new System.Drawing.Point(13, 212);
+            this.btnModificarArticulo.Location = new System.Drawing.Point(3, 213);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
-            this.btnModificarArticulo.Size = new System.Drawing.Size(56, 24);
+            this.btnModificarArticulo.Size = new System.Drawing.Size(78, 24);
             this.btnModificarArticulo.TabIndex = 9;
             this.btnModificarArticulo.Text = "Modificar";
             this.btnModificarArticulo.UseVisualStyleBackColor = true;
@@ -482,9 +482,9 @@ namespace TPWinForm_equipo_22A
             // btnDetallesArticulo
             // 
             this.btnDetallesArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetallesArticulo.Location = new System.Drawing.Point(13, 251);
+            this.btnDetallesArticulo.Location = new System.Drawing.Point(3, 252);
             this.btnDetallesArticulo.Name = "btnDetallesArticulo";
-            this.btnDetallesArticulo.Size = new System.Drawing.Size(56, 24);
+            this.btnDetallesArticulo.Size = new System.Drawing.Size(78, 24);
             this.btnDetallesArticulo.TabIndex = 10;
             this.btnDetallesArticulo.Text = "Detalles";
             this.btnDetallesArticulo.UseVisualStyleBackColor = true;
