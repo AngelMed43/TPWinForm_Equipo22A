@@ -15,7 +15,14 @@ namespace TPWinForm_equipo_22A
     {
         public frmInicio()
         {
+            this.AutoScaleMode = AutoScaleMode.Dpi;
+            this.MinimumSize = new Size(900, 600);
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+
+
             InitializeComponent();
+            pnlMain.Dock = DockStyle.Fill;
             ConfigurarFiltros();
             ActualizarEstadoFiltros();
             ActualizarBotonesPorPestana();
@@ -222,8 +229,14 @@ namespace TPWinForm_equipo_22A
 
         private void frmInicio_Load(object sender, EventArgs e)
         {
+            splitContainer1.SplitterDistance = splitContainer1.Width / 2;
             MarcaNegocio negocio = new MarcaNegocio();
             dgvMarcas.DataSource = negocio.listar();
+        }
+
+        private void frmInicio_Resize(object sender, EventArgs e)
+        {
+            splitContainer1.SplitterDistance = splitContainer1.Width / 2;
         }
     }
 }
