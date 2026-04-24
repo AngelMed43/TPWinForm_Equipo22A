@@ -42,26 +42,29 @@ namespace TPWinForm_equipo_22A
             this.lblDescripción = new System.Windows.Forms.Label();
             this.txtBNombre = new System.Windows.Forms.TextBox();
             this.btnAddImagen = new System.Windows.Forms.Button();
-            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblMarca = new System.Windows.Forms.Label();
             this.txtBCódigo = new System.Windows.Forms.TextBox();
             this.lblCategoría = new System.Windows.Forms.Label();
             this.lblImagenes = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.grpBNuevoArticulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpBNuevoArticulo
             // 
             this.grpBNuevoArticulo.AutoSize = true;
+            this.grpBNuevoArticulo.Controls.Add(this.panel2);
             this.grpBNuevoArticulo.Controls.Add(this.lblCódigo);
             this.grpBNuevoArticulo.Controls.Add(this.cbMarca);
             this.grpBNuevoArticulo.Controls.Add(this.lblNombre);
             this.grpBNuevoArticulo.Controls.Add(this.txtBPrecio);
-            this.grpBNuevoArticulo.Controls.Add(this.btnCancelar);
             this.grpBNuevoArticulo.Controls.Add(this.cbCategoría);
-            this.grpBNuevoArticulo.Controls.Add(this.btnGuardar);
             this.grpBNuevoArticulo.Controls.Add(this.txtBDescripción);
             this.grpBNuevoArticulo.Controls.Add(this.btnDeleteImagen);
             this.grpBNuevoArticulo.Controls.Add(this.lbxImagenes);
@@ -74,9 +77,10 @@ namespace TPWinForm_equipo_22A
             this.grpBNuevoArticulo.Controls.Add(this.lblCategoría);
             this.grpBNuevoArticulo.Controls.Add(this.lblImagenes);
             this.grpBNuevoArticulo.Controls.Add(this.lblPrecio);
-            this.grpBNuevoArticulo.Location = new System.Drawing.Point(1, 1);
+            this.grpBNuevoArticulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpBNuevoArticulo.Location = new System.Drawing.Point(0, 0);
             this.grpBNuevoArticulo.Name = "grpBNuevoArticulo";
-            this.grpBNuevoArticulo.Size = new System.Drawing.Size(493, 411);
+            this.grpBNuevoArticulo.Size = new System.Drawing.Size(620, 553);
             this.grpBNuevoArticulo.TabIndex = 64;
             this.grpBNuevoArticulo.TabStop = false;
             this.grpBNuevoArticulo.Text = "Datos del articulo";
@@ -118,9 +122,10 @@ namespace TPWinForm_equipo_22A
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCancelar.BackColor = System.Drawing.Color.Yellow;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(279, 330);
+            this.btnCancelar.Location = new System.Drawing.Point(331, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(77, 23);
             this.btnCancelar.TabIndex = 8;
@@ -138,8 +143,9 @@ namespace TPWinForm_equipo_22A
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnGuardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnGuardar.Location = new System.Drawing.Point(132, 330);
+            this.btnGuardar.Location = new System.Drawing.Point(184, 5);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(77, 23);
             this.btnGuardar.TabIndex = 7;
@@ -196,17 +202,6 @@ namespace TPWinForm_equipo_22A
             this.btnAddImagen.Text = "Agregar Imagen";
             this.btnAddImagen.UseVisualStyleBackColor = true;
             // 
-            // pbxImagen
-            // 
-            this.pbxImagen.Image = global::TPWinForm_equipo_22A.Properties.Resources.add_image_30;
-            this.pbxImagen.InitialImage = null;
-            this.pbxImagen.Location = new System.Drawing.Point(306, 202);
-            this.pbxImagen.Name = "pbxImagen";
-            this.pbxImagen.Size = new System.Drawing.Size(120, 108);
-            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxImagen.TabIndex = 57;
-            this.pbxImagen.TabStop = false;
-            // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
@@ -255,23 +250,55 @@ namespace TPWinForm_equipo_22A
             this.lblPrecio.TabIndex = 48;
             this.lblPrecio.Text = "Precio :";
             // 
+            // pbxImagen
+            // 
+            this.pbxImagen.Image = global::TPWinForm_equipo_22A.Properties.Resources.add_image_30;
+            this.pbxImagen.InitialImage = null;
+            this.pbxImagen.Location = new System.Drawing.Point(306, 202);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(120, 108);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxImagen.TabIndex = 57;
+            this.pbxImagen.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.grpBNuevoArticulo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(620, 553);
+            this.panel1.TabIndex = 65;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnGuardar);
+            this.panel2.Controls.Add(this.btnCancelar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(3, 517);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(614, 33);
+            this.panel2.TabIndex = 62;
+            // 
             // frmNuevoArticulo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(495, 413);
-            this.Controls.Add(this.grpBNuevoArticulo);
+            this.ClientSize = new System.Drawing.Size(620, 553);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNuevoArticulo";
             this.Text = "frmModificar";
             this.grpBNuevoArticulo.ResumeLayout(false);
             this.grpBNuevoArticulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -297,5 +324,7 @@ namespace TPWinForm_equipo_22A
         private System.Windows.Forms.Label lblCategoría;
         private System.Windows.Forms.Label lblImagenes;
         private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

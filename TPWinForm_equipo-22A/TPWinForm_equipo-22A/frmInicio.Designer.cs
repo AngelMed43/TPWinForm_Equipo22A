@@ -125,6 +125,7 @@ namespace TPWinForm_equipo_22A
             // 
             // lblBuscarBarraTareas
             // 
+            this.lblBuscarBarraTareas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBuscarBarraTareas.AutoSize = true;
             this.lblBuscarBarraTareas.Location = new System.Drawing.Point(1081, 27);
             this.lblBuscarBarraTareas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -136,6 +137,7 @@ namespace TPWinForm_equipo_22A
             // 
             // txtBBuscarSuperior
             // 
+            this.txtBBuscarSuperior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBBuscarSuperior.Location = new System.Drawing.Point(1127, 23);
             this.txtBBuscarSuperior.Margin = new System.Windows.Forms.Padding(2);
             this.txtBBuscarSuperior.Name = "txtBBuscarSuperior";
@@ -490,6 +492,7 @@ namespace TPWinForm_equipo_22A
             this.btnDetallesArticulo.TabIndex = 10;
             this.btnDetallesArticulo.Text = "Detalles";
             this.btnDetallesArticulo.UseVisualStyleBackColor = true;
+            this.btnDetallesArticulo.Click += new System.EventHandler(this.btnDetallesArticulo_Click);
             // 
             // pnlMain
             // 

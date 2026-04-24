@@ -164,6 +164,10 @@ namespace TPWinForm_equipo_22A
                     break;
             }
         }
+        private void btnDetallesArticulo_Click(object sender, EventArgs e)
+        {
+            MostrarFormularioEnPanel(new frmDetalleArticulo());
+        }
 
         //Metodo que modifica atributos del Form inicio depende en que pestaña estemos situados
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -253,5 +257,6 @@ namespace TPWinForm_equipo_22A
         {
             splitContainer1.SplitterDistance = splitContainer1.Width / 2;
         }
+
     }
 }

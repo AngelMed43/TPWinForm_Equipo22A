@@ -55,28 +55,31 @@ namespace TPWinForm_equipo_22A
             this.lblDescripción = new System.Windows.Forms.Label();
             this.txtBNombre = new System.Windows.Forms.TextBox();
             this.btnAddImagen = new System.Windows.Forms.Button();
-            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblMarca = new System.Windows.Forms.Label();
             this.txtBCódigo = new System.Windows.Forms.TextBox();
             this.lblCategoría = new System.Windows.Forms.Label();
             this.lblImagenes = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.grpBDetalleArticulo.SuspendLayout();
             this.grpbDetalleActual.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpBDetalleArticulo
             // 
             this.grpBDetalleArticulo.AutoSize = true;
+            this.grpBDetalleArticulo.Controls.Add(this.panel2);
             this.grpBDetalleArticulo.Controls.Add(this.grpbDetalleActual);
             this.grpBDetalleArticulo.Controls.Add(this.lblCódigo);
             this.grpBDetalleArticulo.Controls.Add(this.cbMarca);
             this.grpBDetalleArticulo.Controls.Add(this.lblNombre);
             this.grpBDetalleArticulo.Controls.Add(this.txtBPrecio);
-            this.grpBDetalleArticulo.Controls.Add(this.btnCancelar);
             this.grpBDetalleArticulo.Controls.Add(this.cbCategoría);
-            this.grpBDetalleArticulo.Controls.Add(this.btnGuardar);
             this.grpBDetalleArticulo.Controls.Add(this.txtBDescripción);
             this.grpBDetalleArticulo.Controls.Add(this.btnDeleteImagen);
             this.grpBDetalleArticulo.Controls.Add(this.lbxImagenes);
@@ -89,9 +92,10 @@ namespace TPWinForm_equipo_22A
             this.grpBDetalleArticulo.Controls.Add(this.lblCategoría);
             this.grpBDetalleArticulo.Controls.Add(this.lblImagenes);
             this.grpBDetalleArticulo.Controls.Add(this.lblPrecio);
-            this.grpBDetalleArticulo.Location = new System.Drawing.Point(12, 14);
+            this.grpBDetalleArticulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpBDetalleArticulo.Location = new System.Drawing.Point(0, 0);
             this.grpBDetalleArticulo.Name = "grpBDetalleArticulo";
-            this.grpBDetalleArticulo.Size = new System.Drawing.Size(497, 408);
+            this.grpBDetalleArticulo.Size = new System.Drawing.Size(620, 553);
             this.grpBDetalleArticulo.TabIndex = 64;
             this.grpBDetalleArticulo.TabStop = false;
             this.grpBDetalleArticulo.Text = "Modificar datos del Articulo ";
@@ -110,9 +114,9 @@ namespace TPWinForm_equipo_22A
             this.grpbDetalleActual.Controls.Add(this.lblCategoriaActual);
             this.grpbDetalleActual.Controls.Add(this.lblDescripciónActual);
             this.grpbDetalleActual.Controls.Add(this.lblMarcaActual);
-            this.grpbDetalleActual.Location = new System.Drawing.Point(233, 8);
+            this.grpbDetalleActual.Location = new System.Drawing.Point(226, 12);
             this.grpbDetalleActual.Name = "grpbDetalleActual";
-            this.grpbDetalleActual.Size = new System.Drawing.Size(246, 224);
+            this.grpbDetalleActual.Size = new System.Drawing.Size(351, 224);
             this.grpbDetalleActual.TabIndex = 68;
             this.grpbDetalleActual.TabStop = false;
             this.grpbDetalleActual.Text = "Datos actuales";
@@ -122,7 +126,7 @@ namespace TPWinForm_equipo_22A
             this.txtbPrecioActual.Location = new System.Drawing.Point(108, 197);
             this.txtbPrecioActual.Name = "txtbPrecioActual";
             this.txtbPrecioActual.ReadOnly = true;
-            this.txtbPrecioActual.Size = new System.Drawing.Size(122, 20);
+            this.txtbPrecioActual.Size = new System.Drawing.Size(223, 20);
             this.txtbPrecioActual.TabIndex = 72;
             // 
             // txtbCategoriaActual
@@ -130,7 +134,7 @@ namespace TPWinForm_equipo_22A
             this.txtbCategoriaActual.Location = new System.Drawing.Point(108, 171);
             this.txtbCategoriaActual.Name = "txtbCategoriaActual";
             this.txtbCategoriaActual.ReadOnly = true;
-            this.txtbCategoriaActual.Size = new System.Drawing.Size(122, 20);
+            this.txtbCategoriaActual.Size = new System.Drawing.Size(223, 20);
             this.txtbCategoriaActual.TabIndex = 71;
             // 
             // txtbMarcaActual
@@ -138,7 +142,7 @@ namespace TPWinForm_equipo_22A
             this.txtbMarcaActual.Location = new System.Drawing.Point(108, 146);
             this.txtbMarcaActual.Name = "txtbMarcaActual";
             this.txtbMarcaActual.ReadOnly = true;
-            this.txtbMarcaActual.Size = new System.Drawing.Size(122, 20);
+            this.txtbMarcaActual.Size = new System.Drawing.Size(223, 20);
             this.txtbMarcaActual.TabIndex = 70;
             // 
             // txtbDescripciónActual
@@ -147,7 +151,7 @@ namespace TPWinForm_equipo_22A
             this.txtbDescripciónActual.Multiline = true;
             this.txtbDescripciónActual.Name = "txtbDescripciónActual";
             this.txtbDescripciónActual.ReadOnly = true;
-            this.txtbDescripciónActual.Size = new System.Drawing.Size(123, 74);
+            this.txtbDescripciónActual.Size = new System.Drawing.Size(223, 74);
             this.txtbDescripciónActual.TabIndex = 69;
             // 
             // txtbNombreActual
@@ -155,7 +159,7 @@ namespace TPWinForm_equipo_22A
             this.txtbNombreActual.Location = new System.Drawing.Point(109, 37);
             this.txtbNombreActual.Name = "txtbNombreActual";
             this.txtbNombreActual.ReadOnly = true;
-            this.txtbNombreActual.Size = new System.Drawing.Size(122, 20);
+            this.txtbNombreActual.Size = new System.Drawing.Size(222, 20);
             this.txtbNombreActual.TabIndex = 69;
             // 
             // txtbCódigoActual
@@ -163,7 +167,7 @@ namespace TPWinForm_equipo_22A
             this.txtbCódigoActual.Location = new System.Drawing.Point(109, 11);
             this.txtbCódigoActual.Name = "txtbCódigoActual";
             this.txtbCódigoActual.ReadOnly = true;
-            this.txtbCódigoActual.Size = new System.Drawing.Size(122, 20);
+            this.txtbCódigoActual.Size = new System.Drawing.Size(222, 20);
             this.txtbCódigoActual.TabIndex = 69;
             // 
             // lblCódigoActual
@@ -263,9 +267,10 @@ namespace TPWinForm_equipo_22A
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCancelar.BackColor = System.Drawing.Color.Yellow;
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(279, 366);
+            this.btnCancelar.Location = new System.Drawing.Point(350, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(77, 23);
             this.btnCancelar.TabIndex = 8;
@@ -283,8 +288,9 @@ namespace TPWinForm_equipo_22A
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnGuardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnGuardar.Location = new System.Drawing.Point(132, 366);
+            this.btnGuardar.Location = new System.Drawing.Point(168, 4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(77, 23);
             this.btnGuardar.TabIndex = 7;
@@ -301,7 +307,7 @@ namespace TPWinForm_equipo_22A
             // 
             // btnDeleteImagen
             // 
-            this.btnDeleteImagen.Location = new System.Drawing.Point(223, 307);
+            this.btnDeleteImagen.Location = new System.Drawing.Point(258, 307);
             this.btnDeleteImagen.Name = "btnDeleteImagen";
             this.btnDeleteImagen.Size = new System.Drawing.Size(77, 39);
             this.btnDeleteImagen.TabIndex = 61;
@@ -335,23 +341,12 @@ namespace TPWinForm_equipo_22A
             // 
             // btnAddImagen
             // 
-            this.btnAddImagen.Location = new System.Drawing.Point(223, 238);
+            this.btnAddImagen.Location = new System.Drawing.Point(258, 238);
             this.btnAddImagen.Name = "btnAddImagen";
             this.btnAddImagen.Size = new System.Drawing.Size(77, 38);
             this.btnAddImagen.TabIndex = 6;
             this.btnAddImagen.Text = "Agregar Imagen";
             this.btnAddImagen.UseVisualStyleBackColor = true;
-            // 
-            // pbxImagen
-            // 
-            this.pbxImagen.Image = global::TPWinForm_equipo_22A.Properties.Resources.add_image_30;
-            this.pbxImagen.InitialImage = null;
-            this.pbxImagen.Location = new System.Drawing.Point(306, 238);
-            this.pbxImagen.Name = "pbxImagen";
-            this.pbxImagen.Size = new System.Drawing.Size(120, 108);
-            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxImagen.TabIndex = 57;
-            this.pbxImagen.TabStop = false;
             // 
             // lblMarca
             // 
@@ -400,15 +395,45 @@ namespace TPWinForm_equipo_22A
             this.lblPrecio.TabIndex = 48;
             this.lblPrecio.Text = "Precio :";
             // 
+            // pbxImagen
+            // 
+            this.pbxImagen.Image = global::TPWinForm_equipo_22A.Properties.Resources.add_image_30;
+            this.pbxImagen.InitialImage = null;
+            this.pbxImagen.Location = new System.Drawing.Point(341, 238);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(120, 108);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxImagen.TabIndex = 57;
+            this.pbxImagen.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.grpBDetalleArticulo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(620, 553);
+            this.panel1.TabIndex = 65;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnGuardar);
+            this.panel2.Controls.Add(this.btnCancelar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(3, 516);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(614, 34);
+            this.panel2.TabIndex = 65;
+            // 
             // frmModificarArticulo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(521, 431);
-            this.Controls.Add(this.grpBDetalleArticulo);
+            this.ClientSize = new System.Drawing.Size(620, 553);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmModificarArticulo";
             this.Text = "frmModificar";
@@ -417,8 +442,10 @@ namespace TPWinForm_equipo_22A
             this.grpbDetalleActual.ResumeLayout(false);
             this.grpbDetalleActual.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -457,5 +484,7 @@ namespace TPWinForm_equipo_22A
         private System.Windows.Forms.TextBox txtbDescripciónActual;
         private System.Windows.Forms.TextBox txtbNombreActual;
         private System.Windows.Forms.TextBox txtbCódigoActual;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
