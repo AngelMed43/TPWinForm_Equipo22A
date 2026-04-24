@@ -13,7 +13,7 @@ namespace dominio
         
 
         public Marca() { }
-        public Marca(int IdMarca, string Nombre, string Descripcion)
+        public Marca(int IdMarca, string Descripcion)
         {
             this.IdMarca = IdMarca;
             this.Descripcion = Descripcion;

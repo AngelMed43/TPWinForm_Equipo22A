@@ -32,14 +32,10 @@ namespace TPWinForm_equipo_22A
             this.grpBDatosActualesMarca = new System.Windows.Forms.GroupBox();
             this.txtBDescripcionMarcaActual = new System.Windows.Forms.TextBox();
             this.lblDescripcionMarcaActual = new System.Windows.Forms.Label();
-            this.lblNombreActualMarca = new System.Windows.Forms.Label();
-            this.txtBNombreActualMarca = new System.Windows.Forms.TextBox();
             this.btnCancelarMarca = new System.Windows.Forms.Button();
             this.btnGuardarMarca = new System.Windows.Forms.Button();
             this.txtBDescripcionMarca = new System.Windows.Forms.TextBox();
             this.lblDescripcionMarca = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblIDMarca = new System.Windows.Forms.Label();
             this.grpBModificarMarca.SuspendLayout();
             this.grpBDatosActualesMarca.SuspendLayout();
             this.SuspendLayout();
@@ -55,8 +51,6 @@ namespace TPWinForm_equipo_22A
             this.grpBModificarMarca.Controls.Add(this.btnGuardarMarca);
             this.grpBModificarMarca.Controls.Add(this.txtBDescripcionMarca);
             this.grpBModificarMarca.Controls.Add(this.lblDescripcionMarca);
-            this.grpBModificarMarca.Controls.Add(this.textBox1);
-            this.grpBModificarMarca.Controls.Add(this.lblIDMarca);
             this.grpBModificarMarca.Location = new System.Drawing.Point(8, 8);
             this.grpBModificarMarca.Name = "grpBModificarMarca";
             this.grpBModificarMarca.Size = new System.Drawing.Size(503, 419);
@@ -68,8 +62,6 @@ namespace TPWinForm_equipo_22A
             // 
             this.grpBDatosActualesMarca.Controls.Add(this.txtBDescripcionMarcaActual);
             this.grpBDatosActualesMarca.Controls.Add(this.lblDescripcionMarcaActual);
-            this.grpBDatosActualesMarca.Controls.Add(this.lblNombreActualMarca);
-            this.grpBDatosActualesMarca.Controls.Add(this.txtBNombreActualMarca);
             this.grpBDatosActualesMarca.Location = new System.Drawing.Point(238, 11);
             this.grpBDatosActualesMarca.Name = "grpBDatosActualesMarca";
             this.grpBDatosActualesMarca.Size = new System.Drawing.Size(245, 271);
@@ -80,7 +72,7 @@ namespace TPWinForm_equipo_22A
             // txtBDescripcionMarcaActual
             // 
             this.txtBDescripcionMarcaActual.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBDescripcionMarcaActual.Location = new System.Drawing.Point(9, 70);
+            this.txtBDescripcionMarcaActual.Location = new System.Drawing.Point(9, 85);
             this.txtBDescripcionMarcaActual.Multiline = true;
             this.txtBDescripcionMarcaActual.Name = "txtBDescripcionMarcaActual";
             this.txtBDescripcionMarcaActual.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -91,29 +83,11 @@ namespace TPWinForm_equipo_22A
             // 
             this.lblDescripcionMarcaActual.AutoSize = true;
             this.lblDescripcionMarcaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblDescripcionMarcaActual.Location = new System.Drawing.Point(6, 51);
+            this.lblDescripcionMarcaActual.Location = new System.Drawing.Point(6, 66);
             this.lblDescripcionMarcaActual.Name = "lblDescripcionMarcaActual";
             this.lblDescripcionMarcaActual.Size = new System.Drawing.Size(79, 16);
             this.lblDescripcionMarcaActual.TabIndex = 2;
             this.lblDescripcionMarcaActual.Text = "Descripción";
-            // 
-            // lblNombreActualMarca
-            // 
-            this.lblNombreActualMarca.AutoSize = true;
-            this.lblNombreActualMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblNombreActualMarca.Location = new System.Drawing.Point(6, 25);
-            this.lblNombreActualMarca.Name = "lblNombreActualMarca";
-            this.lblNombreActualMarca.Size = new System.Drawing.Size(23, 16);
-            this.lblNombreActualMarca.TabIndex = 1;
-            this.lblNombreActualMarca.Text = "ID:";
-            // 
-            // txtBNombreActualMarca
-            // 
-            this.txtBNombreActualMarca.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBNombreActualMarca.Location = new System.Drawing.Point(35, 24);
-            this.txtBNombreActualMarca.Name = "txtBNombreActualMarca";
-            this.txtBNombreActualMarca.Size = new System.Drawing.Size(78, 20);
-            this.txtBNombreActualMarca.TabIndex = 0;
             // 
             // btnCancelarMarca
             // 
@@ -138,7 +112,7 @@ namespace TPWinForm_equipo_22A
             // 
             // txtBDescripcionMarca
             // 
-            this.txtBDescripcionMarca.Location = new System.Drawing.Point(8, 81);
+            this.txtBDescripcionMarca.Location = new System.Drawing.Point(8, 96);
             this.txtBDescripcionMarca.Multiline = true;
             this.txtBDescripcionMarca.Name = "txtBDescripcionMarca";
             this.txtBDescripcionMarca.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -149,28 +123,11 @@ namespace TPWinForm_equipo_22A
             // 
             this.lblDescripcionMarca.AutoSize = true;
             this.lblDescripcionMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblDescripcionMarca.Location = new System.Drawing.Point(6, 62);
+            this.lblDescripcionMarca.Location = new System.Drawing.Point(6, 77);
             this.lblDescripcionMarca.Name = "lblDescripcionMarca";
             this.lblDescripcionMarca.Size = new System.Drawing.Size(85, 16);
             this.lblDescripcionMarca.TabIndex = 2;
             this.lblDescripcionMarca.Text = "Descripción: ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(35, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(78, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // lblIDMarca
-            // 
-            this.lblIDMarca.AutoSize = true;
-            this.lblIDMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblIDMarca.Location = new System.Drawing.Point(6, 36);
-            this.lblIDMarca.Name = "lblIDMarca";
-            this.lblIDMarca.Size = new System.Drawing.Size(23, 16);
-            this.lblIDMarca.TabIndex = 0;
-            this.lblIDMarca.Text = "ID:";
             // 
             // frmModificarMarca
             // 
@@ -193,16 +150,12 @@ namespace TPWinForm_equipo_22A
         #endregion
 
         private System.Windows.Forms.GroupBox grpBModificarMarca;
-        private System.Windows.Forms.Label lblIDMarca;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblDescripcionMarca;
         private System.Windows.Forms.TextBox txtBDescripcionMarca;
         private System.Windows.Forms.Button btnCancelarMarca;
         private System.Windows.Forms.Button btnGuardarMarca;
         private System.Windows.Forms.GroupBox grpBDatosActualesMarca;
         private System.Windows.Forms.Label lblDescripcionMarcaActual;
-        private System.Windows.Forms.Label lblNombreActualMarca;
-        private System.Windows.Forms.TextBox txtBNombreActualMarca;
         private System.Windows.Forms.TextBox txtBDescripcionMarcaActual;
     }
 }

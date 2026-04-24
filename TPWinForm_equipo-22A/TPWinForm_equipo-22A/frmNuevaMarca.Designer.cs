@@ -32,9 +32,7 @@ namespace TPWinForm_equipo_22A
             this.btnCancelarMarca = new System.Windows.Forms.Button();
             this.btnGuardarMarca = new System.Windows.Forms.Button();
             this.txtBDescripcionNuevaMarca = new System.Windows.Forms.TextBox();
-            this.txtBAgregarNombreMarca = new System.Windows.Forms.TextBox();
             this.lblAgregarDescripcionMarca = new System.Windows.Forms.Label();
-            this.lblNombreNuevaMarca = new System.Windows.Forms.Label();
             this.grpBAgregarMarca.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,9 +42,7 @@ namespace TPWinForm_equipo_22A
             this.grpBAgregarMarca.Controls.Add(this.btnCancelarMarca);
             this.grpBAgregarMarca.Controls.Add(this.btnGuardarMarca);
             this.grpBAgregarMarca.Controls.Add(this.txtBDescripcionNuevaMarca);
-            this.grpBAgregarMarca.Controls.Add(this.txtBAgregarNombreMarca);
             this.grpBAgregarMarca.Controls.Add(this.lblAgregarDescripcionMarca);
-            this.grpBAgregarMarca.Controls.Add(this.lblNombreNuevaMarca);
             this.grpBAgregarMarca.Location = new System.Drawing.Point(8, 8);
             this.grpBAgregarMarca.Name = "grpBAgregarMarca";
             this.grpBAgregarMarca.Size = new System.Drawing.Size(446, 372);
@@ -74,42 +70,26 @@ namespace TPWinForm_equipo_22A
             this.btnGuardarMarca.TabIndex = 4;
             this.btnGuardarMarca.Text = "Guardar";
             this.btnGuardarMarca.UseVisualStyleBackColor = false;
+            this.btnGuardarMarca.Click += new System.EventHandler(this.btnGuardarMarca_Click);
             // 
             // txtBDescripcionNuevaMarca
             // 
-            this.txtBDescripcionNuevaMarca.Location = new System.Drawing.Point(8, 87);
+            this.txtBDescripcionNuevaMarca.Location = new System.Drawing.Point(8, 58);
             this.txtBDescripcionNuevaMarca.Multiline = true;
             this.txtBDescripcionNuevaMarca.Name = "txtBDescripcionNuevaMarca";
             this.txtBDescripcionNuevaMarca.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtBDescripcionNuevaMarca.Size = new System.Drawing.Size(434, 239);
             this.txtBDescripcionNuevaMarca.TabIndex = 3;
             // 
-            // txtBAgregarNombreMarca
-            // 
-            this.txtBAgregarNombreMarca.Location = new System.Drawing.Point(35, 38);
-            this.txtBAgregarNombreMarca.Name = "txtBAgregarNombreMarca";
-            this.txtBAgregarNombreMarca.Size = new System.Drawing.Size(78, 20);
-            this.txtBAgregarNombreMarca.TabIndex = 2;
-            // 
             // lblAgregarDescripcionMarca
             // 
             this.lblAgregarDescripcionMarca.AutoSize = true;
             this.lblAgregarDescripcionMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblAgregarDescripcionMarca.Location = new System.Drawing.Point(6, 68);
+            this.lblAgregarDescripcionMarca.Location = new System.Drawing.Point(6, 39);
             this.lblAgregarDescripcionMarca.Name = "lblAgregarDescripcionMarca";
             this.lblAgregarDescripcionMarca.Size = new System.Drawing.Size(82, 16);
             this.lblAgregarDescripcionMarca.TabIndex = 1;
             this.lblAgregarDescripcionMarca.Text = "Descripción:";
-            // 
-            // lblNombreNuevaMarca
-            // 
-            this.lblNombreNuevaMarca.AutoSize = true;
-            this.lblNombreNuevaMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblNombreNuevaMarca.Location = new System.Drawing.Point(6, 42);
-            this.lblNombreNuevaMarca.Name = "lblNombreNuevaMarca";
-            this.lblNombreNuevaMarca.Size = new System.Drawing.Size(23, 16);
-            this.lblNombreNuevaMarca.TabIndex = 0;
-            this.lblNombreNuevaMarca.Text = "ID:";
             // 
             // frmNuevaMarca
             // 
@@ -133,8 +113,6 @@ namespace TPWinForm_equipo_22A
         private System.Windows.Forms.Button btnCancelarMarca;
         private System.Windows.Forms.Button btnGuardarMarca;
         private System.Windows.Forms.TextBox txtBDescripcionNuevaMarca;
-        private System.Windows.Forms.TextBox txtBAgregarNombreMarca;
         private System.Windows.Forms.Label lblAgregarDescripcionMarca;
-        private System.Windows.Forms.Label lblNombreNuevaMarca;
     }
 }
