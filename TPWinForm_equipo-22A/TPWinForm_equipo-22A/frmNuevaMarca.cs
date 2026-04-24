@@ -14,15 +14,20 @@ namespace TPWinForm_equipo_22A
 {
     public partial class frmNuevaMarca : Form
     {
-        public frmNuevaMarca()
+        private frmInicio frmInicio;
+
+        public frmNuevaMarca(frmInicio formInicio)
         {
             InitializeComponent();
+            frmInicio = formInicio;
         }
 
         private void btnCancelarMarca_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+
 
         private void btnGuardarMarca_Click(object sender, EventArgs e)
         {
@@ -35,6 +40,8 @@ namespace TPWinForm_equipo_22A
 
                 negocio.agregar(marca);
                 MessageBox.Show("Agregado exitosamente");
+
+                frmInicio.cargarListadoMarcas();
                 Close();
             }
             catch (Exception ex)

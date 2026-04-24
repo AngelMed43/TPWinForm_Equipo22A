@@ -360,11 +360,13 @@ namespace TPWinForm_equipo_22A
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarcas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvMarcas.Location = new System.Drawing.Point(5, 18);
             this.dgvMarcas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.RowHeadersWidth = 82;
             this.dgvMarcas.RowTemplate.Height = 33;
+            this.dgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMarcas.Size = new System.Drawing.Size(274, 471);
             this.dgvMarcas.TabIndex = 1;
             // 

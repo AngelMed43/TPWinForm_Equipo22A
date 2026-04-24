@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -138,7 +139,7 @@ namespace TPWinForm_equipo_22A
                     MostrarFormularioEnPanel(new frmNuevoArticulo());
                     break;
                 case "Marcas":
-                    MostrarFormularioEnPanel(new frmNuevaMarca());
+                    MostrarFormularioEnPanel(new frmNuevaMarca(this));
                     break;
                 case "Categorias":
                     MostrarFormularioEnPanel(new frmNuevaCategoria());
@@ -230,8 +231,22 @@ namespace TPWinForm_equipo_22A
         private void frmInicio_Load(object sender, EventArgs e)
         {
             splitContainer1.SplitterDistance = splitContainer1.Width / 2;
+            cargarListadoMarcas();
+           
+        }
+
+        public void cargarListadoMarcas()
+        {
             MarcaNegocio negocio = new MarcaNegocio();
-            dgvMarcas.DataSource = negocio.listar();
+
+            try
+            {
+                dgvMarcas.DataSource = negocio.listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void frmInicio_Resize(object sender, EventArgs e)

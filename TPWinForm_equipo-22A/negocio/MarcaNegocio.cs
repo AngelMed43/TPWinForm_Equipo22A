@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using dominio;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace negocio
 {
@@ -43,6 +44,8 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
+
 
 
         public void agregar (Marca nueva)
