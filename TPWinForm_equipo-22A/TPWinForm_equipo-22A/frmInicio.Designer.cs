@@ -371,27 +371,31 @@ namespace TPWinForm_equipo_22A
             // 
             // grpBListaMarcas
             // 
+            this.grpBListaMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBListaMarcas.Controls.Add(this.dgvMarcas);
-            this.grpBListaMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpBListaMarcas.Location = new System.Drawing.Point(2, 2);
+            this.grpBListaMarcas.Location = new System.Drawing.Point(5, 5);
             this.grpBListaMarcas.Name = "grpBListaMarcas";
-            this.grpBListaMarcas.Size = new System.Drawing.Size(538, 542);
+            this.grpBListaMarcas.Size = new System.Drawing.Size(284, 494);
             this.grpBListaMarcas.TabIndex = 0;
             this.grpBListaMarcas.TabStop = false;
             this.grpBListaMarcas.Text = "Listado de Marcas";
             // 
             // dgvMarcas
             // 
+            this.dgvMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMarcas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvMarcas.Location = new System.Drawing.Point(3, 16);
+            this.dgvMarcas.Location = new System.Drawing.Point(5, 18);
             this.dgvMarcas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.RowHeadersWidth = 82;
             this.dgvMarcas.RowTemplate.Height = 33;
             this.dgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMarcas.Size = new System.Drawing.Size(532, 523);
+            this.dgvMarcas.Size = new System.Drawing.Size(274, 471);
             this.dgvMarcas.TabIndex = 1;
             // 
             // Categorias

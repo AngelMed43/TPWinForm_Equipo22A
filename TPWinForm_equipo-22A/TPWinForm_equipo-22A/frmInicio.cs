@@ -275,6 +275,9 @@ namespace TPWinForm_equipo_22A
                 dgvMarcas.AllowUserToDeleteRows = false;
                 dgvMarcas.BackgroundColor = SystemColors.AppWorkspace;
                 dgvMarcas.DataSource = negocio.listar();
+
+                if (dgvMarcas.Columns["IdMarca"] != null)
+                    dgvMarcas.Columns["IdMarca"].Visible = false;
             }
             catch (Exception ex)
             {
