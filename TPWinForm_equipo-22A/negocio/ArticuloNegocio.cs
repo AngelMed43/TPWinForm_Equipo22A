@@ -42,6 +42,33 @@ namespace negocio
             }
         }
 
+        public void insertArticulo(Articulo art)
+        {
+
+            AccesoDatos acceso = new AccesoDatos();
+
+            try
+            {
+                //acceso.setearConsulta("");
+                //acceso.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                acceso.cerrarConexion();
+            }
+        }
+
+
+
+
+        // AUN NO SE IMPLEMENTA PERO SE DEJA DIAGRAMADA
+        // AUN NO SE IMPLEMENTA PERO SE DEJA DIAGRAMADA
+        // AUN NO SE IMPLEMENTA PERO SE DEJA DIAGRAMADA
         // AUN NO SE IMPLEMENTA PERO SE DEJA DIAGRAMADA
         public List<Articulo> detalleArticulo()
         {
@@ -60,8 +87,8 @@ namespace negocio
                     art.Codigo = acceso.Lector.GetString(1);
                     art.Nombre = acceso.Lector.GetString(2);
                     art.Descripcion = acceso.Lector.GetString(3);
-                    //art.Marca = (int)acceso.Lector.GetInt32(4);
-                    //art.Categoria = (int)acceso.Lector.GetString(5);
+                    art.Marca.IdMarca = (int)acceso.Lector.GetInt32(4);
+                    art.Categoria.IdCategoria = acceso.Lector.GetInt32(5);
                     art.Precio = acceso.Lector.GetDecimal(6);
 
 
