@@ -37,7 +37,13 @@ namespace TPWinForm_equipo_22A
 
         private void ActualizarVisibilidadBarraBusqueda()
         {
-            grBBarraBusqueda.Visible = (ObtenerPestanaActual() == "Articulos");
+            bool esPestanaArticulos = (ObtenerPestanaActual() == "Articulos");
+
+            grBBarraBusqueda.Visible = true;
+            grBBarraBusqueda.Enabled = esPestanaArticulos;
+            grBBarraBusqueda.BackColor = esPestanaArticulos
+                ? SystemColors.Control
+                : SystemColors.ControlLight;
         }
 
         private void LimpiarPanelUniversal()
@@ -78,6 +84,7 @@ namespace TPWinForm_equipo_22A
             rdBFiltroXMarca.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
             rdBFiltroXCategoria.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
             rdBFiltroXPrecio.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
+            rdBFiltroXBuscar.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
         }
 
         //Detecta qué filtro quedó activo y actualiza la interfaz.
@@ -106,11 +113,13 @@ namespace TPWinForm_equipo_22A
             bool filtroMarca = rdBFiltroXMarca.Checked;
             bool filtroCategoria = rdBFiltroXCategoria.Checked;
             bool filtroPrecio = rdBFiltroXPrecio.Checked;
+            bool filtroBuscar = rdBFiltroXBuscar.Checked;
 
             cboMarca.Enabled = filtroMarca;
             cboCategoria.Enabled = filtroCategoria;
             txtBPrecioDesde.Enabled = filtroPrecio;
             txtBPrecioHasta.Enabled = filtroPrecio;
+            txtBBuscarSuperior.Enabled = filtroBuscar;
 
             if (!filtroMarca)
                 cboMarca.SelectedIndex = -1;
@@ -127,6 +136,9 @@ namespace TPWinForm_equipo_22A
                 txtBPrecioDesde.Clear();
                 txtBPrecioHasta.Clear();
             }
+
+            if (!filtroBuscar)
+                txtBBuscarSuperior.Clear();
         }
 
         private void btnNuevoArticulo_Click(object sender, EventArgs e)
@@ -246,6 +258,14 @@ namespace TPWinForm_equipo_22A
 
             try
             {
+                dgvMarcas.AutoGenerateColumns = true;
+                dgvMarcas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvMarcas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvMarcas.RowHeadersVisible = false;
+                dgvMarcas.ReadOnly = true;
+                dgvMarcas.AllowUserToAddRows = false;
+                dgvMarcas.AllowUserToDeleteRows = false;
+                dgvMarcas.BackgroundColor = SystemColors.AppWorkspace;
                 dgvMarcas.DataSource = negocio.listar();
             }
             catch (Exception ex)
