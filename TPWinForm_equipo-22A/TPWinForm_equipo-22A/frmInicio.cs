@@ -236,7 +236,8 @@ namespace TPWinForm_equipo_22A
         {
             splitContainer1.SplitterDistance = splitContainer1.Width / 2;
             cargarListadoMarcas();
-           
+            cargarArticulos(); 
+
         }
 
         public void cargarListadoMarcas()
@@ -258,5 +259,24 @@ namespace TPWinForm_equipo_22A
             splitContainer1.SplitterDistance = splitContainer1.Width / 2;
         }
 
+        private void cargarArticulos()
+        {
+            ArticuloNegocio artN = new ArticuloNegocio();
+
+
+            try
+            {
+                dgvArticulos.AutoGenerateColumns = false;
+                dgvArticulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvArticulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvArticulos.RowHeadersVisible = false;
+                dgvArticulos.ReadOnly = true;
+                dgvArticulos.DataSource = artN.listarArticulos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

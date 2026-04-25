@@ -46,7 +46,6 @@ namespace TPWinForm_equipo_22A
             this.rdBFiltroXPrecio = new System.Windows.Forms.RadioButton();
             this.txtBPrecioHasta = new System.Windows.Forms.TextBox();
             this.grBBarraBusqueda = new System.Windows.Forms.GroupBox();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tcMenu = new System.Windows.Forms.TabControl();
             this.Articulos = new System.Windows.Forms.TabPage();
@@ -62,14 +61,18 @@ namespace TPWinForm_equipo_22A
             this.grpBUniversal = new System.Windows.Forms.GroupBox();
             this.pnlUniversal = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.btnNuevoArticulo = new System.Windows.Forms.Button();
             this.btnEliminarArticulo = new System.Windows.Forms.Button();
             this.btnModificarArticulo = new System.Windows.Forms.Button();
             this.btnDetallesArticulo = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlsSuperior.SuspendLayout();
             this.grBBarraBusqueda.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -87,6 +90,7 @@ namespace TPWinForm_equipo_22A
             this.panel2.SuspendLayout();
             this.grpBUniversal.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -248,18 +252,6 @@ namespace TPWinForm_equipo_22A
             this.grBBarraBusqueda.TabStop = false;
             this.grBBarraBusqueda.Text = "Filtrar Articulos";
             // 
-            // pbLogo
-            // 
-            this.pbLogo.AccessibleName = "pbLogo";
-            this.pbLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pbLogo.Image = global::TPWinForm_equipo_22A.Properties.Resources.handle_with_care_100;
-            this.pbLogo.Location = new System.Drawing.Point(0, 0);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(84, 85);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -319,13 +311,21 @@ namespace TPWinForm_equipo_22A
             // 
             // dgvArticulos
             // 
+            this.dgvArticulos.AllowUserToAddRows = false;
+            this.dgvArticulos.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.NullValue = "0";
             this.dgvArticulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Código,
+            this.Nombre,
+            this.Descripción,
+            this.Precio});
             this.dgvArticulos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvArticulos.Location = new System.Drawing.Point(3, 16);
             this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowHeadersWidth = 82;
             this.dgvArticulos.RowTemplate.Height = 33;
             this.dgvArticulos.Size = new System.Drawing.Size(532, 523);
@@ -450,6 +450,18 @@ namespace TPWinForm_equipo_22A
             this.panel1.Size = new System.Drawing.Size(84, 572);
             this.panel1.TabIndex = 13;
             // 
+            // pbLogo
+            // 
+            this.pbLogo.AccessibleName = "pbLogo";
+            this.pbLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pbLogo.Image = global::TPWinForm_equipo_22A.Properties.Resources.handle_with_care_100;
+            this.pbLogo.Location = new System.Drawing.Point(0, 0);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(84, 85);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
+            // 
             // btnNuevoArticulo
             // 
             this.btnNuevoArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -503,6 +515,34 @@ namespace TPWinForm_equipo_22A
             this.pnlMain.Size = new System.Drawing.Size(1264, 572);
             this.pnlMain.TabIndex = 13;
             // 
+            // Código
+            // 
+            this.Código.DataPropertyName = "Codigo";
+            this.Código.HeaderText = "Código";
+            this.Código.Name = "Código";
+            this.Código.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Descripción
+            // 
+            this.Descripción.DataPropertyName = "Descripcion";
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.Name = "Descripción";
+            this.Descripción.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -524,7 +564,6 @@ namespace TPWinForm_equipo_22A
             this.tlsSuperior.PerformLayout();
             this.grBBarraBusqueda.ResumeLayout(false);
             this.grBBarraBusqueda.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -542,6 +581,7 @@ namespace TPWinForm_equipo_22A
             this.panel2.ResumeLayout(false);
             this.grpBUniversal.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnlMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -586,6 +626,10 @@ namespace TPWinForm_equipo_22A
         private System.Windows.Forms.Button btnModificarArticulo;
         private System.Windows.Forms.Button btnDetallesArticulo;
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }
 
