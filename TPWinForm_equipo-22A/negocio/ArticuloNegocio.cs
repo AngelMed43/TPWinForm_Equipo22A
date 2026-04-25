@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using dominio;
 
 namespace negocio
@@ -49,17 +50,47 @@ namespace negocio
 
             try
             {
-                //acceso.setearConsulta("");
-                //acceso.ejecutarAccion();
+                acceso.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) values (@Codigo,@Nombre,@Descripcion,@IdMarca, @IdCategoria,@Precio)");
+                acceso.setearParametros("@Codigo", art.Codigo);
+                acceso.setearParametros("@Nombre", art.Nombre);
+                acceso.setearParametros("@Descripcion", art.Descripcion);
+                acceso.setearParametros("@IdMarca", art.Marca.IdMarca);
+                acceso.setearParametros("@IdCategoria",art.Categoria.IdCategoria);
+                acceso.setearParametros("@Precio",art.Precio);
+                
+                
+                acceso.ejecutarAccion();
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                
+                //Por el momento
+                //Por el momento
+                //Por el momento
+                MessageBox.Show(ex.ToString());
+                //throw ex;
             }
             finally
             {
                 acceso.cerrarConexion();
+            }
+        }
+
+        public void agregarImagen(Imagen img, int idArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @Url)");
+                datos.setearParametros("@IdArticulo", idArticulo);
+                datos.setearParametros("@Url", img.UrlImagen);
+
+                datos.ejecutarAccion();
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
 

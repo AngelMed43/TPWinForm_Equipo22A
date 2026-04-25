@@ -32,24 +32,28 @@ namespace TPWinForm_equipo_22A
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.lblCódigo = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
             this.cbMarca = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtBPrecio = new System.Windows.Forms.TextBox();
-            this.cbCategoría = new System.Windows.Forms.ComboBox();
-            this.txtBDescripción = new System.Windows.Forms.TextBox();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.txtBDescripcion = new System.Windows.Forms.TextBox();
             this.btnDeleteImagen = new System.Windows.Forms.Button();
             this.lbxImagenes = new System.Windows.Forms.ListBox();
-            this.lblDescripción = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtBNombre = new System.Windows.Forms.TextBox();
             this.btnAddImagen = new System.Windows.Forms.Button();
             this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.txtBCódigo = new System.Windows.Forms.TextBox();
-            this.lblCategoría = new System.Windows.Forms.Label();
+            this.txtBCodigo = new System.Windows.Forms.TextBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
             this.lblImagenes = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMetodoCargaImagen = new System.Windows.Forms.Label();
+            this.rbPorUrl = new System.Windows.Forms.RadioButton();
+            this.rbPorPC = new System.Windows.Forms.RadioButton();
+            this.txtUrlImagen = new System.Windows.Forms.TextBox();
             this.grpBNuevoArticulo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
@@ -59,22 +63,26 @@ namespace TPWinForm_equipo_22A
             // grpBNuevoArticulo
             // 
             this.grpBNuevoArticulo.AutoSize = true;
+            this.grpBNuevoArticulo.Controls.Add(this.txtUrlImagen);
+            this.grpBNuevoArticulo.Controls.Add(this.rbPorPC);
+            this.grpBNuevoArticulo.Controls.Add(this.rbPorUrl);
+            this.grpBNuevoArticulo.Controls.Add(this.lblMetodoCargaImagen);
             this.grpBNuevoArticulo.Controls.Add(this.panel2);
-            this.grpBNuevoArticulo.Controls.Add(this.lblCódigo);
+            this.grpBNuevoArticulo.Controls.Add(this.lblCodigo);
             this.grpBNuevoArticulo.Controls.Add(this.cbMarca);
             this.grpBNuevoArticulo.Controls.Add(this.lblNombre);
             this.grpBNuevoArticulo.Controls.Add(this.txtBPrecio);
-            this.grpBNuevoArticulo.Controls.Add(this.cbCategoría);
-            this.grpBNuevoArticulo.Controls.Add(this.txtBDescripción);
+            this.grpBNuevoArticulo.Controls.Add(this.cbCategoria);
+            this.grpBNuevoArticulo.Controls.Add(this.txtBDescripcion);
             this.grpBNuevoArticulo.Controls.Add(this.btnDeleteImagen);
             this.grpBNuevoArticulo.Controls.Add(this.lbxImagenes);
-            this.grpBNuevoArticulo.Controls.Add(this.lblDescripción);
+            this.grpBNuevoArticulo.Controls.Add(this.lblDescripcion);
             this.grpBNuevoArticulo.Controls.Add(this.txtBNombre);
             this.grpBNuevoArticulo.Controls.Add(this.btnAddImagen);
             this.grpBNuevoArticulo.Controls.Add(this.pbxImagen);
             this.grpBNuevoArticulo.Controls.Add(this.lblMarca);
-            this.grpBNuevoArticulo.Controls.Add(this.txtBCódigo);
-            this.grpBNuevoArticulo.Controls.Add(this.lblCategoría);
+            this.grpBNuevoArticulo.Controls.Add(this.txtBCodigo);
+            this.grpBNuevoArticulo.Controls.Add(this.lblCategoria);
             this.grpBNuevoArticulo.Controls.Add(this.lblImagenes);
             this.grpBNuevoArticulo.Controls.Add(this.lblPrecio);
             this.grpBNuevoArticulo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -120,20 +128,21 @@ namespace TPWinForm_equipo_22A
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // lblCódigo
+            // lblCodigo
             // 
-            this.lblCódigo.AutoSize = true;
-            this.lblCódigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCódigo.Location = new System.Drawing.Point(6, 16);
-            this.lblCódigo.Name = "lblCódigo";
-            this.lblCódigo.Size = new System.Drawing.Size(57, 16);
-            this.lblCódigo.TabIndex = 43;
-            this.lblCódigo.Text = "Código :";
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(6, 16);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(57, 16);
+            this.lblCodigo.TabIndex = 43;
+            this.lblCodigo.Text = "Código :";
             // 
             // cbMarca
             // 
+            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMarca.FormattingEnabled = true;
-            this.cbMarca.Location = new System.Drawing.Point(97, 94);
+            this.cbMarca.Location = new System.Drawing.Point(97, 124);
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(123, 21);
             this.cbMarca.TabIndex = 3;
@@ -150,74 +159,79 @@ namespace TPWinForm_equipo_22A
             // 
             // txtBPrecio
             // 
-            this.txtBPrecio.Location = new System.Drawing.Point(97, 148);
+            this.txtBPrecio.Location = new System.Drawing.Point(97, 178);
             this.txtBPrecio.Name = "txtBPrecio";
             this.txtBPrecio.Size = new System.Drawing.Size(102, 20);
             this.txtBPrecio.TabIndex = 5;
             // 
-            // cbCategoría
+            // cbCategoria
             // 
-            this.cbCategoría.FormattingEnabled = true;
-            this.cbCategoría.Location = new System.Drawing.Point(97, 121);
-            this.cbCategoría.Name = "cbCategoría";
-            this.cbCategoría.Size = new System.Drawing.Size(123, 21);
-            this.cbCategoría.TabIndex = 4;
+            this.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(97, 151);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(123, 21);
+            this.cbCategoria.TabIndex = 4;
             // 
-            // txtBDescripción
+            // txtBDescripcion
             // 
-            this.txtBDescripción.Location = new System.Drawing.Point(97, 68);
-            this.txtBDescripción.Name = "txtBDescripción";
-            this.txtBDescripción.Size = new System.Drawing.Size(102, 20);
-            this.txtBDescripción.TabIndex = 2;
+            this.txtBDescripcion.Location = new System.Drawing.Point(97, 68);
+            this.txtBDescripcion.Multiline = true;
+            this.txtBDescripcion.Name = "txtBDescripcion";
+            this.txtBDescripcion.Size = new System.Drawing.Size(203, 50);
+            this.txtBDescripcion.TabIndex = 2;
             // 
             // btnDeleteImagen
             // 
-            this.btnDeleteImagen.Location = new System.Drawing.Point(223, 271);
+            this.btnDeleteImagen.Location = new System.Drawing.Point(223, 400);
             this.btnDeleteImagen.Name = "btnDeleteImagen";
             this.btnDeleteImagen.Size = new System.Drawing.Size(77, 39);
             this.btnDeleteImagen.TabIndex = 61;
             this.btnDeleteImagen.Text = "Eliminar Imagen";
             this.btnDeleteImagen.UseVisualStyleBackColor = true;
+            this.btnDeleteImagen.Click += new System.EventHandler(this.btnDeleteImagen_Click);
             // 
             // lbxImagenes
             // 
             this.lbxImagenes.FormattingEnabled = true;
-            this.lbxImagenes.Location = new System.Drawing.Point(97, 202);
+            this.lbxImagenes.Location = new System.Drawing.Point(97, 331);
             this.lbxImagenes.Name = "lbxImagenes";
             this.lbxImagenes.Size = new System.Drawing.Size(122, 108);
             this.lbxImagenes.TabIndex = 56;
+            this.lbxImagenes.SelectedIndexChanged += new System.EventHandler(this.lbxImagenes_SelectedIndexChanged);
             // 
-            // lblDescripción
+            // lblDescripcion
             // 
-            this.lblDescripción.AutoSize = true;
-            this.lblDescripción.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripción.Location = new System.Drawing.Point(6, 68);
-            this.lblDescripción.Name = "lblDescripción";
-            this.lblDescripción.Size = new System.Drawing.Size(85, 16);
-            this.lblDescripción.TabIndex = 45;
-            this.lblDescripción.Text = "Descripción :";
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Location = new System.Drawing.Point(6, 68);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(85, 16);
+            this.lblDescripcion.TabIndex = 45;
+            this.lblDescripcion.Text = "Descripción :";
             // 
             // txtBNombre
             // 
             this.txtBNombre.Location = new System.Drawing.Point(97, 42);
             this.txtBNombre.Name = "txtBNombre";
-            this.txtBNombre.Size = new System.Drawing.Size(102, 20);
+            this.txtBNombre.Size = new System.Drawing.Size(122, 20);
             this.txtBNombre.TabIndex = 1;
             // 
             // btnAddImagen
             // 
-            this.btnAddImagen.Location = new System.Drawing.Point(223, 202);
+            this.btnAddImagen.Location = new System.Drawing.Point(223, 331);
             this.btnAddImagen.Name = "btnAddImagen";
             this.btnAddImagen.Size = new System.Drawing.Size(77, 38);
             this.btnAddImagen.TabIndex = 6;
             this.btnAddImagen.Text = "Agregar Imagen";
             this.btnAddImagen.UseVisualStyleBackColor = true;
+            this.btnAddImagen.Click += new System.EventHandler(this.btnAddImagen_Click);
             // 
             // pbxImagen
             // 
             this.pbxImagen.Image = global::TPWinForm_equipo_22A.Properties.Resources.add_image_30;
             this.pbxImagen.InitialImage = null;
-            this.pbxImagen.Location = new System.Drawing.Point(306, 202);
+            this.pbxImagen.Location = new System.Drawing.Point(306, 331);
             this.pbxImagen.Name = "pbxImagen";
             this.pbxImagen.Size = new System.Drawing.Size(120, 108);
             this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -228,35 +242,35 @@ namespace TPWinForm_equipo_22A
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(6, 94);
+            this.lblMarca.Location = new System.Drawing.Point(6, 124);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(51, 16);
             this.lblMarca.TabIndex = 46;
             this.lblMarca.Text = "Marca :";
             // 
-            // txtBCódigo
+            // txtBCodigo
             // 
-            this.txtBCódigo.AcceptsTab = true;
-            this.txtBCódigo.Location = new System.Drawing.Point(97, 16);
-            this.txtBCódigo.Name = "txtBCódigo";
-            this.txtBCódigo.Size = new System.Drawing.Size(102, 20);
-            this.txtBCódigo.TabIndex = 0;
+            this.txtBCodigo.AcceptsTab = true;
+            this.txtBCodigo.Location = new System.Drawing.Point(97, 16);
+            this.txtBCodigo.Name = "txtBCodigo";
+            this.txtBCodigo.Size = new System.Drawing.Size(123, 20);
+            this.txtBCodigo.TabIndex = 0;
             // 
-            // lblCategoría
+            // lblCategoria
             // 
-            this.lblCategoría.AutoSize = true;
-            this.lblCategoría.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoría.Location = new System.Drawing.Point(6, 121);
-            this.lblCategoría.Name = "lblCategoría";
-            this.lblCategoría.Size = new System.Drawing.Size(72, 16);
-            this.lblCategoría.TabIndex = 47;
-            this.lblCategoría.Text = "Categoría :";
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(6, 151);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(72, 16);
+            this.lblCategoria.TabIndex = 47;
+            this.lblCategoria.Text = "Categoría :";
             // 
             // lblImagenes
             // 
             this.lblImagenes.AutoSize = true;
             this.lblImagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImagenes.Location = new System.Drawing.Point(6, 202);
+            this.lblImagenes.Location = new System.Drawing.Point(6, 331);
             this.lblImagenes.Name = "lblImagenes";
             this.lblImagenes.Size = new System.Drawing.Size(73, 16);
             this.lblImagenes.TabIndex = 49;
@@ -266,7 +280,7 @@ namespace TPWinForm_equipo_22A
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(6, 148);
+            this.lblPrecio.Location = new System.Drawing.Point(6, 178);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(52, 16);
             this.lblPrecio.TabIndex = 48;
@@ -281,6 +295,47 @@ namespace TPWinForm_equipo_22A
             this.panel1.Size = new System.Drawing.Size(620, 553);
             this.panel1.TabIndex = 65;
             // 
+            // lblMetodoCargaImagen
+            // 
+            this.lblMetodoCargaImagen.AutoSize = true;
+            this.lblMetodoCargaImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMetodoCargaImagen.Location = new System.Drawing.Point(6, 212);
+            this.lblMetodoCargaImagen.Name = "lblMetodoCargaImagen";
+            this.lblMetodoCargaImagen.Size = new System.Drawing.Size(102, 16);
+            this.lblMetodoCargaImagen.TabIndex = 63;
+            this.lblMetodoCargaImagen.Text = "Cargar Imagen :";
+            // 
+            // rbPorUrl
+            // 
+            this.rbPorUrl.AutoSize = true;
+            this.rbPorUrl.Location = new System.Drawing.Point(77, 245);
+            this.rbPorUrl.Name = "rbPorUrl";
+            this.rbPorUrl.Size = new System.Drawing.Size(66, 17);
+            this.rbPorUrl.TabIndex = 64;
+            this.rbPorUrl.TabStop = true;
+            this.rbPorUrl.Text = "Por URL";
+            this.rbPorUrl.UseVisualStyleBackColor = true;
+            this.rbPorUrl.CheckedChanged += new System.EventHandler(this.rbPorUrl_CheckedChanged);
+            // 
+            // rbPorPC
+            // 
+            this.rbPorPC.AutoSize = true;
+            this.rbPorPC.Location = new System.Drawing.Point(77, 304);
+            this.rbPorPC.Name = "rbPorPC";
+            this.rbPorPC.Size = new System.Drawing.Size(76, 17);
+            this.rbPorPC.TabIndex = 65;
+            this.rbPorPC.TabStop = true;
+            this.rbPorPC.Text = "Local / PC";
+            this.rbPorPC.UseVisualStyleBackColor = true;
+            this.rbPorPC.CheckedChanged += new System.EventHandler(this.rbPorPC_CheckedChanged);
+            // 
+            // txtUrlImagen
+            // 
+            this.txtUrlImagen.Location = new System.Drawing.Point(97, 268);
+            this.txtUrlImagen.Name = "txtUrlImagen";
+            this.txtUrlImagen.Size = new System.Drawing.Size(203, 20);
+            this.txtUrlImagen.TabIndex = 66;
+            // 
             // frmNuevoArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -293,6 +348,7 @@ namespace TPWinForm_equipo_22A
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNuevoArticulo";
             this.Text = "frmModificar";
+            this.Load += new System.EventHandler(this.frmNuevoArticulo_Load);
             this.grpBNuevoArticulo.ResumeLayout(false);
             this.grpBNuevoArticulo.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -306,26 +362,30 @@ namespace TPWinForm_equipo_22A
         #endregion
 
         private System.Windows.Forms.GroupBox grpBNuevoArticulo;
-        private System.Windows.Forms.Label lblCódigo;
+        private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtBPrecio;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.ComboBox cbCategoría;
+        private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtBDescripción;
+        private System.Windows.Forms.TextBox txtBDescripcion;
         private System.Windows.Forms.Button btnDeleteImagen;
         private System.Windows.Forms.ListBox lbxImagenes;
-        private System.Windows.Forms.Label lblDescripción;
+        private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtBNombre;
         private System.Windows.Forms.Button btnAddImagen;
         private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.TextBox txtBCódigo;
-        private System.Windows.Forms.Label lblCategoría;
+        private System.Windows.Forms.TextBox txtBCodigo;
+        private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblImagenes;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblMetodoCargaImagen;
+        private System.Windows.Forms.TextBox txtUrlImagen;
+        private System.Windows.Forms.RadioButton rbPorPC;
+        private System.Windows.Forms.RadioButton rbPorUrl;
     }
 }
