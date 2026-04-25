@@ -16,6 +16,14 @@ namespace TPWinForm_equipo_22A
     {
         private frmInicio frmInicio;
 
+        private Marca marca = null;
+
+        public frmNuevaMarca(frmInicio formInicio, Marca marca)
+        {
+            InitializeComponent();
+            frmInicio = formInicio;
+            this.marca = marca;
+        }
         public frmNuevaMarca(frmInicio formInicio)
         {
             InitializeComponent();
@@ -31,15 +39,27 @@ namespace TPWinForm_equipo_22A
 
         private void btnGuardarMarca_Click(object sender, EventArgs e)
         {
-            Marca marca = new Marca();
             MarcaNegocio negocio = new MarcaNegocio();
 
             try
-            {
+            {   
+                if (marca == null)
+                {
+                    marca = new Marca();
+                }
                 marca.Descripcion = txtBDescripcionNuevaMarca.Text;
 
-                negocio.agregar(marca);
-                MessageBox.Show("Agregado exitosamente");
+                if (marca.IdMarca != 0)
+                {
+                    negocio.modificar(marca);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else
+                {
+                    negocio.agregar(marca);
+                    MessageBox.Show("Agregado exitosamente");
+                }
+                
 
                 frmInicio.cargarListadoMarcas();
                 Close();
@@ -47,6 +67,20 @@ namespace TPWinForm_equipo_22A
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void frmNuevaMarca_Load(object sender, EventArgs e)
+        {
+            if (marca != null)
+            {
+                grpBAgregarMarca.Text = "Modificar Marca";
+                txtBDescripcionNuevaMarca.Text = marca.Descripcion;
+            }
+            else
+            {
+                grpBAgregarMarca.Text = "Agregar Marca";
+                txtBDescripcionNuevaMarca.Clear();
             }
         }
     }

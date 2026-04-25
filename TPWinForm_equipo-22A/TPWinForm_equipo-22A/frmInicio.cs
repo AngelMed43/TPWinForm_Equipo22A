@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using negocio;
+using dominio; 
 
 namespace TPWinForm_equipo_22A
 {
@@ -172,7 +173,14 @@ namespace TPWinForm_equipo_22A
                     MostrarFormularioEnPanel(new frmModificarCategoria());
                     break;
                 case "Marcas":
-                    MostrarFormularioEnPanel(new frmModificarMarca());
+                    if (dgvMarcas.CurrentRow == null)
+                    {
+                        MessageBox.Show("Debe seleccionar una marca para modificar.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+
+                    Marca seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+                    MostrarFormularioEnPanel(new frmNuevaMarca(this, seleccionada));
                     break;
             }
         }

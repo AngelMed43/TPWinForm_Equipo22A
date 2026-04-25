@@ -101,6 +101,7 @@ namespace TPWinForm_equipo_22A
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNuevaMarca";
             this.Text = "frmNuevaMarca";
+            this.Load += new System.EventHandler(this.frmNuevaMarca_Load);
             this.grpBAgregarMarca.ResumeLayout(false);
             this.grpBAgregarMarca.PerformLayout();
             this.ResumeLayout(false);
