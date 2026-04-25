@@ -111,7 +111,9 @@ namespace TPWinForm_equipo_22A
         private void btnAddImagen_Click(object sender, EventArgs e)
         {
             OpenFileDialog archivo = new OpenFileDialog();
-            
+            archivo.Title = "Selecciona una Imagen";
+            archivo.Filter = "Imagenes|*.jpg;*.png;*.jpeg";
+
             string ruta = "";
             string nombreArchivo;
             string destinoImagen;
@@ -141,7 +143,7 @@ namespace TPWinForm_equipo_22A
                 else
                 {
                     // CREO el filtro al abri la ventana de dialogo
-                    archivo.Filter = "Imagenes|*.jpg;*.png;*.jpeg";
+                    
 
                     if (archivo.ShowDialog() != DialogResult.OK)
                         return;

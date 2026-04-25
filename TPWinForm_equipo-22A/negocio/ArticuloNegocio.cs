@@ -137,5 +137,27 @@ namespace negocio
                 acceso.cerrarConexion();
             }
         }
+
+
+        public void eliminarArticulo(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                // Elimino primero las imagenes ya que hay una relación entre tablas
+                datos.setearConsulta("Delete from IMAGENES where IdArticulo = @Id");
+                datos.setearParametros("@Id", id);
+                datos.ejecutarAccion();
+
+                datos.setearConsulta("Delete from ARTICULOS where IdArticulo = @Id");
+                datos.setearParametros("@Id", id);
+                datos.ejecutarAccion();
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }

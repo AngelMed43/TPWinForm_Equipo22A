@@ -217,20 +217,50 @@ namespace TPWinForm_equipo_22A
                 return;
             }
 
+            DialogResult respuesta;
+
             if (pestana == "Articulos")
             {
-                MessageBox.Show("¿Está seguro que desea eliminar el artículo seleccionado?", "Mensaje de Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                respuesta = MessageBox.Show("¿Está seguro que desea eliminar el artículo seleccionado?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             }
             else if (pestana == "Marcas")
             {
-                MessageBox.Show("¿Está seguro que desea eliminar la marca seleccionada?", "Mensaje de Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                respuesta = MessageBox.Show("¿Está seguro que desea eliminar la marca seleccionada?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             }
-            else if (pestana == "Categorias")
+            else
             {
-                MessageBox.Show("¿Está seguro que desea eliminar la categoria seleccionada?", "Mensaje de Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                respuesta = MessageBox.Show("¿Está seguro que desea eliminar la categoría seleccionada?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             }
 
-            // Lógica para eliminar
+            if (respuesta != DialogResult.Yes)
+                return;
+
+            try
+            {
+                if (pestana == "Articulos")
+                {
+                    Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                    ArticuloNegocio artN = new ArticuloNegocio();
+                    artN.eliminarArticulo(seleccionado.Id);
+
+                    cargarArticulos();
+                }
+                else if (pestana == "Marcas")
+                {
+                    // Queda para implementar
+                }
+                else if (pestana == "Categorias")
+                {
+                    // pendiente
+                }
+
+                MessageBox.Show("Eliminado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Limpia el TextBox de Precio Desde al hacer click
