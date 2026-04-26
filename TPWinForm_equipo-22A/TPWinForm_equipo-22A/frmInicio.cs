@@ -161,6 +161,10 @@ namespace TPWinForm_equipo_22A
                         return;
                     }
                     Articulo artS = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    MessageBox.Show("ID seleccionado: " + artS.Id);
+                    ArticuloNegocio artnegocio= new ArticuloNegocio();
+                    artS.Imagenes = artnegocio.listarImagenes(artS.Id);
+
                     MostrarFormularioEnPanel(new frmModificarArticulo(this,artS));
                     break;
                 case "Categorias":
