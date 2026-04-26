@@ -248,7 +248,12 @@ namespace TPWinForm_equipo_22A
                 }
                 else if (pestana == "Marcas")
                 {
-                    // Queda para implementar
+                    MarcaNegocio negocio = new MarcaNegocio();
+                    Marca seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+
+                    negocio.eliminar(seleccionada.IdMarca);
+
+                    cargarListadoMarcas();
                 }
                 else if (pestana == "Categorias")
                 {

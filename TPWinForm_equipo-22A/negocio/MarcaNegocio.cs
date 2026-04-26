@@ -45,7 +45,6 @@ namespace negocio
             }
         }
 
-
         public void modificar(Marca marca)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -90,7 +89,21 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
-        
+
+        public void eliminar(int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("delete from Marcas where id = @id");
+                datos.setearParametros("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            } 
+        }
     }
 }
 
