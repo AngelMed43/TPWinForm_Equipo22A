@@ -19,6 +19,7 @@ namespace TPWinForm_equipo_22A
     {
 
         public Articulo articulo;
+
         public frmNuevoArticulo()
         {
             InitializeComponent();

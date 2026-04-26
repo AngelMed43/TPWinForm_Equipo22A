@@ -360,7 +360,6 @@ namespace TPWinForm_equipo_22A
             // 
             // pbxImagen
             // 
-            this.pbxImagen.Image = global::TPWinForm_equipo_22A.Properties.Resources.add_image_30;
             this.pbxImagen.InitialImage = null;
             this.pbxImagen.Location = new System.Drawing.Point(341, 238);
             this.pbxImagen.Name = "pbxImagen";

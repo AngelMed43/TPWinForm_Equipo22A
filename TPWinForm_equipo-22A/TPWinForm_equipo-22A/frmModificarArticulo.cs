@@ -19,24 +19,26 @@ namespace TPWinForm_equipo_22A
     {
         private frmInicio frmInicio;
         private Articulo articulo = null;
+        private string carpetaImagenes;
         public frmModificarArticulo(frmInicio formInicio, Articulo art)
         {
             InitializeComponent();
             frmInicio = formInicio;
             this.articulo = art;
-            articulo.Imagenes = new List<Imagen>();
+            //Me pisaba la lista --- No va
+            //articulo.Imagenes = new List<Imagen>();
+            string baseDocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            carpetaImagenes = Path.Combine(baseDocs, "Imagenes_APPGestion");
         }
         public frmModificarArticulo(frmInicio formInicio)
         {
             InitializeComponent();
             frmInicio = formInicio;
+            string baseDocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            carpetaImagenes = Path.Combine(baseDocs, "Imagenes_APPGestion");
         }
         private void frmModificarArticulo_Load(object sender, EventArgs e)
-        {
-            //rbPorPC.Checked = true;
-            //txtUrlImagen.Enabled = false;
-
-            
+        {    
             MarcaNegocio marca = new MarcaNegocio();
             CategoriaNegocio categoria = new CategoriaNegocio();
             try
@@ -75,13 +77,12 @@ namespace TPWinForm_equipo_22A
 
                 if (articulo.Categoria != null)
                     cbCategoría.SelectedValue = articulo.Categoria.IdCategoria;
-                MessageBox.Show(articulo.Imagenes?.Count.ToString() ?? "NULL");
                 lbxImagenes.Items.Clear();
                 if (articulo.Imagenes != null && articulo.Imagenes.Count > 0)
                 {
                     foreach (Imagen img in articulo.Imagenes)
                     {
-                        lbxImagenes.Items.Add(img);
+                        lbxImagenes.Items.Add(img.UrlImagen);
                     }
 
                     lbxImagenes.SelectedIndex = 0;
@@ -100,7 +101,7 @@ namespace TPWinForm_equipo_22A
         private void lbxImagenes_SelectedIndexChanged(object sender, EventArgs e)
         {
             string valor;
-            string carpeta = Path.Combine(Application.StartupPath, "Imagenes");
+            string carpeta = carpetaImagenes;
             string rutaCompleta;
 
             if (lbxImagenes.SelectedItem != null)
@@ -111,23 +112,36 @@ namespace TPWinForm_equipo_22A
                 {
                     if (valor.StartsWith("http"))
                     {
+                        pbxImagen.Image = null;
                         pbxImagen.LoadAsync(valor);
                     }
                     else
                     {
                         // HAGO ESTO porque sino,no me visualiza las fotos, ya que las listo con otro nombre
                         rutaCompleta = Path.Combine(carpeta, valor);
-                        pbxImagen.Load(rutaCompleta);
+                        MostrarImagenLocal(rutaCompleta);
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
                     pbxImagen.Image = null;
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
 
-
+        private void MostrarImagenLocal(string ruta)
+        {
+            if (File.Exists(ruta))
+            {
+                pbxImagen.ImageLocation = ruta;
+                pbxImagen.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+            else
+            {
+                pbxImagen.Image = null;
+            }
+        }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             
