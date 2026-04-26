@@ -1,3 +1,5 @@
+using Conexion_BDD;
+using negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +10,6 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using negocio;
 
 namespace TPWinForm_equipo_22A
 {
@@ -142,7 +143,7 @@ namespace TPWinForm_equipo_22A
                     MostrarFormularioEnPanel(new frmNuevaMarca(this));
                     break;
                 case "Categorias":
-                    MostrarFormularioEnPanel(new frmNuevaCategoria());
+                    MostrarFormularioEnPanel(new frmNuevaCategoria(this));
                     break;
             }
         }
@@ -236,6 +237,7 @@ namespace TPWinForm_equipo_22A
         {
             splitContainer1.SplitterDistance = splitContainer1.Width / 2;
             cargarListadoMarcas();
+            cargarListadoCategorias();
            
         }
 
@@ -252,11 +254,23 @@ namespace TPWinForm_equipo_22A
                 MessageBox.Show(ex.ToString());
             }
         }
+        public void cargarListadoCategorias()
+        {
+            CategoriaNegocio negocio = new CategoriaNegocio();
+
+            try
+            {
+                dgvCategorias.DataSource = negocio.listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
         private void frmInicio_Resize(object sender, EventArgs e)
         {
             splitContainer1.SplitterDistance = splitContainer1.Width / 2;
         }
-
     }
 }

@@ -33,7 +33,7 @@ namespace TPWinForm_equipo_22A
             this.lblIDCategoria = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtBDescripción = new System.Windows.Forms.TextBox();
+            this.txtBDescripcionNuevaCategoria = new System.Windows.Forms.TextBox();
             this.lblDescripción = new System.Windows.Forms.Label();
             this.grpBDetalleCategoria.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +45,7 @@ namespace TPWinForm_equipo_22A
             this.grpBDetalleCategoria.Controls.Add(this.lblIDCategoria);
             this.grpBDetalleCategoria.Controls.Add(this.btnCancelar);
             this.grpBDetalleCategoria.Controls.Add(this.btnGuardar);
-            this.grpBDetalleCategoria.Controls.Add(this.txtBDescripción);
+            this.grpBDetalleCategoria.Controls.Add(this.txtBDescripcionNuevaCategoria);
             this.grpBDetalleCategoria.Controls.Add(this.lblDescripción);
             this.grpBDetalleCategoria.Location = new System.Drawing.Point(16, 15);
             this.grpBDetalleCategoria.Margin = new System.Windows.Forms.Padding(6);
@@ -100,16 +100,17 @@ namespace TPWinForm_equipo_22A
             this.btnGuardar.TabIndex = 58;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtBDescripción
+            // txtBDescripcionNuevaCategoria
             // 
-            this.txtBDescripción.Location = new System.Drawing.Point(16, 167);
-            this.txtBDescripción.Margin = new System.Windows.Forms.Padding(6);
-            this.txtBDescripción.Multiline = true;
-            this.txtBDescripción.Name = "txtBDescripción";
-            this.txtBDescripción.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBDescripción.Size = new System.Drawing.Size(864, 456);
-            this.txtBDescripción.TabIndex = 52;
+            this.txtBDescripcionNuevaCategoria.Location = new System.Drawing.Point(16, 167);
+            this.txtBDescripcionNuevaCategoria.Margin = new System.Windows.Forms.Padding(6);
+            this.txtBDescripcionNuevaCategoria.Multiline = true;
+            this.txtBDescripcionNuevaCategoria.Name = "txtBDescripcionNuevaCategoria";
+            this.txtBDescripcionNuevaCategoria.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBDescripcionNuevaCategoria.Size = new System.Drawing.Size(864, 456);
+            this.txtBDescripcionNuevaCategoria.TabIndex = 52;
             // 
             // lblDescripción
             // 
@@ -132,6 +133,7 @@ namespace TPWinForm_equipo_22A
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNuevaCategoria";
             this.Text = "frmNuevaCategoria";
+            this.Load += new System.EventHandler(this.frmNuevaCategoria_Load);
             this.grpBDetalleCategoria.ResumeLayout(false);
             this.grpBDetalleCategoria.PerformLayout();
             this.ResumeLayout(false);
@@ -144,7 +146,7 @@ namespace TPWinForm_equipo_22A
         private System.Windows.Forms.Label lblIDCategoria;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtBDescripción;
+        private System.Windows.Forms.TextBox txtBDescripcionNuevaCategoria;
         private System.Windows.Forms.Label lblDescripción;
         private System.Windows.Forms.Label IDGenerado;
     }

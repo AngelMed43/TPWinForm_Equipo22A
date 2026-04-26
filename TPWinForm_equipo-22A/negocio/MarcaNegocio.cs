@@ -45,9 +45,6 @@ namespace negocio
             }
         }
 
-
-
-
         public void agregar (Marca nueva)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -67,6 +64,7 @@ namespace negocio
                 datos.cerrarConexion();
             }
         }
+
         
     }
 }
