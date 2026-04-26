@@ -29,17 +29,13 @@ namespace TPWinForm_equipo_22A
         private void InitializeComponent()
         {
             this.grpBModificarCategoria = new System.Windows.Forms.GroupBox();
-            this.NuevoIDCategoria = new System.Windows.Forms.Label();
             this.grpBDatosActualesMarca = new System.Windows.Forms.GroupBox();
-            this.ActualIDCategoria = new System.Windows.Forms.Label();
             this.txtBDescripcionCategoriaActual = new System.Windows.Forms.TextBox();
             this.lblDescripcionCategoriaActual = new System.Windows.Forms.Label();
-            this.lblIDActualCategoria = new System.Windows.Forms.Label();
             this.btnCancelarCategoria = new System.Windows.Forms.Button();
             this.btnGuardarCategoria = new System.Windows.Forms.Button();
             this.txtBDescripcionNuevaCategoria = new System.Windows.Forms.TextBox();
             this.lblDescripcionCategoria = new System.Windows.Forms.Label();
-            this.lblNuevoIDCategoria = new System.Windows.Forms.Label();
             this.grpBModificarCategoria.SuspendLayout();
             this.grpBDatosActualesMarca.SuspendLayout();
             this.SuspendLayout();
@@ -50,13 +46,11 @@ namespace TPWinForm_equipo_22A
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBModificarCategoria.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grpBModificarCategoria.Controls.Add(this.NuevoIDCategoria);
             this.grpBModificarCategoria.Controls.Add(this.grpBDatosActualesMarca);
             this.grpBModificarCategoria.Controls.Add(this.btnCancelarCategoria);
             this.grpBModificarCategoria.Controls.Add(this.btnGuardarCategoria);
             this.grpBModificarCategoria.Controls.Add(this.txtBDescripcionNuevaCategoria);
             this.grpBModificarCategoria.Controls.Add(this.lblDescripcionCategoria);
-            this.grpBModificarCategoria.Controls.Add(this.lblNuevoIDCategoria);
             this.grpBModificarCategoria.Location = new System.Drawing.Point(16, 15);
             this.grpBModificarCategoria.Margin = new System.Windows.Forms.Padding(6);
             this.grpBModificarCategoria.Name = "grpBModificarCategoria";
@@ -66,23 +60,10 @@ namespace TPWinForm_equipo_22A
             this.grpBModificarCategoria.TabStop = false;
             this.grpBModificarCategoria.Text = "Modificar Categoria";
             // 
-            // NuevoIDCategoria
-            // 
-            this.NuevoIDCategoria.AutoSize = true;
-            this.NuevoIDCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.NuevoIDCategoria.Location = new System.Drawing.Point(69, 69);
-            this.NuevoIDCategoria.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.NuevoIDCategoria.Name = "NuevoIDCategoria";
-            this.NuevoIDCategoria.Size = new System.Drawing.Size(161, 30);
-            this.NuevoIDCategoria.TabIndex = 7;
-            this.NuevoIDCategoria.Text = "NUMERO ID";
-            // 
             // grpBDatosActualesMarca
             // 
-            this.grpBDatosActualesMarca.Controls.Add(this.ActualIDCategoria);
             this.grpBDatosActualesMarca.Controls.Add(this.txtBDescripcionCategoriaActual);
             this.grpBDatosActualesMarca.Controls.Add(this.lblDescripcionCategoriaActual);
-            this.grpBDatosActualesMarca.Controls.Add(this.lblIDActualCategoria);
             this.grpBDatosActualesMarca.Location = new System.Drawing.Point(476, 21);
             this.grpBDatosActualesMarca.Margin = new System.Windows.Forms.Padding(6);
             this.grpBDatosActualesMarca.Name = "grpBDatosActualesMarca";
@@ -91,17 +72,6 @@ namespace TPWinForm_equipo_22A
             this.grpBDatosActualesMarca.TabIndex = 6;
             this.grpBDatosActualesMarca.TabStop = false;
             this.grpBDatosActualesMarca.Text = "Datos actuales";
-            // 
-            // ActualIDCategoria
-            // 
-            this.ActualIDCategoria.AutoSize = true;
-            this.ActualIDCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.ActualIDCategoria.Location = new System.Drawing.Point(69, 48);
-            this.ActualIDCategoria.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.ActualIDCategoria.Name = "ActualIDCategoria";
-            this.ActualIDCategoria.Size = new System.Drawing.Size(161, 30);
-            this.ActualIDCategoria.TabIndex = 4;
-            this.ActualIDCategoria.Text = "NUMERO ID";
             // 
             // txtBDescripcionCategoriaActual
             // 
@@ -124,17 +94,6 @@ namespace TPWinForm_equipo_22A
             this.lblDescripcionCategoriaActual.Size = new System.Drawing.Size(148, 30);
             this.lblDescripcionCategoriaActual.TabIndex = 2;
             this.lblDescripcionCategoriaActual.Text = "Descripción";
-            // 
-            // lblIDActualCategoria
-            // 
-            this.lblIDActualCategoria.AutoSize = true;
-            this.lblIDActualCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblIDActualCategoria.Location = new System.Drawing.Point(12, 48);
-            this.lblIDActualCategoria.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblIDActualCategoria.Name = "lblIDActualCategoria";
-            this.lblIDActualCategoria.Size = new System.Drawing.Size(45, 30);
-            this.lblIDActualCategoria.TabIndex = 1;
-            this.lblIDActualCategoria.Text = "ID:";
             // 
             // btnCancelarCategoria
             // 
@@ -180,17 +139,6 @@ namespace TPWinForm_equipo_22A
             this.lblDescripcionCategoria.TabIndex = 2;
             this.lblDescripcionCategoria.Text = "Descripción: ";
             // 
-            // lblNuevoIDCategoria
-            // 
-            this.lblNuevoIDCategoria.AutoSize = true;
-            this.lblNuevoIDCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblNuevoIDCategoria.Location = new System.Drawing.Point(12, 69);
-            this.lblNuevoIDCategoria.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblNuevoIDCategoria.Name = "lblNuevoIDCategoria";
-            this.lblNuevoIDCategoria.Size = new System.Drawing.Size(45, 30);
-            this.lblNuevoIDCategoria.TabIndex = 0;
-            this.lblNuevoIDCategoria.Text = "ID:";
-            // 
             // frmModificarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -217,13 +165,9 @@ namespace TPWinForm_equipo_22A
         private System.Windows.Forms.GroupBox grpBDatosActualesMarca;
         private System.Windows.Forms.TextBox txtBDescripcionCategoriaActual;
         private System.Windows.Forms.Label lblDescripcionCategoriaActual;
-        private System.Windows.Forms.Label lblIDActualCategoria;
         private System.Windows.Forms.Button btnCancelarCategoria;
         private System.Windows.Forms.Button btnGuardarCategoria;
         private System.Windows.Forms.TextBox txtBDescripcionNuevaCategoria;
         private System.Windows.Forms.Label lblDescripcionCategoria;
-        private System.Windows.Forms.Label lblNuevoIDCategoria;
-        private System.Windows.Forms.Label NuevoIDCategoria;
-        private System.Windows.Forms.Label ActualIDCategoria;
     }
 }

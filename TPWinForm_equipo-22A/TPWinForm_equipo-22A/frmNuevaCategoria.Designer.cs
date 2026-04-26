@@ -29,8 +29,6 @@ namespace TPWinForm_equipo_22A
         private void InitializeComponent()
         {
             this.grpBDetalleCategoria = new System.Windows.Forms.GroupBox();
-            this.IDGenerado = new System.Windows.Forms.Label();
-            this.lblIDCategoria = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtBDescripcionNuevaCategoria = new System.Windows.Forms.TextBox();
@@ -41,8 +39,6 @@ namespace TPWinForm_equipo_22A
             // grpBDetalleCategoria
             // 
             this.grpBDetalleCategoria.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grpBDetalleCategoria.Controls.Add(this.IDGenerado);
-            this.grpBDetalleCategoria.Controls.Add(this.lblIDCategoria);
             this.grpBDetalleCategoria.Controls.Add(this.btnCancelar);
             this.grpBDetalleCategoria.Controls.Add(this.btnGuardar);
             this.grpBDetalleCategoria.Controls.Add(this.txtBDescripcionNuevaCategoria);
@@ -55,28 +51,6 @@ namespace TPWinForm_equipo_22A
             this.grpBDetalleCategoria.TabIndex = 64;
             this.grpBDetalleCategoria.TabStop = false;
             this.grpBDetalleCategoria.Text = "Detalle de la categoria seleccionada";
-            // 
-            // IDGenerado
-            // 
-            this.IDGenerado.AutoSize = true;
-            this.IDGenerado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDGenerado.Location = new System.Drawing.Point(229, 81);
-            this.IDGenerado.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.IDGenerado.Name = "IDGenerado";
-            this.IDGenerado.Size = new System.Drawing.Size(248, 30);
-            this.IDGenerado.TabIndex = 60;
-            this.IDGenerado.Text = "ID AUTOGENRADO";
-            // 
-            // lblIDCategoria
-            // 
-            this.lblIDCategoria.AutoSize = true;
-            this.lblIDCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDCategoria.Location = new System.Drawing.Point(12, 81);
-            this.lblIDCategoria.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lblIDCategoria.Name = "lblIDCategoria";
-            this.lblIDCategoria.Size = new System.Drawing.Size(205, 30);
-            this.lblIDCategoria.TabIndex = 44;
-            this.lblIDCategoria.Text = "ID de Categoria :";
             // 
             // btnCancelar
             // 
@@ -104,7 +78,7 @@ namespace TPWinForm_equipo_22A
             // 
             // txtBDescripcionNuevaCategoria
             // 
-            this.txtBDescripcionNuevaCategoria.Location = new System.Drawing.Point(16, 167);
+            this.txtBDescripcionNuevaCategoria.Location = new System.Drawing.Point(16, 112);
             this.txtBDescripcionNuevaCategoria.Margin = new System.Windows.Forms.Padding(6);
             this.txtBDescripcionNuevaCategoria.Multiline = true;
             this.txtBDescripcionNuevaCategoria.Name = "txtBDescripcionNuevaCategoria";
@@ -116,12 +90,12 @@ namespace TPWinForm_equipo_22A
             // 
             this.lblDescripción.AutoSize = true;
             this.lblDescripción.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripción.Location = new System.Drawing.Point(12, 131);
+            this.lblDescripción.Location = new System.Drawing.Point(12, 75);
             this.lblDescripción.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblDescripción.Name = "lblDescripción";
-            this.lblDescripción.Size = new System.Drawing.Size(162, 30);
+            this.lblDescripción.Size = new System.Drawing.Size(155, 30);
             this.lblDescripción.TabIndex = 45;
-            this.lblDescripción.Text = "Descripción :";
+            this.lblDescripción.Text = "Descripción:";
             // 
             // frmNuevaCategoria
             // 
@@ -143,11 +117,9 @@ namespace TPWinForm_equipo_22A
         #endregion
 
         private System.Windows.Forms.GroupBox grpBDetalleCategoria;
-        private System.Windows.Forms.Label lblIDCategoria;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtBDescripcionNuevaCategoria;
         private System.Windows.Forms.Label lblDescripción;
-        private System.Windows.Forms.Label IDGenerado;
     }
 }

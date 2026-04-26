@@ -1,4 +1,4 @@
-using Conexion_BDD;
+ï»¿using Conexion_BDD;
 using negocio;
 using System;
 using System.Collections.Generic;
@@ -84,7 +84,7 @@ namespace TPWinForm_equipo_22A
         }
 
         // Asocia los RadioButton de filtro a un mismo evento,
-        // para actualizar qué controles quedan habilitados.
+        // para actualizar quÃ© controles quedan habilitados.
         private void ConfigurarFiltros()
         {
             rdBFiltroXMarca.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
@@ -94,7 +94,7 @@ namespace TPWinForm_equipo_22A
             cboCategoria.SelectedIndexChanged += cboCategoria_SelectedIndexChanged;
         }
 
-        //Detecta qué filtro quedó activo y actualiza la interfaz.
+        //Detecta quÃ© filtro quedÃ³ activo y actualiza la interfaz.
         private void ActualizarEstadoFiltrosAlCambiar(object sender, EventArgs e)
         {
             RadioButton rb = sender as RadioButton;
@@ -105,7 +105,7 @@ namespace TPWinForm_equipo_22A
             }
         }
 
-        //Método que decide qué controles se pueden usar y cuáles se limpian según el filtro seleccionado.
+        //MÃ©todo que decide quÃ© controles se pueden usar y cuÃ¡les se limpian segÃºn el filtro seleccionado.
         private void ActualizarEstadoFiltros()
         {
             bool filtroMarca = rdBFiltroXMarca.Checked;
@@ -157,19 +157,25 @@ namespace TPWinForm_equipo_22A
                 case "Articulos":
                     if (dgvArticulos.CurrentRow == null)
                     {
-                        MessageBox.Show("Debe seleccionar un articulo para modificar.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Debe seleccionar un articulo para modificar.", "AtenciÃ³n!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
                     Articulo artS = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                     MostrarFormularioEnPanel(new frmModificarArticulo(this,artS));
                     break;
                 case "Categorias":
-                    MostrarFormularioEnPanel(new frmModificarCategoria());
+                    if (dgvCategorias.CurrentRow == null)
+                    {
+                        MessageBox.Show("Debe seleccionar una categoria para modificar.", "AtenciÃ³n!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    Categoria seleccion = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+                    MostrarFormularioEnPanel(new frmNuevaCategoria(this, seleccion));
                     break;
                 case "Marcas":
                     if (dgvMarcas.CurrentRow == null)
                     {
-                        MessageBox.Show("Debe seleccionar una marca para modificar.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Debe seleccionar una marca para modificar.", "AtenciÃ³n!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         return;
                     }
 
@@ -183,7 +189,7 @@ namespace TPWinForm_equipo_22A
             MostrarFormularioEnPanel(new frmDetalleArticulo());
         }
 
-        //Metodo que modifica atributos del Form inicio depende en que pestaña estemos situados
+        //Metodo que modifica atributos del Form inicio depende en que pestaÃ±a estemos situados
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             LimpiarPanelUniversal();
@@ -197,17 +203,17 @@ namespace TPWinForm_equipo_22A
 
             if (pestana == "Articulos" && dgvArticulos.CurrentRow == null)
             {
-                MessageBox.Show("Debe seleccionar un artículo para eliminar.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debe seleccionar un artÃ­culo para eliminar.", "AtenciÃ³n!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             else if (pestana == "Marcas" && dgvMarcas.CurrentRow == null)
             {
-                MessageBox.Show("Debe seleccionar una marca para eliminar.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debe seleccionar una marca para eliminar.", "AtenciÃ³n!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             else if (pestana == "Categorias" && dgvCategorias.CurrentRow == null)
             {
-                MessageBox.Show("Debe seleccionar una categoria para eliminar.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debe seleccionar una categoria para eliminar.", "AtenciÃ³n!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -215,15 +221,15 @@ namespace TPWinForm_equipo_22A
 
             if (pestana == "Articulos")
             {
-                respuesta = MessageBox.Show("¿Está seguro que desea eliminar el artículo seleccionado?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                respuesta = MessageBox.Show("Â¿EstÃ¡ seguro que desea eliminar el artÃ­culo seleccionado?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             }
             else if (pestana == "Marcas")
             {
-                respuesta = MessageBox.Show("¿Está seguro que desea eliminar la marca seleccionada?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                respuesta = MessageBox.Show("Â¿EstÃ¡ seguro que desea eliminar la marca seleccionada?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             }
             else
             {
-                respuesta = MessageBox.Show("¿Está seguro que desea eliminar la categoría seleccionada?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                respuesta = MessageBox.Show("Â¿EstÃ¡ seguro que desea eliminar la categorÃ­a seleccionada?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             }
 
             if (respuesta != DialogResult.Yes)
@@ -253,7 +259,12 @@ namespace TPWinForm_equipo_22A
                 }
                 else if (pestana == "Categorias")
                 {
-                    // pendiente
+                    CategoriaNegocio Catnegocio = new CategoriaNegocio();
+                    Categoria seleccion = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+
+                    Catnegocio.eliminarCategoria(seleccion.IdCategoria);
+
+                    cargarListadoCategorias();
                 }
 
                 MessageBox.Show("Eliminado correctamente.");
@@ -342,7 +353,18 @@ namespace TPWinForm_equipo_22A
 
             try
             {
+                dgvCategorias.AutoGenerateColumns = true;
+                dgvCategorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvCategorias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;  // âœ… Ocupa todo el ancho
+                dgvCategorias.RowHeadersVisible = false;
+                dgvCategorias.ReadOnly = true;
+                dgvCategorias.AllowUserToAddRows = false;
+                dgvCategorias.AllowUserToDeleteRows = false;
+                dgvCategorias.BackgroundColor = SystemColors.AppWorkspace;
                 dgvCategorias.DataSource = negocio.listar();
+
+                if (dgvCategorias.Columns["IdCategoria"] != null)
+                    dgvCategorias.Columns["IdCategoria"].Visible = false;  // âœ… Oculta el ID
             }
             catch (Exception ex)
             {
@@ -434,14 +456,14 @@ namespace TPWinForm_equipo_22A
         {
             if (cboCampo.SelectedItem == null)
             {
-                MessageBox.Show("Debe seleccionar un campo para buscar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debe seleccionar un campo para buscar.", "AtenciÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 cboCampo.Focus();
                 return false;
             }
 
             if (cboCriterio.SelectedItem == null)
             {
-                MessageBox.Show("Debe seleccionar un criterio para buscar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debe seleccionar un criterio para buscar.", "AtenciÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 cboCriterio.Focus();
                 return false;
             }
@@ -452,7 +474,7 @@ namespace TPWinForm_equipo_22A
             {
                 if (string.IsNullOrWhiteSpace(filtro))
                 {
-                    MessageBox.Show("Debe completar el valor de filtro para Precio.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Debe completar el valor de filtro para Precio.", "AtenciÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtBFiltro.Focus();
                     return false;
                 }
@@ -460,7 +482,7 @@ namespace TPWinForm_equipo_22A
                 decimal valor;
                 if (!decimal.TryParse(filtro, out valor))
                 {
-                    MessageBox.Show("Si el campo es Precio, el filtro debe ser numérico.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Si el campo es Precio, el filtro debe ser numÃ©rico.", "AtenciÃ³n", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     txtBFiltro.Focus();
                     return false;
                 }

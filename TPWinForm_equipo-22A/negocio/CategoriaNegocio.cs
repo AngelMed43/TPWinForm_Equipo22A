@@ -43,17 +43,15 @@ namespace Conexion_BDD
                 datos.cerrarConexion();
             }
         }
-
-
-
-
         public void agregar(Categoria nueva)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("Insert Into CATEGORIAS (Descripcion) Values ('" + nueva.Descripcion + "')");
+                datos.setearConsulta("Insert Into CATEGORIAS (Descripcion) Values (@desc)");
+                datos.setearParametros("@desc", nueva.Descripcion);
+
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -65,7 +63,49 @@ namespace Conexion_BDD
                 datos.cerrarConexion();
             }
         }
-        public int obtenerProximoId()
+        public void modificar(Categoria categoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("update CATEGORIAS set Descripcion = @desc Where Id = @id");
+                datos.setearParametros("@desc", categoria.Descripcion);
+                datos.setearParametros("@id", categoria.IdCategoria);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+        public void eliminarCategoria(int id)
+        {
+           AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("delete from CATEGORIAS where id = @id");
+                datos.setearParametros("@id", id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        /*public int obtenerProximoId()
         {
             AccesoDatos datos = new AccesoDatos();
 
@@ -87,6 +127,6 @@ namespace Conexion_BDD
             {
                 datos.cerrarConexion();
             }
-        }
+        }*/
     }
 }
