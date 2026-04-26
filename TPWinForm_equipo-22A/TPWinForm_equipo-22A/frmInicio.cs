@@ -10,6 +10,8 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
+
 
 namespace TPWinForm_equipo_22A
 {
@@ -38,7 +40,13 @@ namespace TPWinForm_equipo_22A
 
         private void ActualizarVisibilidadBarraBusqueda()
         {
-            grBBarraBusqueda.Visible = (ObtenerPestanaActual() == "Articulos");
+            bool esPestanaArticulos = (ObtenerPestanaActual() == "Articulos");
+
+            grBBarraBusqueda.Visible = true;
+            grBBarraBusqueda.Enabled = esPestanaArticulos;
+            grBBarraBusqueda.BackColor = esPestanaArticulos
+                ? SystemColors.Control
+                : SystemColors.ControlLight;
         }
 
         private void LimpiarPanelUniversal()
@@ -79,6 +87,7 @@ namespace TPWinForm_equipo_22A
             rdBFiltroXMarca.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
             rdBFiltroXCategoria.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
             rdBFiltroXPrecio.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
+            rdBFiltroXBuscar.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
         }
 
         //Detecta qué filtro quedó activo y actualiza la interfaz.
@@ -107,11 +116,13 @@ namespace TPWinForm_equipo_22A
             bool filtroMarca = rdBFiltroXMarca.Checked;
             bool filtroCategoria = rdBFiltroXCategoria.Checked;
             bool filtroPrecio = rdBFiltroXPrecio.Checked;
+            bool filtroBuscar = rdBFiltroXBuscar.Checked;
 
             cboMarca.Enabled = filtroMarca;
             cboCategoria.Enabled = filtroCategoria;
             txtBPrecioDesde.Enabled = filtroPrecio;
             txtBPrecioHasta.Enabled = filtroPrecio;
+            txtBBuscarSuperior.Enabled = filtroBuscar;
 
             if (!filtroMarca)
                 cboMarca.SelectedIndex = -1;
@@ -128,6 +139,9 @@ namespace TPWinForm_equipo_22A
                 txtBPrecioDesde.Clear();
                 txtBPrecioHasta.Clear();
             }
+
+            if (!filtroBuscar)
+                txtBBuscarSuperior.Clear();
         }
 
         private void btnNuevoArticulo_Click(object sender, EventArgs e)
@@ -161,7 +175,14 @@ namespace TPWinForm_equipo_22A
                     MostrarFormularioEnPanel(new frmModificarCategoria());
                     break;
                 case "Marcas":
-                    MostrarFormularioEnPanel(new frmModificarMarca());
+                    if (dgvMarcas.CurrentRow == null)
+                    {
+                        MessageBox.Show("Debe seleccionar una marca para modificar.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+
+                    Marca seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+                    MostrarFormularioEnPanel(new frmNuevaMarca(this, seleccionada));
                     break;
             }
         }
@@ -198,20 +219,55 @@ namespace TPWinForm_equipo_22A
                 return;
             }
 
+            DialogResult respuesta;
+
             if (pestana == "Articulos")
             {
-                MessageBox.Show("¿Está seguro que desea eliminar el artículo seleccionado?", "Mensaje de Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                respuesta = MessageBox.Show("¿Está seguro que desea eliminar el artículo seleccionado?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             }
             else if (pestana == "Marcas")
             {
-                MessageBox.Show("¿Está seguro que desea eliminar la marca seleccionada?", "Mensaje de Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                respuesta = MessageBox.Show("¿Está seguro que desea eliminar la marca seleccionada?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             }
-            else if (pestana == "Categorias")
+            else
             {
-                MessageBox.Show("¿Está seguro que desea eliminar la categoria seleccionada?", "Mensaje de Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                respuesta = MessageBox.Show("¿Está seguro que desea eliminar la categoría seleccionada?","Confirmar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             }
 
-            // Lógica para eliminar
+            if (respuesta != DialogResult.Yes)
+                return;
+
+            try
+            {
+                if (pestana == "Articulos")
+                {
+                    Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                    ArticuloNegocio artN = new ArticuloNegocio();
+                    artN.eliminarArticulo(seleccionado.Id);
+
+                    cargarArticulos();
+                }
+                else if (pestana == "Marcas")
+                {
+                    MarcaNegocio negocio = new MarcaNegocio();
+                    Marca seleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+
+                    negocio.eliminar(seleccionada.IdMarca);
+
+                    cargarListadoMarcas();
+                }
+                else if (pestana == "Categorias")
+                {
+                    // pendiente
+                }
+
+                MessageBox.Show("Eliminado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Limpia el TextBox de Precio Desde al hacer click
@@ -239,6 +295,8 @@ namespace TPWinForm_equipo_22A
             cargarListadoMarcas();
             cargarListadoCategorias();
            
+            cargarArticulos(); 
+
         }
 
         public void cargarListadoMarcas()
@@ -247,7 +305,18 @@ namespace TPWinForm_equipo_22A
 
             try
             {
+                dgvMarcas.AutoGenerateColumns = true;
+                dgvMarcas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvMarcas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvMarcas.RowHeadersVisible = false;
+                dgvMarcas.ReadOnly = true;
+                dgvMarcas.AllowUserToAddRows = false;
+                dgvMarcas.AllowUserToDeleteRows = false;
+                dgvMarcas.BackgroundColor = SystemColors.AppWorkspace;
                 dgvMarcas.DataSource = negocio.listar();
+
+                if (dgvMarcas.Columns["IdMarca"] != null)
+                    dgvMarcas.Columns["IdMarca"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -271,6 +340,26 @@ namespace TPWinForm_equipo_22A
         private void frmInicio_Resize(object sender, EventArgs e)
         {
             splitContainer1.SplitterDistance = splitContainer1.Width / 2;
+        }
+
+        private void cargarArticulos()
+        {
+            ArticuloNegocio artN = new ArticuloNegocio();
+
+
+            try
+            {
+                dgvArticulos.AutoGenerateColumns = false;
+                dgvArticulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvArticulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvArticulos.RowHeadersVisible = false;
+                dgvArticulos.ReadOnly = true;
+                dgvArticulos.DataSource = artN.listarArticulos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
