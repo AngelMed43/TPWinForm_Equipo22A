@@ -27,6 +27,7 @@ namespace TPWinForm_equipo_22A
 
 
             InitializeComponent();
+            dgvArticulos.AutoGenerateColumns = false;
             pnlMain.Dock = DockStyle.Fill;
             ConfigurarFiltros();
             rdBFiltroXBuscar.Checked = true;
@@ -89,6 +90,8 @@ namespace TPWinForm_equipo_22A
             rdBFiltroXMarca.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
             rdBFiltroXCategoria.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
             rdBFiltroXBuscar.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
+            cboMarca.SelectedIndexChanged += cboMarca_SelectedIndexChanged;
+            cboCategoria.SelectedIndexChanged += cboCategoria_SelectedIndexChanged;
         }
 
         //Detecta qué filtro quedó activo y actualiza la interfaz.
@@ -113,14 +116,16 @@ namespace TPWinForm_equipo_22A
             cboCategoria.Enabled = filtroCategoria;
             txtBBuscarSuperior.Enabled = filtroBuscar;
 
-            if (!filtroMarca)
-                cboMarca.SelectedIndex = -1;
+            if (!filtroMarca && cboMarca.SelectedIndex > 0)
+                cboMarca.SelectedIndex = 0;
 
-            if (!filtroCategoria)
-                cboCategoria.SelectedIndex = -1;
+            if (!filtroCategoria && cboCategoria.SelectedIndex > 0)
+                cboCategoria.SelectedIndex = 0;
 
             if (!filtroBuscar)
                 txtBBuscarSuperior.Clear();
+
+            AplicarFiltroSuperior();
         }
 
         private void btnNuevoArticulo_Click(object sender, EventArgs e)
@@ -275,13 +280,35 @@ namespace TPWinForm_equipo_22A
             splitContainer1.SplitterDistance = splitContainer1.Width / 2;
             cargarListadoMarcas();
             cargarListadoCategorias();
-           
+
             cargarArticulos();
 
             cboCampo.Items.Add("Nombre");
             cboCampo.Items.Add("Descripcion");
             cboCampo.Items.Add("Precio");
 
+            CargarCombosFiltroSuperior();
+        }
+
+        private void CargarCombosFiltroSuperior()
+        {
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            List<Marca> marcas = marcaNegocio.listar();
+            marcas.Insert(0, new Marca { IdMarca = 0, Descripcion = "Todas" });
+
+            cboMarca.DataSource = marcas;
+            cboMarca.DisplayMember = "Descripcion";
+            cboMarca.ValueMember = "IdMarca";
+            cboMarca.SelectedIndex = 0;
+
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            List<Categoria> categorias = categoriaNegocio.listar();
+            categorias.Insert(0, new Categoria { IdCategoria = 0, Descripcion = "Todas" });
+
+            cboCategoria.DataSource = categorias;
+            cboCategoria.DisplayMember = "Descripcion";
+            cboCategoria.ValueMember = "IdCategoria";
+            cboCategoria.SelectedIndex = 0;
         }
 
         public void cargarListadoMarcas()
@@ -308,6 +335,7 @@ namespace TPWinForm_equipo_22A
                 MessageBox.Show(ex.ToString());
             }
         }
+
         public void cargarListadoCategorias()
         {
             CategoriaNegocio negocio = new CategoriaNegocio();
@@ -331,7 +359,6 @@ namespace TPWinForm_equipo_22A
         {
             ArticuloNegocio artN = new ArticuloNegocio();
 
-            
             try
             {
                 dgvArticulos.AutoGenerateColumns = false;
@@ -349,25 +376,58 @@ namespace TPWinForm_equipo_22A
 
         private void txtBBuscarSuperior_TextChanged(object sender, EventArgs e)
         {
-            List<Articulo> listaFiltrada;
+            if (rdBFiltroXBuscar.Checked)
+                AplicarFiltroSuperior();
+        }
+
+        private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (rdBFiltroXMarca.Checked)
+                AplicarFiltroSuperior();
+        }
+
+        private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (rdBFiltroXCategoria.Checked)
+                AplicarFiltroSuperior();
+        }
+
+        private void AplicarFiltroSuperior()
+        {
+            if (ObtenerPestanaActual() != "Articulos")
+                return;
+
+            dgvArticulos.AutoGenerateColumns = false;
 
             ArticuloNegocio artN = new ArticuloNegocio();
             List<Articulo> listaArticulos = artN.listarArticulos();
+            List<Articulo> listaFiltrada = listaArticulos;
 
-            string filtro = txtBBuscarSuperior.Text;
-
-            if (filtro.Length > 0)
+            if (rdBFiltroXMarca.Checked)
             {
-                listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                Marca marcaSeleccionada = cboMarca.SelectedItem as Marca;
+                if (marcaSeleccionada != null && marcaSeleccionada.IdMarca > 0)
+                    listaFiltrada = listaArticulos.FindAll(x => x.Marca != null && x.Marca.IdMarca == marcaSeleccionada.IdMarca);
             }
-            else
+            else if (rdBFiltroXCategoria.Checked)
             {
-                listaFiltrada = listaArticulos;
+                Categoria categoriaSeleccionada = cboCategoria.SelectedItem as Categoria;
+                if (categoriaSeleccionada != null && categoriaSeleccionada.IdCategoria > 0)
+                    listaFiltrada = listaArticulos.FindAll(x => x.Categoria != null && x.Categoria.IdCategoria == categoriaSeleccionada.IdCategoria);
+            }
+            else if (rdBFiltroXBuscar.Checked)
+            {
+                string filtro = txtBBuscarSuperior.Text;
+                if (!string.IsNullOrWhiteSpace(filtro))
+                {
+                    listaFiltrada = listaArticulos.FindAll(x =>
+                        x.Nombre.ToUpper().Contains(filtro.ToUpper()) ||
+                        x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                }
             }
 
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltrada;
-            
         }
 
         private bool ValidarBusquedaAvanzada()

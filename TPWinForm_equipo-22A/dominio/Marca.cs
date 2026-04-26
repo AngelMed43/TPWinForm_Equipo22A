@@ -12,13 +12,18 @@ namespace dominio
         public int IdMarca { get; set; }
         [DisplayName("Descripción")]
         public string Descripcion { get; set; }
-        
+
 
         public Marca() { }
         public Marca(int IdMarca, string Descripcion)
         {
             this.IdMarca = IdMarca;
             this.Descripcion = Descripcion;
+        }
+
+        public override string ToString()
+        {
+            return Descripcion;
         }
     }
 }

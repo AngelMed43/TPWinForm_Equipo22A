@@ -144,6 +144,7 @@ namespace TPWinForm_equipo_22A
             // 
             // cboMarca
             // 
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(31, 36);
             this.cboMarca.Margin = new System.Windows.Forms.Padding(2);
@@ -153,6 +154,7 @@ namespace TPWinForm_equipo_22A
             // 
             // cboCategoria
             // 
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.FormattingEnabled = true;
             this.cboCategoria.Location = new System.Drawing.Point(192, 36);
             this.cboCategoria.Margin = new System.Windows.Forms.Padding(2);

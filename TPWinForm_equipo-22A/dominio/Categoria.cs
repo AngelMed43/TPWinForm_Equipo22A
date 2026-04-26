@@ -14,11 +14,16 @@ namespace dominio
         public Categoria()
         {
         }
-        
+
         public Categoria(int IdCategoria, string Descripcion)
         {
             this.IdCategoria = IdCategoria;
             this.Descripcion = Descripcion;
+        }
+
+        public override string ToString()
+        {
+            return Descripcion;
         }
     }
 }
