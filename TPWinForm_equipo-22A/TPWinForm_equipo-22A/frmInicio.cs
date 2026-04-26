@@ -366,5 +366,28 @@ namespace TPWinForm_equipo_22A
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void txtBBuscarSuperior_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+
+            ArticuloNegocio artN = new ArticuloNegocio();
+            List<Articulo> listaArticulos = artN.listarArticulos();
+
+            string filtro = txtBBuscarSuperior.Text;
+
+            if (filtro.Length >= 3)
+            {
+                listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltrada;
+            
+        }
     }
 }

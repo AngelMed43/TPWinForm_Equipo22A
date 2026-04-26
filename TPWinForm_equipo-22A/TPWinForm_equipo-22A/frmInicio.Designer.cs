@@ -130,16 +130,17 @@ namespace TPWinForm_equipo_22A
             // txtBBuscarSuperior
             // 
             this.txtBBuscarSuperior.Location = new System.Drawing.Point(446, 36);
-            this.txtBBuscarSuperior.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.txtBBuscarSuperior.Margin = new System.Windows.Forms.Padding(1);
             this.txtBBuscarSuperior.Name = "txtBBuscarSuperior";
             this.txtBBuscarSuperior.Size = new System.Drawing.Size(186, 20);
             this.txtBBuscarSuperior.TabIndex = 4;
+            this.txtBBuscarSuperior.TextChanged += new System.EventHandler(this.txtBBuscarSuperior_TextChanged);
             // 
             // cboMarca
             // 
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(31, 36);
-            this.cboMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboMarca.Margin = new System.Windows.Forms.Padding(2);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(104, 21);
             this.cboMarca.TabIndex = 0;
@@ -148,7 +149,7 @@ namespace TPWinForm_equipo_22A
             // 
             this.cboCategoria.FormattingEnabled = true;
             this.cboCategoria.Location = new System.Drawing.Point(138, 36);
-            this.cboCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(104, 21);
             this.cboCategoria.TabIndex = 1;
@@ -156,7 +157,7 @@ namespace TPWinForm_equipo_22A
             // txtBPrecioDesde
             // 
             this.txtBPrecioDesde.Location = new System.Drawing.Point(245, 37);
-            this.txtBPrecioDesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBPrecioDesde.Margin = new System.Windows.Forms.Padding(2);
             this.txtBPrecioDesde.Name = "txtBPrecioDesde";
             this.txtBPrecioDesde.Size = new System.Drawing.Size(77, 20);
             this.txtBPrecioDesde.TabIndex = 2;
@@ -177,7 +178,7 @@ namespace TPWinForm_equipo_22A
             this.rdBFiltroXMarca.AutoSize = true;
             this.rdBFiltroXMarca.BackColor = System.Drawing.Color.Transparent;
             this.rdBFiltroXMarca.Location = new System.Drawing.Point(31, 17);
-            this.rdBFiltroXMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdBFiltroXMarca.Margin = new System.Windows.Forms.Padding(2);
             this.rdBFiltroXMarca.Name = "rdBFiltroXMarca";
             this.rdBFiltroXMarca.Size = new System.Drawing.Size(55, 17);
             this.rdBFiltroXMarca.TabIndex = 6;
@@ -199,7 +200,7 @@ namespace TPWinForm_equipo_22A
             this.rdBFiltroXCategoria.AutoSize = true;
             this.rdBFiltroXCategoria.BackColor = System.Drawing.Color.Transparent;
             this.rdBFiltroXCategoria.Location = new System.Drawing.Point(138, 17);
-            this.rdBFiltroXCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdBFiltroXCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.rdBFiltroXCategoria.Name = "rdBFiltroXCategoria";
             this.rdBFiltroXCategoria.Size = new System.Drawing.Size(70, 17);
             this.rdBFiltroXCategoria.TabIndex = 8;
@@ -212,7 +213,7 @@ namespace TPWinForm_equipo_22A
             this.rdBFiltroXPrecio.AutoSize = true;
             this.rdBFiltroXPrecio.BackColor = System.Drawing.Color.Transparent;
             this.rdBFiltroXPrecio.Location = new System.Drawing.Point(246, 17);
-            this.rdBFiltroXPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdBFiltroXPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.rdBFiltroXPrecio.Name = "rdBFiltroXPrecio";
             this.rdBFiltroXPrecio.Size = new System.Drawing.Size(55, 17);
             this.rdBFiltroXPrecio.TabIndex = 9;
@@ -225,7 +226,7 @@ namespace TPWinForm_equipo_22A
             this.rdBFiltroXBuscar.AutoSize = true;
             this.rdBFiltroXBuscar.BackColor = System.Drawing.Color.Transparent;
             this.rdBFiltroXBuscar.Location = new System.Drawing.Point(446, 17);
-            this.rdBFiltroXBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdBFiltroXBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.rdBFiltroXBuscar.Name = "rdBFiltroXBuscar";
             this.rdBFiltroXBuscar.Size = new System.Drawing.Size(58, 17);
             this.rdBFiltroXBuscar.TabIndex = 11;
@@ -236,7 +237,7 @@ namespace TPWinForm_equipo_22A
             // txtBPrecioHasta
             // 
             this.txtBPrecioHasta.Location = new System.Drawing.Point(326, 37);
-            this.txtBPrecioHasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBPrecioHasta.Margin = new System.Windows.Forms.Padding(2);
             this.txtBPrecioHasta.Name = "txtBPrecioHasta";
             this.txtBPrecioHasta.Size = new System.Drawing.Size(76, 20);
             this.txtBPrecioHasta.TabIndex = 10;
@@ -258,9 +259,9 @@ namespace TPWinForm_equipo_22A
             this.grBBarraBusqueda.Controls.Add(this.cboMarca);
             this.grBBarraBusqueda.Dock = System.Windows.Forms.DockStyle.Top;
             this.grBBarraBusqueda.Location = new System.Drawing.Point(0, 25);
-            this.grBBarraBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grBBarraBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.grBBarraBusqueda.Name = "grBBarraBusqueda";
-            this.grBBarraBusqueda.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grBBarraBusqueda.Padding = new System.Windows.Forms.Padding(2);
             this.grBBarraBusqueda.Size = new System.Drawing.Size(1264, 62);
             this.grBBarraBusqueda.TabIndex = 7;
             this.grBBarraBusqueda.TabStop = false;
@@ -270,7 +271,7 @@ namespace TPWinForm_equipo_22A
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -295,7 +296,7 @@ namespace TPWinForm_equipo_22A
             this.tcMenu.Controls.Add(this.Categorias);
             this.tcMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcMenu.Location = new System.Drawing.Point(0, 0);
-            this.tcMenu.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tcMenu.Margin = new System.Windows.Forms.Padding(1);
             this.tcMenu.Name = "tcMenu";
             this.tcMenu.SelectedIndex = 0;
             this.tcMenu.Size = new System.Drawing.Size(632, 572);
@@ -306,9 +307,9 @@ namespace TPWinForm_equipo_22A
             // 
             this.Articulos.Controls.Add(this.grpBListaArticulo);
             this.Articulos.Location = new System.Drawing.Point(4, 22);
-            this.Articulos.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Articulos.Margin = new System.Windows.Forms.Padding(1);
             this.Articulos.Name = "Articulos";
-            this.Articulos.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Articulos.Padding = new System.Windows.Forms.Padding(1);
             this.Articulos.Size = new System.Drawing.Size(624, 546);
             this.Articulos.TabIndex = 0;
             this.Articulos.Text = "Articulos";
@@ -319,9 +320,9 @@ namespace TPWinForm_equipo_22A
             this.grpBListaArticulo.Controls.Add(this.dgvArticulos);
             this.grpBListaArticulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpBListaArticulo.Location = new System.Drawing.Point(1, 1);
-            this.grpBListaArticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpBListaArticulo.Margin = new System.Windows.Forms.Padding(2);
             this.grpBListaArticulo.Name = "grpBListaArticulo";
-            this.grpBListaArticulo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpBListaArticulo.Padding = new System.Windows.Forms.Padding(2);
             this.grpBListaArticulo.Size = new System.Drawing.Size(622, 544);
             this.grpBListaArticulo.TabIndex = 0;
             this.grpBListaArticulo.TabStop = false;
@@ -341,7 +342,7 @@ namespace TPWinForm_equipo_22A
             this.Precio});
             this.dgvArticulos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvArticulos.Location = new System.Drawing.Point(2, 15);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(1);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowHeadersWidth = 82;
@@ -381,10 +382,10 @@ namespace TPWinForm_equipo_22A
             // 
             this.Marcas.Controls.Add(this.grpBListaMarcas);
             this.Marcas.Location = new System.Drawing.Point(4, 22);
-            this.Marcas.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Marcas.Margin = new System.Windows.Forms.Padding(1);
             this.Marcas.Name = "Marcas";
-            this.Marcas.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.Marcas.Size = new System.Drawing.Size(542, 541);
+            this.Marcas.Padding = new System.Windows.Forms.Padding(1);
+            this.Marcas.Size = new System.Drawing.Size(624, 546);
             this.Marcas.TabIndex = 1;
             this.Marcas.Text = "Marcas";
             this.Marcas.UseVisualStyleBackColor = true;
@@ -396,10 +397,10 @@ namespace TPWinForm_equipo_22A
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBListaMarcas.Controls.Add(this.dgvMarcas);
             this.grpBListaMarcas.Location = new System.Drawing.Point(2, 3);
-            this.grpBListaMarcas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpBListaMarcas.Margin = new System.Windows.Forms.Padding(2);
             this.grpBListaMarcas.Name = "grpBListaMarcas";
-            this.grpBListaMarcas.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.grpBListaMarcas.Size = new System.Drawing.Size(417, 527);
+            this.grpBListaMarcas.Padding = new System.Windows.Forms.Padding(2);
+            this.grpBListaMarcas.Size = new System.Drawing.Size(499, 532);
             this.grpBListaMarcas.TabIndex = 0;
             this.grpBListaMarcas.TabStop = false;
             this.grpBListaMarcas.Text = "Listado de Marcas";
@@ -412,19 +413,19 @@ namespace TPWinForm_equipo_22A
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMarcas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvMarcas.Location = new System.Drawing.Point(2, 16);
-            this.dgvMarcas.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dgvMarcas.Margin = new System.Windows.Forms.Padding(1);
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.RowHeadersWidth = 82;
             this.dgvMarcas.RowTemplate.Height = 33;
             this.dgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMarcas.Size = new System.Drawing.Size(412, 508);
+            this.dgvMarcas.Size = new System.Drawing.Size(494, 513);
             this.dgvMarcas.TabIndex = 1;
             // 
             // Categorias
             // 
             this.Categorias.Controls.Add(this.grpCategorias);
             this.Categorias.Location = new System.Drawing.Point(4, 22);
-            this.Categorias.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Categorias.Margin = new System.Windows.Forms.Padding(1);
             this.Categorias.Name = "Categorias";
             this.Categorias.Size = new System.Drawing.Size(624, 546);
             this.Categorias.TabIndex = 2;
@@ -435,9 +436,9 @@ namespace TPWinForm_equipo_22A
             // 
             this.grpCategorias.Controls.Add(this.dgvCategorias);
             this.grpCategorias.Location = new System.Drawing.Point(0, 0);
-            this.grpCategorias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpCategorias.Margin = new System.Windows.Forms.Padding(2);
             this.grpCategorias.Name = "grpCategorias";
-            this.grpCategorias.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpCategorias.Padding = new System.Windows.Forms.Padding(2);
             this.grpCategorias.Size = new System.Drawing.Size(624, 546);
             this.grpCategorias.TabIndex = 1;
             this.grpCategorias.TabStop = false;
@@ -450,7 +451,7 @@ namespace TPWinForm_equipo_22A
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategorias.Location = new System.Drawing.Point(2, 16);
-            this.dgvCategorias.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dgvCategorias.Margin = new System.Windows.Forms.Padding(1);
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.RowHeadersWidth = 82;
             this.dgvCategorias.RowTemplate.Height = 33;
@@ -462,7 +463,7 @@ namespace TPWinForm_equipo_22A
             this.panel2.Controls.Add(this.grpBUniversal);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(84, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(546, 572);
             this.panel2.TabIndex = 14;
@@ -472,9 +473,9 @@ namespace TPWinForm_equipo_22A
             this.grpBUniversal.Controls.Add(this.pnlUniversal);
             this.grpBUniversal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpBUniversal.Location = new System.Drawing.Point(0, 0);
-            this.grpBUniversal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpBUniversal.Margin = new System.Windows.Forms.Padding(2);
             this.grpBUniversal.Name = "grpBUniversal";
-            this.grpBUniversal.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpBUniversal.Padding = new System.Windows.Forms.Padding(2);
             this.grpBUniversal.Size = new System.Drawing.Size(546, 572);
             this.grpBUniversal.TabIndex = 12;
             this.grpBUniversal.TabStop = false;
@@ -483,7 +484,7 @@ namespace TPWinForm_equipo_22A
             // 
             this.pnlUniversal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlUniversal.Location = new System.Drawing.Point(2, 15);
-            this.pnlUniversal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlUniversal.Margin = new System.Windows.Forms.Padding(2);
             this.pnlUniversal.Name = "pnlUniversal";
             this.pnlUniversal.Size = new System.Drawing.Size(542, 555);
             this.pnlUniversal.TabIndex = 0;
@@ -497,7 +498,7 @@ namespace TPWinForm_equipo_22A
             this.pnlButtons.Controls.Add(this.btnDetallesArticulo);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlButtons.Location = new System.Drawing.Point(0, 0);
-            this.pnlButtons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlButtons.Margin = new System.Windows.Forms.Padding(2);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(84, 572);
             this.pnlButtons.TabIndex = 13;
@@ -508,7 +509,7 @@ namespace TPWinForm_equipo_22A
             this.pbLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pbLogo.Image = global::TPWinForm_equipo_22A.Properties.Resources.handle_with_care_100;
             this.pbLogo.Location = new System.Drawing.Point(0, 0);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(84, 70);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -526,7 +527,6 @@ namespace TPWinForm_equipo_22A
             this.btnNuevoArticulo.Text = "Nuevo";
             this.btnNuevoArticulo.UseVisualStyleBackColor = false;
             this.btnNuevoArticulo.Click += new System.EventHandler(this.btnNuevoArticulo_Click);
-            
             // 
             // btnEliminarArticulo
             // 
@@ -584,7 +584,7 @@ namespace TPWinForm_equipo_22A
             this.Controls.Add(this.stsInferior);
             this.Controls.Add(this.tlsSuperior);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(957, 524);
             this.Name = "frmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
