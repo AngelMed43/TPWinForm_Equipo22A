@@ -93,8 +93,7 @@ namespace TPWinForm_equipo_22A
             // 
             // frmNuevaMarca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(464, 384);
             this.Controls.Add(this.grpBAgregarMarca);
