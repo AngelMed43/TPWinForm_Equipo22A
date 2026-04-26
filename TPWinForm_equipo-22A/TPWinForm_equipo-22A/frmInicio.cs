@@ -19,8 +19,9 @@ namespace TPWinForm_equipo_22A
     {
         public frmInicio()
         {
-            this.AutoScaleMode = AutoScaleMode.Dpi;
+            this.AutoScaleMode = AutoScaleMode.Font;
             this.MinimumSize = new Size(900, 600);
+            this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.CenterScreen;
 
 
