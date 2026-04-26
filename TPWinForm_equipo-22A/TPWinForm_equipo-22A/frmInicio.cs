@@ -152,7 +152,9 @@ namespace TPWinForm_equipo_22A
             switch (pestana)
             {
                 case "Articulos":
-                    MostrarFormularioEnPanel(new frmNuevoArticulo());
+                    frmNuevoArticulo frmN = new frmNuevoArticulo();
+                    frmN.FormClosed += (s,args) => cargarArticulos();
+                    MostrarFormularioEnPanel(frmN);
                     break;
                 case "Marcas":
                     MostrarFormularioEnPanel(new frmNuevaMarca(this));
@@ -245,6 +247,8 @@ namespace TPWinForm_equipo_22A
                     Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
 
                     ArticuloNegocio artN = new ArticuloNegocio();
+                    //Para chequear el guardado
+                    //MessageBox.Show(seleccionado.Id.ToString());
                     artN.eliminarArticulo(seleccionado.Id);
 
                     cargarArticulos();
@@ -347,7 +351,7 @@ namespace TPWinForm_equipo_22A
         {
             ArticuloNegocio artN = new ArticuloNegocio();
 
-
+            
             try
             {
                 dgvArticulos.AutoGenerateColumns = false;

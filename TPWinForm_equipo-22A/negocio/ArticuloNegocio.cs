@@ -18,16 +18,17 @@ namespace negocio
 
             try
             {
-                acceso.setearConsulta("Select Codigo, Nombre, Descripcion, Precio from ARTICULOS");
+                acceso.setearConsulta("SELECT Id, Codigo, Nombre, Descripcion, Precio FROM ARTICULOS");
                 acceso.ejecutarLectura();
 
                 while (acceso.Lector.Read())
                 {
                     Articulo art = new Articulo();
-                    art.Codigo = acceso.Lector.GetString(0);
-                    art.Nombre = acceso.Lector.GetString(1);
-                    art.Descripcion = acceso.Lector.GetString(2);
-                    art.Precio = acceso.Lector.GetDecimal(3);
+                    art.Id = acceso.Lector.GetInt32(0); 
+                    art.Codigo = acceso.Lector.GetString(1);
+                    art.Nombre = acceso.Lector.GetString(2);
+                    art.Descripcion = acceso.Lector.GetString(3);
+                    art.Precio = acceso.Lector.GetDecimal(4);
 
                     listaArticulo.Add(art);
                 }
@@ -149,10 +150,13 @@ namespace negocio
                 datos.setearConsulta("Delete from IMAGENES where IdArticulo = @Id");
                 datos.setearParametros("@Id", id);
                 datos.ejecutarAccion();
+                // Sin agregar esto, la conexión sigue abierta
+                datos.cerrarConexion();
 
-                datos.setearConsulta("Delete from ARTICULOS where IdArticulo = @Id");
+                datos.setearConsulta("Delete from ARTICULOS where Id = @Id");
                 datos.setearParametros("@Id", id);
                 datos.ejecutarAccion();
+                datos.cerrarConexion();
             }
             finally
             {

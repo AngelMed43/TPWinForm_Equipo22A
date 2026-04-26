@@ -28,6 +28,9 @@ namespace negocio
         {
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
+
+            //Agregado ya que no limpia los parametros anteriores
+            comando.Parameters.Clear();
         }
 
         public void ejecutarLectura()
@@ -52,6 +55,9 @@ namespace negocio
             {
                 conexion.Open();
                 comando.ExecuteNonQuery();
+
+                // Añadido porque no cierra la conexión
+                // conexion.Close();
             }
             catch (Exception ex)
             {

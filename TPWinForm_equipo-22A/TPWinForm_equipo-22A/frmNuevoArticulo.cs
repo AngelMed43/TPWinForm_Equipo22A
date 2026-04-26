@@ -1,3 +1,4 @@
+using Conexion_BDD;
 using dominio;
 using negocio;
 using System;
@@ -69,34 +70,23 @@ namespace TPWinForm_equipo_22A
 
         private void frmNuevoArticulo_Load(object sender, EventArgs e)
         {
-            //NO ES ASI YA QUE QUIERO MOSTRAR MARCAS Y CATEGORIAS
-            //NO ES ASI YA QUE QUIERO MOSTRAR MARCAS Y CATEGORIAS
-            //NO ES ASI YA QUE QUIERO MOSTRAR MARCAS Y CATEGORIAS
-            /*
-            ArticuloNegocio artN = new ArticuloNegocio();
-
-            try
-            {
-                cbMarca.DataSource = artN.listarArticulos();
-                cbCategoria.DataSource = artN.listarArticulos();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.ToString());
-            }
-            */
             rbPorPC.Checked = true;
             txtUrlImagen.Enabled = false;
 
 
             MarcaNegocio marca = new MarcaNegocio();
-
+            CategoriaNegocio categoria = new CategoriaNegocio();
             try
             {
                 cbMarca.DataSource = marca.listar();
+                // Lo que muestra en el Desplegable
                 cbMarca.DisplayMember = "Descripcion";
+                //Valor clave
                 cbMarca.ValueMember = "IdMarca";
+
+                cbCategoria.DataSource = categoria.listar();
+                cbCategoria.DisplayMember = "Descripcion";
+                cbCategoria.ValueMember = "IdCategoria";
             }
             catch (Exception ex)
             {
