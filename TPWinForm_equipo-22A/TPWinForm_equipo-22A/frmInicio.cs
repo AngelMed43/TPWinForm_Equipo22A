@@ -29,6 +29,7 @@ namespace TPWinForm_equipo_22A
             InitializeComponent();
             pnlMain.Dock = DockStyle.Fill;
             ConfigurarFiltros();
+            rdBFiltroXBuscar.Checked = true;
             ActualizarEstadoFiltros();
             ActualizarBotonesPorPestana();
             ActualizarVisibilidadBarraBusqueda();
@@ -87,7 +88,6 @@ namespace TPWinForm_equipo_22A
         {
             rdBFiltroXMarca.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
             rdBFiltroXCategoria.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
-            rdBFiltroXPrecio.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
             rdBFiltroXBuscar.CheckedChanged += ActualizarEstadoFiltrosAlCambiar;
         }
 
@@ -102,27 +102,15 @@ namespace TPWinForm_equipo_22A
             }
         }
 
-        private void MostrarTextoGuiaPrecio()
-        {
-            if (string.IsNullOrWhiteSpace(txtBPrecioDesde.Text))
-                txtBPrecioDesde.Text = "Desde:";
-
-            if (string.IsNullOrWhiteSpace(txtBPrecioHasta.Text))
-                txtBPrecioHasta.Text = "Hasta:";
-        }
-
         //Método que decide qué controles se pueden usar y cuáles se limpian según el filtro seleccionado.
         private void ActualizarEstadoFiltros()
         {
             bool filtroMarca = rdBFiltroXMarca.Checked;
             bool filtroCategoria = rdBFiltroXCategoria.Checked;
-            bool filtroPrecio = rdBFiltroXPrecio.Checked;
             bool filtroBuscar = rdBFiltroXBuscar.Checked;
 
             cboMarca.Enabled = filtroMarca;
             cboCategoria.Enabled = filtroCategoria;
-            txtBPrecioDesde.Enabled = filtroPrecio;
-            txtBPrecioHasta.Enabled = filtroPrecio;
             txtBBuscarSuperior.Enabled = filtroBuscar;
 
             if (!filtroMarca)
@@ -130,16 +118,6 @@ namespace TPWinForm_equipo_22A
 
             if (!filtroCategoria)
                 cboCategoria.SelectedIndex = -1;
-
-            if (filtroPrecio)
-            {
-                MostrarTextoGuiaPrecio();
-            }
-            else
-            {
-                txtBPrecioDesde.Clear();
-                txtBPrecioHasta.Clear();
-            }
 
             if (!filtroBuscar)
                 txtBBuscarSuperior.Clear();
@@ -284,19 +262,11 @@ namespace TPWinForm_equipo_22A
         //Limpia el TextBox de Precio Desde al hacer click
         private void txtBPrecioDesde_Click(object sender, EventArgs e)
         {
-            if (txtBPrecioDesde.Text == "Desde:")
-            {
-                txtBPrecioDesde.Clear();
-            }
         }
 
         //Limpia el TextBox de Precio Hasta al hacer click
         private void txtBPrecioHasta_Click(object sender, EventArgs e)
         {
-            if (txtBPrecioHasta.Text == "Hasta:")
-            {
-                txtBPrecioHasta.Clear();
-            }
         }
 
 
@@ -306,7 +276,11 @@ namespace TPWinForm_equipo_22A
             cargarListadoMarcas();
             cargarListadoCategorias();
            
-            cargarArticulos(); 
+            cargarArticulos();
+
+            cboCampo.Items.Add("Nombre");
+            cboCampo.Items.Add("Descripcion");
+            cboCampo.Items.Add("Precio");
 
         }
 
@@ -382,7 +356,7 @@ namespace TPWinForm_equipo_22A
 
             string filtro = txtBBuscarSuperior.Text;
 
-            if (filtro.Length >= 3)
+            if (filtro.Length > 0)
             {
                 listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
             }
@@ -394,6 +368,86 @@ namespace TPWinForm_equipo_22A
             dgvArticulos.DataSource = null;
             dgvArticulos.DataSource = listaFiltrada;
             
+        }
+
+        private bool ValidarBusquedaAvanzada()
+        {
+            if (cboCampo.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un campo para buscar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                cboCampo.Focus();
+                return false;
+            }
+
+            if (cboCriterio.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un criterio para buscar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                cboCriterio.Focus();
+                return false;
+            }
+
+            string filtro = txtBFiltro.Text.Trim();
+
+            if (cboCampo.SelectedItem.ToString() == "Precio")
+            {
+                if (string.IsNullOrWhiteSpace(filtro))
+                {
+                    MessageBox.Show("Debe completar el valor de filtro para Precio.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtBFiltro.Focus();
+                    return false;
+                }
+
+                decimal valor;
+                if (!decimal.TryParse(filtro, out valor))
+                {
+                    MessageBox.Show("Si el campo es Precio, el filtro debe ser numérico.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtBFiltro.Focus();
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboCampo.SelectedItem.ToString();
+            if(opcion == "Precio")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Igual a");
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
+            }
+
+            cboCriterio.SelectedIndex = -1;
+        }
+
+        private void btnBuscarArticulos_Click(object sender, EventArgs e)
+        {
+            if (!ValidarBusquedaAvanzada())
+                return;
+
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtBFiltro.Text.Trim();
+                dgvArticulos.DataSource = negocio.filtrar(campo, criterio, filtro);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

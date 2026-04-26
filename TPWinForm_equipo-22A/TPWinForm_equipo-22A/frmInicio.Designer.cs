@@ -37,14 +37,11 @@ namespace TPWinForm_equipo_22A
             this.txtBBuscarSuperior = new System.Windows.Forms.TextBox();
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
-            this.txtBPrecioDesde = new System.Windows.Forms.TextBox();
             this.lblFiltroMarca = new System.Windows.Forms.Label();
             this.rdBFiltroXMarca = new System.Windows.Forms.RadioButton();
             this.lblFiltroEstado = new System.Windows.Forms.Label();
             this.rdBFiltroXCategoria = new System.Windows.Forms.RadioButton();
-            this.rdBFiltroXPrecio = new System.Windows.Forms.RadioButton();
             this.rdBFiltroXBuscar = new System.Windows.Forms.RadioButton();
-            this.txtBPrecioHasta = new System.Windows.Forms.TextBox();
             this.grBBarraBusqueda = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tcMenu = new System.Windows.Forms.TabControl();
@@ -55,6 +52,14 @@ namespace TPWinForm_equipo_22A
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlFiltroArticulos = new System.Windows.Forms.Panel();
+            this.btnBuscarArticulos = new System.Windows.Forms.Button();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.txtBFiltro = new System.Windows.Forms.TextBox();
+            this.cboCriterio = new System.Windows.Forms.ComboBox();
+            this.cboCampo = new System.Windows.Forms.ComboBox();
+            this.lblCriterio = new System.Windows.Forms.Label();
+            this.lblCampo = new System.Windows.Forms.Label();
             this.Marcas = new System.Windows.Forms.TabPage();
             this.grpBListaMarcas = new System.Windows.Forms.GroupBox();
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
@@ -81,6 +86,7 @@ namespace TPWinForm_equipo_22A
             this.Articulos.SuspendLayout();
             this.grpBListaArticulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
+            this.pnlFiltroArticulos.SuspendLayout();
             this.Marcas.SuspendLayout();
             this.grpBListaMarcas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
@@ -129,10 +135,10 @@ namespace TPWinForm_equipo_22A
             // 
             // txtBBuscarSuperior
             // 
-            this.txtBBuscarSuperior.Location = new System.Drawing.Point(446, 36);
+            this.txtBBuscarSuperior.Location = new System.Drawing.Point(380, 36);
             this.txtBBuscarSuperior.Margin = new System.Windows.Forms.Padding(1);
             this.txtBBuscarSuperior.Name = "txtBBuscarSuperior";
-            this.txtBBuscarSuperior.Size = new System.Drawing.Size(186, 20);
+            this.txtBBuscarSuperior.Size = new System.Drawing.Size(157, 20);
             this.txtBBuscarSuperior.TabIndex = 4;
             this.txtBBuscarSuperior.TextChanged += new System.EventHandler(this.txtBBuscarSuperior_TextChanged);
             // 
@@ -148,21 +154,11 @@ namespace TPWinForm_equipo_22A
             // cboCategoria
             // 
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(138, 36);
+            this.cboCategoria.Location = new System.Drawing.Point(192, 36);
             this.cboCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(104, 21);
             this.cboCategoria.TabIndex = 1;
-            // 
-            // txtBPrecioDesde
-            // 
-            this.txtBPrecioDesde.Location = new System.Drawing.Point(245, 37);
-            this.txtBPrecioDesde.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBPrecioDesde.Name = "txtBPrecioDesde";
-            this.txtBPrecioDesde.Size = new System.Drawing.Size(77, 20);
-            this.txtBPrecioDesde.TabIndex = 2;
-            this.txtBPrecioDesde.Text = "Desde:";
-            this.txtBPrecioDesde.Click += new System.EventHandler(this.txtBPrecioDesde_Click);
             // 
             // lblFiltroMarca
             // 
@@ -199,7 +195,7 @@ namespace TPWinForm_equipo_22A
             // 
             this.rdBFiltroXCategoria.AutoSize = true;
             this.rdBFiltroXCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.rdBFiltroXCategoria.Location = new System.Drawing.Point(138, 17);
+            this.rdBFiltroXCategoria.Location = new System.Drawing.Point(200, 17);
             this.rdBFiltroXCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.rdBFiltroXCategoria.Name = "rdBFiltroXCategoria";
             this.rdBFiltroXCategoria.Size = new System.Drawing.Size(70, 17);
@@ -208,24 +204,12 @@ namespace TPWinForm_equipo_22A
             this.rdBFiltroXCategoria.Text = "Categoria";
             this.rdBFiltroXCategoria.UseVisualStyleBackColor = false;
             // 
-            // rdBFiltroXPrecio
-            // 
-            this.rdBFiltroXPrecio.AutoSize = true;
-            this.rdBFiltroXPrecio.BackColor = System.Drawing.Color.Transparent;
-            this.rdBFiltroXPrecio.Location = new System.Drawing.Point(246, 17);
-            this.rdBFiltroXPrecio.Margin = new System.Windows.Forms.Padding(2);
-            this.rdBFiltroXPrecio.Name = "rdBFiltroXPrecio";
-            this.rdBFiltroXPrecio.Size = new System.Drawing.Size(55, 17);
-            this.rdBFiltroXPrecio.TabIndex = 9;
-            this.rdBFiltroXPrecio.TabStop = true;
-            this.rdBFiltroXPrecio.Text = "Precio";
-            this.rdBFiltroXPrecio.UseVisualStyleBackColor = false;
-            // 
             // rdBFiltroXBuscar
             // 
             this.rdBFiltroXBuscar.AutoSize = true;
             this.rdBFiltroXBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.rdBFiltroXBuscar.Location = new System.Drawing.Point(446, 17);
+            this.rdBFiltroXBuscar.Checked = true;
+            this.rdBFiltroXBuscar.Location = new System.Drawing.Point(388, 17);
             this.rdBFiltroXBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.rdBFiltroXBuscar.Name = "rdBFiltroXBuscar";
             this.rdBFiltroXBuscar.Size = new System.Drawing.Size(58, 17);
@@ -234,27 +218,14 @@ namespace TPWinForm_equipo_22A
             this.rdBFiltroXBuscar.Text = "Buscar";
             this.rdBFiltroXBuscar.UseVisualStyleBackColor = false;
             // 
-            // txtBPrecioHasta
-            // 
-            this.txtBPrecioHasta.Location = new System.Drawing.Point(326, 37);
-            this.txtBPrecioHasta.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBPrecioHasta.Name = "txtBPrecioHasta";
-            this.txtBPrecioHasta.Size = new System.Drawing.Size(76, 20);
-            this.txtBPrecioHasta.TabIndex = 10;
-            this.txtBPrecioHasta.Text = "Hasta:";
-            this.txtBPrecioHasta.Click += new System.EventHandler(this.txtBPrecioHasta_Click);
-            // 
             // grBBarraBusqueda
             // 
-            this.grBBarraBusqueda.Controls.Add(this.txtBPrecioHasta);
             this.grBBarraBusqueda.Controls.Add(this.rdBFiltroXBuscar);
-            this.grBBarraBusqueda.Controls.Add(this.rdBFiltroXPrecio);
             this.grBBarraBusqueda.Controls.Add(this.rdBFiltroXCategoria);
             this.grBBarraBusqueda.Controls.Add(this.lblFiltroEstado);
             this.grBBarraBusqueda.Controls.Add(this.txtBBuscarSuperior);
             this.grBBarraBusqueda.Controls.Add(this.rdBFiltroXMarca);
             this.grBBarraBusqueda.Controls.Add(this.lblFiltroMarca);
-            this.grBBarraBusqueda.Controls.Add(this.txtBPrecioDesde);
             this.grBBarraBusqueda.Controls.Add(this.cboCategoria);
             this.grBBarraBusqueda.Controls.Add(this.cboMarca);
             this.grBBarraBusqueda.Dock = System.Windows.Forms.DockStyle.Top;
@@ -318,6 +289,7 @@ namespace TPWinForm_equipo_22A
             // grpBListaArticulo
             // 
             this.grpBListaArticulo.Controls.Add(this.dgvArticulos);
+            this.grpBListaArticulo.Controls.Add(this.pnlFiltroArticulos);
             this.grpBListaArticulo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpBListaArticulo.Location = new System.Drawing.Point(1, 1);
             this.grpBListaArticulo.Margin = new System.Windows.Forms.Padding(2);
@@ -347,7 +319,7 @@ namespace TPWinForm_equipo_22A
             this.dgvArticulos.ReadOnly = true;
             this.dgvArticulos.RowHeadersWidth = 82;
             this.dgvArticulos.RowTemplate.Height = 33;
-            this.dgvArticulos.Size = new System.Drawing.Size(618, 527);
+            this.dgvArticulos.Size = new System.Drawing.Size(618, 467);
             this.dgvArticulos.TabIndex = 0;
             // 
             // Código
@@ -377,6 +349,84 @@ namespace TPWinForm_equipo_22A
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
+            // 
+            // pnlFiltroArticulos
+            // 
+            this.pnlFiltroArticulos.Controls.Add(this.btnBuscarArticulos);
+            this.pnlFiltroArticulos.Controls.Add(this.lblFiltro);
+            this.pnlFiltroArticulos.Controls.Add(this.txtBFiltro);
+            this.pnlFiltroArticulos.Controls.Add(this.cboCriterio);
+            this.pnlFiltroArticulos.Controls.Add(this.cboCampo);
+            this.pnlFiltroArticulos.Controls.Add(this.lblCriterio);
+            this.pnlFiltroArticulos.Controls.Add(this.lblCampo);
+            this.pnlFiltroArticulos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlFiltroArticulos.Location = new System.Drawing.Point(2, 482);
+            this.pnlFiltroArticulos.Name = "pnlFiltroArticulos";
+            this.pnlFiltroArticulos.Size = new System.Drawing.Size(618, 60);
+            this.pnlFiltroArticulos.TabIndex = 1;
+            // 
+            // btnBuscarArticulos
+            // 
+            this.btnBuscarArticulos.Location = new System.Drawing.Point(536, 18);
+            this.btnBuscarArticulos.Name = "btnBuscarArticulos";
+            this.btnBuscarArticulos.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarArticulos.TabIndex = 6;
+            this.btnBuscarArticulos.Text = "Buscar";
+            this.btnBuscarArticulos.UseVisualStyleBackColor = true;
+            this.btnBuscarArticulos.Click += new System.EventHandler(this.btnBuscarArticulos_Click);
+            // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(366, 22);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(32, 13);
+            this.lblFiltro.TabIndex = 5;
+            this.lblFiltro.Text = "Filtro:";
+            // 
+            // txtBFiltro
+            // 
+            this.txtBFiltro.Location = new System.Drawing.Point(404, 19);
+            this.txtBFiltro.Name = "txtBFiltro";
+            this.txtBFiltro.Size = new System.Drawing.Size(116, 20);
+            this.txtBFiltro.TabIndex = 4;
+            // 
+            // cboCriterio
+            // 
+            this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCriterio.FormattingEnabled = true;
+            this.cboCriterio.Location = new System.Drawing.Point(230, 19);
+            this.cboCriterio.Name = "cboCriterio";
+            this.cboCriterio.Size = new System.Drawing.Size(100, 21);
+            this.cboCriterio.TabIndex = 3;
+            // 
+            // cboCampo
+            // 
+            this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCampo.FormattingEnabled = true;
+            this.cboCampo.Location = new System.Drawing.Point(55, 20);
+            this.cboCampo.Name = "cboCampo";
+            this.cboCampo.Size = new System.Drawing.Size(100, 21);
+            this.cboCampo.TabIndex = 2;
+            this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
+            // 
+            // lblCriterio
+            // 
+            this.lblCriterio.AutoSize = true;
+            this.lblCriterio.Location = new System.Drawing.Point(182, 23);
+            this.lblCriterio.Name = "lblCriterio";
+            this.lblCriterio.Size = new System.Drawing.Size(42, 13);
+            this.lblCriterio.TabIndex = 1;
+            this.lblCriterio.Text = "Criterio:";
+            // 
+            // lblCampo
+            // 
+            this.lblCampo.AutoSize = true;
+            this.lblCampo.Location = new System.Drawing.Point(6, 24);
+            this.lblCampo.Name = "lblCampo";
+            this.lblCampo.Size = new System.Drawing.Size(43, 13);
+            this.lblCampo.TabIndex = 0;
+            this.lblCampo.Text = "Campo:";
             // 
             // Marcas
             // 
@@ -602,6 +652,8 @@ namespace TPWinForm_equipo_22A
             this.Articulos.ResumeLayout(false);
             this.grpBListaArticulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
+            this.pnlFiltroArticulos.ResumeLayout(false);
+            this.pnlFiltroArticulos.PerformLayout();
             this.Marcas.ResumeLayout(false);
             this.grpBListaMarcas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
@@ -626,14 +678,11 @@ namespace TPWinForm_equipo_22A
         private System.Windows.Forms.TextBox txtBBuscarSuperior;
         private System.Windows.Forms.ComboBox cboMarca;
         private System.Windows.Forms.ComboBox cboCategoria;
-        private System.Windows.Forms.TextBox txtBPrecioDesde;
         private System.Windows.Forms.Label lblFiltroMarca;
         private System.Windows.Forms.RadioButton rdBFiltroXMarca;
         private System.Windows.Forms.Label lblFiltroEstado;
         private System.Windows.Forms.RadioButton rdBFiltroXCategoria;
-        private System.Windows.Forms.RadioButton rdBFiltroXPrecio;
         private System.Windows.Forms.RadioButton rdBFiltroXBuscar;
-        private System.Windows.Forms.TextBox txtBPrecioHasta;
         private System.Windows.Forms.GroupBox grBBarraBusqueda;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.SplitContainer splitContainer1;
@@ -660,6 +709,14 @@ namespace TPWinForm_equipo_22A
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.Panel pnlFiltroArticulos;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.TextBox txtBFiltro;
+        private System.Windows.Forms.ComboBox cboCriterio;
+        private System.Windows.Forms.ComboBox cboCampo;
+        private System.Windows.Forms.Label lblCriterio;
+        private System.Windows.Forms.Label lblCampo;
+        private System.Windows.Forms.Button btnBuscarArticulos;
     }
 }
 
