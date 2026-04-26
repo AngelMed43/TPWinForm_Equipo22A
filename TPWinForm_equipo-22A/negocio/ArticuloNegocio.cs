@@ -123,7 +123,35 @@ namespace negocio
         }
 
 
+        public List<Imagen> listarImagenes(int idArticulo)
+        {
+            List<Imagen> lista = new List<Imagen>();
+            AccesoDatos datos = new AccesoDatos();
 
+            try
+            {
+                datos.setearConsulta("SELECT ImagenUrl FROM IMAGENES WHERE IdArticulo = @Id");
+                datos.setearParametros("@Id", idArticulo);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Imagen img = new Imagen();
+                    img.UrlImagen = datos.Lector.GetString(0);
+                    lista.Add(img);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+            return lista;
+        }
 
         // AUN NO SE IMPLEMENTA PERO SE DEJA DIAGRAMADA
         // AUN NO SE IMPLEMENTA PERO SE DEJA DIAGRAMADA

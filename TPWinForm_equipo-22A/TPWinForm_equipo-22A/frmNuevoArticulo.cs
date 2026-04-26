@@ -107,7 +107,9 @@ namespace TPWinForm_equipo_22A
             string ruta = "";
             string nombreArchivo;
             string destinoImagen;
-            string carpeta = Path.Combine(Application.StartupPath, "Imagenes");
+            string baseDocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string carpeta = Path.Combine(baseDocs, "Imagenes_APPGestion");
+            
             // SALTA ERROR por mas que cree una carpeta
             if (!Directory.Exists(carpeta))
                 Directory.CreateDirectory(carpeta);
@@ -149,7 +151,8 @@ namespace TPWinForm_equipo_22A
                     articulo.Imagenes.Add(new Imagen { UrlImagen = nombreArchivo });
 
                     lbxImagenes.Items.Add(nombreArchivo);
-                    pbxImagen.Load(destinoImagen);
+                    pbxImagen.ImageLocation = ruta;
+                    //pbxImagen.Load(destinoImagen);
                 }
                 txtUrlImagen.Clear();
             }catch (Exception ex){
