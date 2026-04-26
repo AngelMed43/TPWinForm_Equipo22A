@@ -18,7 +18,8 @@ namespace negocio
 
             try
             {
-                acceso.setearConsulta("SELECT Id, Codigo, Nombre, Descripcion, Precio FROM ARTICULOS");
+                acceso.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio,A.IdMarca, M.Descripcion AS Marca, A.IdCategoria, C.Descripcion AS Categoria FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id");
+                //acceso.setearConsulta("SELECT Id, Codigo, Nombre, Descripcion, Precio FROM ARTICULOS");
                 acceso.ejecutarLectura();
 
                 while (acceso.Lector.Read())
@@ -30,6 +31,29 @@ namespace negocio
                     art.Descripcion = acceso.Lector.GetString(3);
                     art.Precio = acceso.Lector.GetDecimal(4);
 
+                    int? idMarca = acceso.Lector.IsDBNull(5) ? (int?)null : acceso.Lector.GetInt32(5);
+                    int? idCategoria = acceso.Lector.IsDBNull(7) ? (int?)null : acceso.Lector.GetInt32(7);
+
+                    if (idMarca != null)
+                    {
+                        art.Marca = new Marca();
+                        art.Marca.IdMarca = idMarca.Value;
+
+                        if (!acceso.Lector.IsDBNull(6))
+                            art.Marca.Descripcion = acceso.Lector.GetString(6);
+                    }
+
+                    
+                    if (idCategoria != null)
+                    {
+                        art.Categoria = new Categoria();
+                        art.Categoria.IdCategoria = idCategoria.Value;
+
+                        if (!acceso.Lector.IsDBNull(8))
+                            art.Categoria.Descripcion = acceso.Lector.GetString(8);
+
+                        
+                    }
                     listaArticulo.Add(art);
                 }
                 return listaArticulo;

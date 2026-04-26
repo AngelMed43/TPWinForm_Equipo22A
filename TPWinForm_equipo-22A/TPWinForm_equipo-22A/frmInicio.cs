@@ -172,7 +172,13 @@ namespace TPWinForm_equipo_22A
             switch (pestana)
             {
                 case "Articulos":
-                    MostrarFormularioEnPanel(new frmModificarArticulo());
+                    if (dgvArticulos.CurrentRow == null)
+                    {
+                        MessageBox.Show("Debe seleccionar un articulo para modificar.", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    Articulo artS = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    MostrarFormularioEnPanel(new frmModificarArticulo(this,artS));
                     break;
                 case "Categorias":
                     MostrarFormularioEnPanel(new frmModificarCategoria());

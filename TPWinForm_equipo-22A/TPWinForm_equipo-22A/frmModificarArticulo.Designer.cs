@@ -29,6 +29,9 @@ namespace TPWinForm_equipo_22A
         private void InitializeComponent()
         {
             this.grpBDetalleArticulo = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.grpbDetalleActual = new System.Windows.Forms.GroupBox();
             this.txtbPrecioActual = new System.Windows.Forms.TextBox();
             this.txtbCategoriaActual = new System.Windows.Forms.TextBox();
@@ -46,28 +49,25 @@ namespace TPWinForm_equipo_22A
             this.cbMarca = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtBPrecio = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.cbCategoría = new System.Windows.Forms.ComboBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.txtBDescripción = new System.Windows.Forms.TextBox();
             this.btnDeleteImagen = new System.Windows.Forms.Button();
             this.lbxImagenes = new System.Windows.Forms.ListBox();
             this.lblDescripción = new System.Windows.Forms.Label();
             this.txtBNombre = new System.Windows.Forms.TextBox();
             this.btnAddImagen = new System.Windows.Forms.Button();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblMarca = new System.Windows.Forms.Label();
             this.txtBCódigo = new System.Windows.Forms.TextBox();
             this.lblCategoría = new System.Windows.Forms.Label();
             this.lblImagenes = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.grpBDetalleArticulo.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.grpbDetalleActual.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpBDetalleArticulo
@@ -99,6 +99,40 @@ namespace TPWinForm_equipo_22A
             this.grpBDetalleArticulo.TabIndex = 64;
             this.grpBDetalleArticulo.TabStop = false;
             this.grpBDetalleArticulo.Text = "Modificar datos del Articulo ";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnGuardar);
+            this.panel2.Controls.Add(this.btnCancelar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(3, 516);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(614, 34);
+            this.panel2.TabIndex = 65;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnGuardar.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnGuardar.Location = new System.Drawing.Point(168, 4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(77, 23);
+            this.btnGuardar.TabIndex = 7;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCancelar.BackColor = System.Drawing.Color.Yellow;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Location = new System.Drawing.Point(350, 4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(77, 23);
+            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // grpbDetalleActual
             // 
@@ -265,19 +299,6 @@ namespace TPWinForm_equipo_22A
             this.txtBPrecio.Size = new System.Drawing.Size(102, 20);
             this.txtBPrecio.TabIndex = 5;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnCancelar.BackColor = System.Drawing.Color.Yellow;
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(350, 4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(77, 23);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // cbCategoría
             // 
             this.cbCategoría.FormattingEnabled = true;
@@ -285,17 +306,6 @@ namespace TPWinForm_equipo_22A
             this.cbCategoría.Name = "cbCategoría";
             this.cbCategoría.Size = new System.Drawing.Size(123, 21);
             this.cbCategoría.TabIndex = 4;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnGuardar.BackColor = System.Drawing.Color.SkyBlue;
-            this.btnGuardar.Location = new System.Drawing.Point(168, 4);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(77, 23);
-            this.btnGuardar.TabIndex = 7;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
             // 
             // txtBDescripción
             // 
@@ -348,6 +358,17 @@ namespace TPWinForm_equipo_22A
             this.btnAddImagen.Text = "Agregar Imagen";
             this.btnAddImagen.UseVisualStyleBackColor = true;
             // 
+            // pbxImagen
+            // 
+            this.pbxImagen.Image = global::TPWinForm_equipo_22A.Properties.Resources.add_image_30;
+            this.pbxImagen.InitialImage = null;
+            this.pbxImagen.Location = new System.Drawing.Point(341, 238);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(120, 108);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxImagen.TabIndex = 57;
+            this.pbxImagen.TabStop = false;
+            // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
@@ -395,17 +416,6 @@ namespace TPWinForm_equipo_22A
             this.lblPrecio.TabIndex = 48;
             this.lblPrecio.Text = "Precio :";
             // 
-            // pbxImagen
-            // 
-            this.pbxImagen.Image = global::TPWinForm_equipo_22A.Properties.Resources.add_image_30;
-            this.pbxImagen.InitialImage = null;
-            this.pbxImagen.Location = new System.Drawing.Point(341, 238);
-            this.pbxImagen.Name = "pbxImagen";
-            this.pbxImagen.Size = new System.Drawing.Size(120, 108);
-            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxImagen.TabIndex = 57;
-            this.pbxImagen.TabStop = false;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.grpBDetalleArticulo);
@@ -414,16 +424,6 @@ namespace TPWinForm_equipo_22A
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(620, 553);
             this.panel1.TabIndex = 65;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnGuardar);
-            this.panel2.Controls.Add(this.btnCancelar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(3, 516);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(614, 34);
-            this.panel2.TabIndex = 65;
             // 
             // frmModificarArticulo
             // 
@@ -437,14 +437,15 @@ namespace TPWinForm_equipo_22A
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmModificarArticulo";
             this.Text = "frmModificar";
+            this.Load += new System.EventHandler(this.frmModificarArticulo_Load);
             this.grpBDetalleArticulo.ResumeLayout(false);
             this.grpBDetalleArticulo.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.grpbDetalleActual.ResumeLayout(false);
             this.grpbDetalleActual.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
