@@ -119,7 +119,7 @@ namespace TPWinForm_equipo_22A
                     {
                         // HAGO ESTO porque sino,no me visualiza las fotos, ya que las listo con otro nombre
                         rutaCompleta = Path.Combine(carpeta, valor);
-                        MostrarImagenLocal(rutaCompleta);
+                        mostrarImagenLocal(rutaCompleta);
                     }
                 }
                 catch (Exception ex)
@@ -130,7 +130,7 @@ namespace TPWinForm_equipo_22A
             }
         }
 
-        private void MostrarImagenLocal(string ruta)
+        private void mostrarImagenLocal(string ruta)
         {
             if (File.Exists(ruta))
             {

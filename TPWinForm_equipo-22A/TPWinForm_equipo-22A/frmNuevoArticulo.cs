@@ -19,14 +19,15 @@ namespace TPWinForm_equipo_22A
     {
 
         public Articulo articulo;
-
+        private readonly string carpetaImagenes;
         public frmNuevoArticulo()
         {
             InitializeComponent();
 
             articulo = new Articulo();
             articulo.Imagenes = new List<Imagen>();
-            //txtBCódigo.Focus(); ----- No funciona.
+            string baseDocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            carpetaImagenes = Path.Combine(baseDocs, "Imagenes_APPGestion");
         }
 
         
@@ -37,35 +38,34 @@ namespace TPWinForm_equipo_22A
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
-            ArticuloNegocio artN= new ArticuloNegocio();
 
+            bool marcaSelected = cbMarca.SelectedItem != null;
+            bool categoriaSelected = cbCategoria.SelectedItem != null;
+
+            bool valido = Validaciones.ValidarArticulo(txtBCodigo.Text,txtBNombre.Text,marcaSelected,categoriaSelected,txtBPrecio.Text,string.Empty);
+
+            if (!valido) return;
+
+            ArticuloNegocio artN = new ArticuloNegocio();
             try
             {
-                articulo.Codigo = txtBCodigo.Text;
-                articulo.Nombre = txtBNombre.Text;
-                articulo.Descripcion = txtBDescripcion.Text;
-                articulo.Marca= (Marca)cbMarca.SelectedItem;
+                articulo.Codigo = txtBCodigo.Text.Trim();
+                articulo.Nombre = txtBNombre.Text.Trim();
+                articulo.Descripcion = txtBDescripcion.Text.Trim();
+                articulo.Marca = (Marca)cbMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cbCategoria.SelectedItem;
-                articulo.Precio = decimal.Parse(txtBPrecio.Text);
-
+                articulo.Precio = Validaciones.ParsearPrecio(txtBPrecio.Text);
 
                 artN.insertArticulo(articulo);
                 foreach (Imagen img in articulo.Imagenes)
-                {
                     artN.agregarImagen(img, articulo.Id);
-                }
 
-                MessageBox.Show("Artículo guardado correctamente");
-                
+                MessageBox.Show("Artículo guardado correctamente.", "Éxito",MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception ex)
             {
-                // Por el momento
-                // Por el momento
-                // Por el momento
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Error al guardar: " + ex.Message, "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -84,10 +84,13 @@ namespace TPWinForm_equipo_22A
                 cbMarca.DisplayMember = "Descripcion";
                 //Valor clave
                 cbMarca.ValueMember = "IdMarca";
+                // Para que no se seleccione alguna marca por defecto
+                cbMarca.SelectedIndex = -1;
 
                 cbCategoria.DataSource = categoria.listar();
                 cbCategoria.DisplayMember = "Descripcion";
                 cbCategoria.ValueMember = "IdCategoria";
+                cbCategoria.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -163,30 +166,20 @@ namespace TPWinForm_equipo_22A
 
         private void lbxImagenes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string valor;
-            string carpeta = Path.Combine(Application.StartupPath, "Imagenes");
-            string rutaCompleta;
+            if (lbxImagenes.SelectedItem == null) return;
 
-            if (lbxImagenes.SelectedItem != null)
+
+            string valor = lbxImagenes.SelectedItem.ToString();
+            try
             {
-                 valor = lbxImagenes.SelectedItem.ToString();
-
-                try
-                {
-                    if (valor.StartsWith("http"))
-                    {
-                        pbxImagen.LoadAsync(valor);
-                    }
-                    else{
-                        // HAGO ESTO porque sino,no me visualiza las fotos, ya que las listo con otro nombre
-                        rutaCompleta = Path.Combine(carpeta, valor);
-                        pbxImagen.Load(rutaCompleta);
-                    }
-                }
-                catch
-                {
-                    pbxImagen.Image = null;
-                }
+                if (valor.StartsWith("http"))
+                    pbxImagen.LoadAsync(valor);
+                else
+                    mostrarImagenLocal(Path.Combine(carpetaImagenes, valor));
+            }
+            catch
+            {
+                pbxImagen.Image = null;
             }
         }
 
@@ -217,6 +210,19 @@ namespace TPWinForm_equipo_22A
         private void rbPorPC_CheckedChanged(object sender, EventArgs e)
         {
             txtUrlImagen.Enabled = false;
+        }
+
+        private void mostrarImagenLocal(string ruta)
+        {
+            if (File.Exists(ruta))
+            {
+                pbxImagen.ImageLocation = ruta;
+                pbxImagen.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+            else
+            {
+                pbxImagen.Image = null;
+            }
         }
     }
 }
