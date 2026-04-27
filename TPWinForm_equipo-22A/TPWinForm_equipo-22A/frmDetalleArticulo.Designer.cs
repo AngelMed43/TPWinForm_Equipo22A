@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.gbDetalleArticulo = new System.Windows.Forms.GroupBox();
+            this.dgvDetallesArticulo = new System.Windows.Forms.DataGridView();
             this.pnlInferiorDetalle = new System.Windows.Forms.Panel();
             this.btnCerrarDetalle = new System.Windows.Forms.Button();
-            this.dgvDetallesArticulo = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gbDetalleArticulo.SuspendLayout();
-            this.pnlInferiorDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesArticulo)).BeginInit();
+            this.pnlInferiorDetalle.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,15 @@
             this.gbDetalleArticulo.TabIndex = 0;
             this.gbDetalleArticulo.TabStop = false;
             this.gbDetalleArticulo.Text = "Detalle del Articulo seleccionado";
+            // 
+            // dgvDetallesArticulo
+            // 
+            this.dgvDetallesArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetallesArticulo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDetallesArticulo.Location = new System.Drawing.Point(3, 16);
+            this.dgvDetallesArticulo.Name = "dgvDetallesArticulo";
+            this.dgvDetallesArticulo.Size = new System.Drawing.Size(794, 431);
+            this.dgvDetallesArticulo.TabIndex = 0;
             // 
             // pnlInferiorDetalle
             // 
@@ -71,15 +80,6 @@
             this.btnCerrarDetalle.UseVisualStyleBackColor = true;
             this.btnCerrarDetalle.Click += new System.EventHandler(this.btnCerrarDetalle_Click);
             // 
-            // dgvDetallesArticulo
-            // 
-            this.dgvDetallesArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetallesArticulo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDetallesArticulo.Location = new System.Drawing.Point(3, 16);
-            this.dgvDetallesArticulo.Name = "dgvDetallesArticulo";
-            this.dgvDetallesArticulo.Size = new System.Drawing.Size(794, 431);
-            this.dgvDetallesArticulo.TabIndex = 0;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.gbDetalleArticulo);
@@ -91,14 +91,15 @@
             // 
             // frmDetalleArticulo
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDetalleArticulo";
             this.gbDetalleArticulo.ResumeLayout(false);
-            this.pnlInferiorDetalle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesArticulo)).EndInit();
+            this.pnlInferiorDetalle.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

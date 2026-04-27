@@ -51,9 +51,11 @@ namespace TPWinForm_equipo_22A
             this.grpBModificarCategoria.Controls.Add(this.btnGuardarCategoria);
             this.grpBModificarCategoria.Controls.Add(this.txtBDescripcionNuevaCategoria);
             this.grpBModificarCategoria.Controls.Add(this.lblDescripcionCategoria);
-            this.grpBModificarCategoria.Location = new System.Drawing.Point(8, 8);
+            this.grpBModificarCategoria.Location = new System.Drawing.Point(16, 15);
+            this.grpBModificarCategoria.Margin = new System.Windows.Forms.Padding(6);
             this.grpBModificarCategoria.Name = "grpBModificarCategoria";
-            this.grpBModificarCategoria.Size = new System.Drawing.Size(503, 419);
+            this.grpBModificarCategoria.Padding = new System.Windows.Forms.Padding(6);
+            this.grpBModificarCategoria.Size = new System.Drawing.Size(1006, 806);
             this.grpBModificarCategoria.TabIndex = 1;
             this.grpBModificarCategoria.TabStop = false;
             this.grpBModificarCategoria.Text = "Modificar Categoria";
@@ -62,9 +64,11 @@ namespace TPWinForm_equipo_22A
             // 
             this.grpBDatosActualesMarca.Controls.Add(this.txtBDescripcionCategoriaActual);
             this.grpBDatosActualesMarca.Controls.Add(this.lblDescripcionCategoriaActual);
-            this.grpBDatosActualesMarca.Location = new System.Drawing.Point(238, 11);
+            this.grpBDatosActualesMarca.Location = new System.Drawing.Point(476, 21);
+            this.grpBDatosActualesMarca.Margin = new System.Windows.Forms.Padding(6);
             this.grpBDatosActualesMarca.Name = "grpBDatosActualesMarca";
-            this.grpBDatosActualesMarca.Size = new System.Drawing.Size(245, 271);
+            this.grpBDatosActualesMarca.Padding = new System.Windows.Forms.Padding(6);
+            this.grpBDatosActualesMarca.Size = new System.Drawing.Size(490, 521);
             this.grpBDatosActualesMarca.TabIndex = 6;
             this.grpBDatosActualesMarca.TabStop = false;
             this.grpBDatosActualesMarca.Text = "Datos actuales";
@@ -72,29 +76,32 @@ namespace TPWinForm_equipo_22A
             // txtBDescripcionCategoriaActual
             // 
             this.txtBDescripcionCategoriaActual.BackColor = System.Drawing.SystemColors.Control;
-            this.txtBDescripcionCategoriaActual.Location = new System.Drawing.Point(9, 70);
+            this.txtBDescripcionCategoriaActual.Location = new System.Drawing.Point(18, 135);
+            this.txtBDescripcionCategoriaActual.Margin = new System.Windows.Forms.Padding(6);
             this.txtBDescripcionCategoriaActual.Multiline = true;
             this.txtBDescripcionCategoriaActual.Name = "txtBDescripcionCategoriaActual";
             this.txtBDescripcionCategoriaActual.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBDescripcionCategoriaActual.Size = new System.Drawing.Size(223, 195);
+            this.txtBDescripcionCategoriaActual.Size = new System.Drawing.Size(442, 371);
             this.txtBDescripcionCategoriaActual.TabIndex = 3;
             // 
             // lblDescripcionCategoriaActual
             // 
             this.lblDescripcionCategoriaActual.AutoSize = true;
             this.lblDescripcionCategoriaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblDescripcionCategoriaActual.Location = new System.Drawing.Point(6, 51);
+            this.lblDescripcionCategoriaActual.Location = new System.Drawing.Point(12, 98);
+            this.lblDescripcionCategoriaActual.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblDescripcionCategoriaActual.Name = "lblDescripcionCategoriaActual";
-            this.lblDescripcionCategoriaActual.Size = new System.Drawing.Size(79, 16);
+            this.lblDescripcionCategoriaActual.Size = new System.Drawing.Size(148, 30);
             this.lblDescripcionCategoriaActual.TabIndex = 2;
             this.lblDescripcionCategoriaActual.Text = "Descripción";
             // 
             // btnCancelarCategoria
             // 
             this.btnCancelarCategoria.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancelarCategoria.Location = new System.Drawing.Point(279, 366);
+            this.btnCancelarCategoria.Location = new System.Drawing.Point(558, 704);
+            this.btnCancelarCategoria.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancelarCategoria.Name = "btnCancelarCategoria";
-            this.btnCancelarCategoria.Size = new System.Drawing.Size(77, 23);
+            this.btnCancelarCategoria.Size = new System.Drawing.Size(154, 44);
             this.btnCancelarCategoria.TabIndex = 5;
             this.btnCancelarCategoria.Text = "Cancelar";
             this.btnCancelarCategoria.UseVisualStyleBackColor = false;
@@ -103,40 +110,44 @@ namespace TPWinForm_equipo_22A
             // btnGuardarCategoria
             // 
             this.btnGuardarCategoria.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuardarCategoria.Location = new System.Drawing.Point(132, 366);
+            this.btnGuardarCategoria.Location = new System.Drawing.Point(264, 704);
+            this.btnGuardarCategoria.Margin = new System.Windows.Forms.Padding(6);
             this.btnGuardarCategoria.Name = "btnGuardarCategoria";
-            this.btnGuardarCategoria.Size = new System.Drawing.Size(77, 23);
+            this.btnGuardarCategoria.Size = new System.Drawing.Size(154, 44);
             this.btnGuardarCategoria.TabIndex = 4;
             this.btnGuardarCategoria.Text = "Guardar";
             this.btnGuardarCategoria.UseVisualStyleBackColor = false;
             // 
             // txtBDescripcionNuevaCategoria
             // 
-            this.txtBDescripcionNuevaCategoria.Location = new System.Drawing.Point(8, 81);
+            this.txtBDescripcionNuevaCategoria.Location = new System.Drawing.Point(16, 156);
+            this.txtBDescripcionNuevaCategoria.Margin = new System.Windows.Forms.Padding(6);
             this.txtBDescripcionNuevaCategoria.Multiline = true;
             this.txtBDescripcionNuevaCategoria.Name = "txtBDescripcionNuevaCategoria";
             this.txtBDescripcionNuevaCategoria.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBDescripcionNuevaCategoria.Size = new System.Drawing.Size(223, 195);
+            this.txtBDescripcionNuevaCategoria.Size = new System.Drawing.Size(442, 371);
             this.txtBDescripcionNuevaCategoria.TabIndex = 3;
             // 
             // lblDescripcionCategoria
             // 
             this.lblDescripcionCategoria.AutoSize = true;
             this.lblDescripcionCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.lblDescripcionCategoria.Location = new System.Drawing.Point(6, 62);
+            this.lblDescripcionCategoria.Location = new System.Drawing.Point(12, 119);
+            this.lblDescripcionCategoria.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblDescripcionCategoria.Name = "lblDescripcionCategoria";
-            this.lblDescripcionCategoria.Size = new System.Drawing.Size(85, 16);
+            this.lblDescripcionCategoria.Size = new System.Drawing.Size(162, 30);
             this.lblDescripcionCategoria.TabIndex = 2;
             this.lblDescripcionCategoria.Text = "Descripción: ";
             // 
             // frmModificarCategoria
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(521, 431);
+            this.ClientSize = new System.Drawing.Size(1042, 829);
             this.Controls.Add(this.grpBModificarCategoria);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmModificarCategoria";
             this.Text = "frmModificarClase";
             this.Load += new System.EventHandler(this.frmModificarCategoria_Load);
