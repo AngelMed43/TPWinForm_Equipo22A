@@ -23,7 +23,7 @@ namespace TPWinForm_equipo_22A
             this.MinimumSize = new Size(900, 600);
             this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.Font = new System.Drawing.Font("Segoe UI", 9F);
+
 
 
             InitializeComponent();

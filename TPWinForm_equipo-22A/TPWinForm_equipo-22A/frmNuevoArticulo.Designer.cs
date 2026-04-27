@@ -29,10 +29,6 @@ namespace TPWinForm_equipo_22A
         private void InitializeComponent()
         {
             this.grpBNuevoArticulo = new System.Windows.Forms.GroupBox();
-            this.txtUrlImagen = new System.Windows.Forms.TextBox();
-            this.rbPorPC = new System.Windows.Forms.RadioButton();
-            this.rbPorUrl = new System.Windows.Forms.RadioButton();
-            this.lblMetodoCargaImagen = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -54,6 +50,10 @@ namespace TPWinForm_equipo_22A
             this.lblImagenes = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMetodoCargaImagen = new System.Windows.Forms.Label();
+            this.rbPorUrl = new System.Windows.Forms.RadioButton();
+            this.rbPorPC = new System.Windows.Forms.RadioButton();
+            this.txtUrlImagen = new System.Windows.Forms.TextBox();
             this.grpBNuevoArticulo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
@@ -92,47 +92,6 @@ namespace TPWinForm_equipo_22A
             this.grpBNuevoArticulo.TabIndex = 64;
             this.grpBNuevoArticulo.TabStop = false;
             this.grpBNuevoArticulo.Text = "Datos del articulo";
-            // 
-            // txtUrlImagen
-            // 
-            this.txtUrlImagen.Location = new System.Drawing.Point(97, 268);
-            this.txtUrlImagen.Name = "txtUrlImagen";
-            this.txtUrlImagen.Size = new System.Drawing.Size(203, 20);
-            this.txtUrlImagen.TabIndex = 66;
-            // 
-            // rbPorPC
-            // 
-            this.rbPorPC.AutoSize = true;
-            this.rbPorPC.Location = new System.Drawing.Point(77, 304);
-            this.rbPorPC.Name = "rbPorPC";
-            this.rbPorPC.Size = new System.Drawing.Size(76, 17);
-            this.rbPorPC.TabIndex = 65;
-            this.rbPorPC.TabStop = true;
-            this.rbPorPC.Text = "Local / PC";
-            this.rbPorPC.UseVisualStyleBackColor = true;
-            this.rbPorPC.CheckedChanged += new System.EventHandler(this.rbPorPC_CheckedChanged);
-            // 
-            // rbPorUrl
-            // 
-            this.rbPorUrl.AutoSize = true;
-            this.rbPorUrl.Location = new System.Drawing.Point(77, 245);
-            this.rbPorUrl.Name = "rbPorUrl";
-            this.rbPorUrl.Size = new System.Drawing.Size(66, 17);
-            this.rbPorUrl.TabIndex = 64;
-            this.rbPorUrl.TabStop = true;
-            this.rbPorUrl.Text = "Por URL";
-            this.rbPorUrl.UseVisualStyleBackColor = true;
-            this.rbPorUrl.CheckedChanged += new System.EventHandler(this.rbPorUrl_CheckedChanged);
-            // 
-            // lblMetodoCargaImagen
-            // 
-            this.lblMetodoCargaImagen.AutoSize = true;
-            this.lblMetodoCargaImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMetodoCargaImagen.Location = new System.Drawing.Point(6, 212);
-            this.lblMetodoCargaImagen.Name = "lblMetodoCargaImagen";
-            this.lblMetodoCargaImagen.Size = new System.Drawing.Size(102, 16);
-            this.lblMetodoCargaImagen.TabIndex = 63;
-            this.lblMetodoCargaImagen.Text = "Cargar Imagen :";
             // 
             // panel2
             // 
@@ -336,9 +295,51 @@ namespace TPWinForm_equipo_22A
             this.panel1.Size = new System.Drawing.Size(620, 553);
             this.panel1.TabIndex = 65;
             // 
+            // lblMetodoCargaImagen
+            // 
+            this.lblMetodoCargaImagen.AutoSize = true;
+            this.lblMetodoCargaImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMetodoCargaImagen.Location = new System.Drawing.Point(6, 212);
+            this.lblMetodoCargaImagen.Name = "lblMetodoCargaImagen";
+            this.lblMetodoCargaImagen.Size = new System.Drawing.Size(102, 16);
+            this.lblMetodoCargaImagen.TabIndex = 63;
+            this.lblMetodoCargaImagen.Text = "Cargar Imagen :";
+            // 
+            // rbPorUrl
+            // 
+            this.rbPorUrl.AutoSize = true;
+            this.rbPorUrl.Location = new System.Drawing.Point(77, 245);
+            this.rbPorUrl.Name = "rbPorUrl";
+            this.rbPorUrl.Size = new System.Drawing.Size(66, 17);
+            this.rbPorUrl.TabIndex = 64;
+            this.rbPorUrl.TabStop = true;
+            this.rbPorUrl.Text = "Por URL";
+            this.rbPorUrl.UseVisualStyleBackColor = true;
+            this.rbPorUrl.CheckedChanged += new System.EventHandler(this.rbPorUrl_CheckedChanged);
+            // 
+            // rbPorPC
+            // 
+            this.rbPorPC.AutoSize = true;
+            this.rbPorPC.Location = new System.Drawing.Point(77, 304);
+            this.rbPorPC.Name = "rbPorPC";
+            this.rbPorPC.Size = new System.Drawing.Size(76, 17);
+            this.rbPorPC.TabIndex = 65;
+            this.rbPorPC.TabStop = true;
+            this.rbPorPC.Text = "Local / PC";
+            this.rbPorPC.UseVisualStyleBackColor = true;
+            this.rbPorPC.CheckedChanged += new System.EventHandler(this.rbPorPC_CheckedChanged);
+            // 
+            // txtUrlImagen
+            // 
+            this.txtUrlImagen.Location = new System.Drawing.Point(97, 268);
+            this.txtUrlImagen.Name = "txtUrlImagen";
+            this.txtUrlImagen.Size = new System.Drawing.Size(203, 20);
+            this.txtUrlImagen.TabIndex = 66;
+            // 
             // frmNuevoArticulo
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.CancelButton = this.btnCancelar;

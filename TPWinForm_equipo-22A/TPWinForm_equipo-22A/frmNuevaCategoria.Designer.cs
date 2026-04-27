@@ -43,9 +43,11 @@ namespace TPWinForm_equipo_22A
             this.grpBDetalleCategoria.Controls.Add(this.btnGuardar);
             this.grpBDetalleCategoria.Controls.Add(this.txtBDescripcionNuevaCategoria);
             this.grpBDetalleCategoria.Controls.Add(this.lblDescripción);
-            this.grpBDetalleCategoria.Location = new System.Drawing.Point(8, 8);
+            this.grpBDetalleCategoria.Location = new System.Drawing.Point(16, 15);
+            this.grpBDetalleCategoria.Margin = new System.Windows.Forms.Padding(6);
             this.grpBDetalleCategoria.Name = "grpBDetalleCategoria";
-            this.grpBDetalleCategoria.Size = new System.Drawing.Size(446, 372);
+            this.grpBDetalleCategoria.Padding = new System.Windows.Forms.Padding(6);
+            this.grpBDetalleCategoria.Size = new System.Drawing.Size(892, 715);
             this.grpBDetalleCategoria.TabIndex = 64;
             this.grpBDetalleCategoria.TabStop = false;
             this.grpBDetalleCategoria.Text = "Detalle de la categoria seleccionada";
@@ -53,9 +55,10 @@ namespace TPWinForm_equipo_22A
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCancelar.Location = new System.Drawing.Point(279, 330);
+            this.btnCancelar.Location = new System.Drawing.Point(558, 635);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(6);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(77, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(154, 44);
             this.btnCancelar.TabIndex = 59;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -64,9 +67,10 @@ namespace TPWinForm_equipo_22A
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuardar.Location = new System.Drawing.Point(132, 330);
+            this.btnGuardar.Location = new System.Drawing.Point(264, 635);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(6);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(77, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(154, 44);
             this.btnGuardar.TabIndex = 58;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -74,31 +78,33 @@ namespace TPWinForm_equipo_22A
             // 
             // txtBDescripcionNuevaCategoria
             // 
-            this.txtBDescripcionNuevaCategoria.Location = new System.Drawing.Point(8, 58);
+            this.txtBDescripcionNuevaCategoria.Location = new System.Drawing.Point(16, 112);
+            this.txtBDescripcionNuevaCategoria.Margin = new System.Windows.Forms.Padding(6);
             this.txtBDescripcionNuevaCategoria.Multiline = true;
             this.txtBDescripcionNuevaCategoria.Name = "txtBDescripcionNuevaCategoria";
             this.txtBDescripcionNuevaCategoria.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBDescripcionNuevaCategoria.Size = new System.Drawing.Size(434, 239);
+            this.txtBDescripcionNuevaCategoria.Size = new System.Drawing.Size(864, 456);
             this.txtBDescripcionNuevaCategoria.TabIndex = 52;
             // 
             // lblDescripción
             // 
             this.lblDescripción.AutoSize = true;
             this.lblDescripción.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripción.Location = new System.Drawing.Point(6, 39);
+            this.lblDescripción.Location = new System.Drawing.Point(12, 75);
+            this.lblDescripción.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblDescripción.Name = "lblDescripción";
-            this.lblDescripción.Size = new System.Drawing.Size(82, 16);
+            this.lblDescripción.Size = new System.Drawing.Size(155, 30);
             this.lblDescripción.TabIndex = 45;
             this.lblDescripción.Text = "Descripción:";
             // 
             // frmNuevaCategoria
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(464, 384);
+            this.ClientSize = new System.Drawing.Size(928, 738);
             this.Controls.Add(this.grpBDetalleCategoria);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmNuevaCategoria";
             this.Text = "frmNuevaCategoria";
             this.Load += new System.EventHandler(this.frmNuevaCategoria_Load);
