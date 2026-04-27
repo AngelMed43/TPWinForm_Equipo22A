@@ -15,6 +15,7 @@ namespace TPWinForm_equipo_22A
 {
     public partial class frmNuevaCategoria : Form
     {
+        private const int MaxDescripcion = 50;
         private frmInicio frmInicio;
         private Categoria categoria = null;
         public frmNuevaCategoria(frmInicio formInicio)
@@ -49,12 +50,9 @@ namespace TPWinForm_equipo_22A
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtBDescripcionNuevaCategoria.Text))
-            {
-                MessageBox.Show("Debe ingresar una descripción.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtBDescripcionNuevaCategoria.Focus();
+            if (!Validaciones.ValidarCategoria(txtBDescripcionNuevaCategoria.Text, out string descripcionNormalizada, MaxDescripcion))
                 return;
-            }
+
             CategoriaNegocio negocio = new CategoriaNegocio();
 
             try
@@ -64,7 +62,8 @@ namespace TPWinForm_equipo_22A
                     categoria = new Categoria();
                 }
 
-                categoria.Descripcion = txtBDescripcionNuevaCategoria.Text;
+                txtBDescripcionNuevaCategoria.Text = descripcionNormalizada;
+                categoria.Descripcion = descripcionNormalizada;
 
                 if (categoria.IdCategoria != 0)
                 {
@@ -82,12 +81,14 @@ namespace TPWinForm_equipo_22A
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
         private void frmNuevaCategoria_Load(object sender, EventArgs e)
         {
+            txtBDescripcionNuevaCategoria.MaxLength = MaxDescripcion;
+
             if (categoria != null)
             {
                 grpBDetalleCategoria.Text = "Modificar Categoría";

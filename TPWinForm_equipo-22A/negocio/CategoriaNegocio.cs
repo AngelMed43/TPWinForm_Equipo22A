@@ -10,6 +10,8 @@ namespace Conexion_BDD
 {
     public class CategoriaNegocio
     {
+        private const int MaxDescripcion = 50;
+
         public List<Categoria> listar()
         {
 
@@ -23,10 +25,10 @@ namespace Conexion_BDD
 
                 while (datos.Lector.Read())
                 {
-                     Categoria aux = new Categoria();
+                    Categoria aux = new Categoria();
 
                     aux.IdCategoria = (int)datos.Lector["Id"];
-                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Descripcion = datos.Lector["Descripcion"] as string;
 
                     lista.Add(aux);
                 }
@@ -43,8 +45,11 @@ namespace Conexion_BDD
                 datos.cerrarConexion();
             }
         }
+
         public void agregar(Categoria nueva)
         {
+            ValidarCategoria(nueva, false);
+
             AccesoDatos datos = new AccesoDatos();
 
             try
@@ -63,8 +68,14 @@ namespace Conexion_BDD
                 datos.cerrarConexion();
             }
         }
+
         public void modificar(Categoria categoria)
         {
+            ValidarCategoria(categoria, true);
+
+            if (!ExisteCategoriaPorId(categoria.IdCategoria))
+                throw new Exception("La categoría a modificar no existe.");
+
             AccesoDatos datos = new AccesoDatos();
 
             try
@@ -89,7 +100,16 @@ namespace Conexion_BDD
 
         public void eliminarCategoria(int id)
         {
-           AccesoDatos datos = new AccesoDatos();
+            if (id <= 0)
+                throw new Exception("Debe seleccionar una categoría válida.");
+
+            if (!ExisteCategoriaPorId(id))
+                throw new Exception("La categoría seleccionada no existe.");
+
+            if (TieneArticulosAsociados(id))
+                throw new Exception("No se puede eliminar la categoría porque tiene artículos asociados.");
+
+            AccesoDatos datos = new AccesoDatos();
             try
             {
                 datos.setearConsulta("delete from CATEGORIAS where id = @id");
@@ -105,28 +125,88 @@ namespace Conexion_BDD
                 datos.cerrarConexion();
             }
         }
-        /*public int obtenerProximoId()
+
+        private void ValidarCategoria(Categoria categoria, bool esModificacion)
+        {
+            if (categoria == null)
+                throw new Exception("Los datos de la categoría son obligatorios.");
+
+            if (esModificacion && categoria.IdCategoria <= 0)
+                throw new Exception("El identificador de la categoría es inválido.");
+
+            if (string.IsNullOrWhiteSpace(categoria.Descripcion))
+                throw new Exception("La descripción de la categoría es obligatoria.");
+
+            categoria.Descripcion = categoria.Descripcion.Trim();
+
+            if (categoria.Descripcion.Length > MaxDescripcion)
+                throw new Exception("La descripción de la categoría no puede superar los 50 caracteres.");
+
+            int? idExcluir = esModificacion ? (int?)categoria.IdCategoria : null;
+            if (ExisteDescripcion(categoria.Descripcion, idExcluir))
+                throw new Exception("Ya existe una categoría con la misma descripción.");
+        }
+
+        private bool ExisteDescripcion(string descripcion, int? idExcluir)
         {
             AccesoDatos datos = new AccesoDatos();
-
             try
             {
-                datos.setearConsulta("SELECT MAX(Id) FROM CATEGORIAS");
+                string consulta = "select count(1) from CATEGORIAS where UPPER(LTRIM(RTRIM(Descripcion))) = UPPER(LTRIM(RTRIM(@desc)))";
+
+                if (idExcluir.HasValue)
+                    consulta += " and Id <> @id";
+
+                datos.setearConsulta(consulta);
+                datos.setearParametros("@desc", descripcion);
+
+                if (idExcluir.HasValue)
+                    datos.setearParametros("@id", idExcluir.Value);
+
                 object resultado = datos.ejecutarAccionConRetorno();
-
-                if (resultado == null || resultado is DBNull)
-                    return 1;
-
-                return ((int)resultado) + 1;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                int cantidad = Convert.ToInt32(resultado);
+                return cantidad > 0;
             }
             finally
             {
                 datos.cerrarConexion();
             }
-        }*/
+        }
+
+        private bool ExisteCategoriaPorId(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("select count(1) from CATEGORIAS where Id = @id");
+                datos.setearParametros("@id", id);
+
+                object resultado = datos.ejecutarAccionConRetorno();
+                int cantidad = Convert.ToInt32(resultado);
+                return cantidad > 0;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        private bool TieneArticulosAsociados(int idCategoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("select count(1) from ARTICULOS where IdCategoria = @idCategoria");
+                datos.setearParametros("@idCategoria", idCategoria);
+
+                object resultado = datos.ejecutarAccionConRetorno();
+                int cantidad = Convert.ToInt32(resultado);
+                return cantidad > 0;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }

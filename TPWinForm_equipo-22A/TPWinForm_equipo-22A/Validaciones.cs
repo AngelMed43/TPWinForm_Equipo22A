@@ -101,6 +101,27 @@ namespace TPWinForm_equipo_22A
             return true;
         }
 
+        public static bool ValidarCategoria(string descripcionIngresada, out string descripcionNormalizada, int maxDescripcion = 50)
+        {
+            descripcionNormalizada = string.IsNullOrWhiteSpace(descripcionIngresada)
+                ? string.Empty
+                : descripcionIngresada.Trim();
+
+            if (string.IsNullOrWhiteSpace(descripcionNormalizada))
+            {
+                MessageBox.Show("La descripción de la categoría es obligatoria.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (descripcionNormalizada.Length > maxDescripcion)
+            {
+                MessageBox.Show("La descripción de la categoría no puede superar los 50 caracteres.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
         
     }
 }
