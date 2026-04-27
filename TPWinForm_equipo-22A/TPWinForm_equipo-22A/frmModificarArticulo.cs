@@ -36,7 +36,11 @@ namespace TPWinForm_equipo_22A
             carpetaImagenes = Path.Combine(baseDocs, "Imagenes_APPGestion");
         }
         private void frmModificarArticulo_Load(object sender, EventArgs e)
-        {    
+        {
+            rbPorPC.Checked = true;
+            txtUrlImagen.Enabled = false;
+            
+
             MarcaNegocio marca = new MarcaNegocio();
             CategoriaNegocio categoria = new CategoriaNegocio();
             try
@@ -148,6 +152,154 @@ namespace TPWinForm_equipo_22A
             this.Close();
         }
 
+        private void rbPorUrl_CheckedChanged(object sender, EventArgs e)
+        {
+            txtUrlImagen.Enabled = rbPorUrl.Checked;
+        }
+
+        private void rbPorPC_CheckedChanged(object sender, EventArgs e)
+        {
+            txtUrlImagen.Enabled = false;
+        }
+
+        private void btnAddImagen_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(carpetaImagenes))
+                Directory.CreateDirectory(carpetaImagenes);
+
+            string ruta = "";
+            string nombreArchivo;
+            string destinoImagen;
+
+            try
+            {
+                if (rbPorUrl.Checked)
+                {
+                    if (string.IsNullOrWhiteSpace(txtUrlImagen.Text))
+                    {
+                        MessageBox.Show("Ingrese una URL!", "Validación",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    //Trim elimina espacios en blanco al principio y al final de un txt
+                    //Trim elimina espacios en blanco al principio y al final de un txt
+                    if (!txtUrlImagen.Text.Trim().StartsWith("http"))
+                    {
+                        MessageBox.Show("La URL no es válida. Debe comenzar con http:// o https://",
+                            "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    ruta = txtUrlImagen.Text.Trim();
+                    articulo.Imagenes.Add(new Imagen { UrlImagen = ruta });
+                    lbxImagenes.Items.Add(ruta);
+                    pbxImagen.Image = null;
+                    pbxImagen.Load(ruta);
+                    txtUrlImagen.Clear();
+                }
+                else
+                {
+                    OpenFileDialog archivo = new OpenFileDialog();
+                    archivo.Title = "Selecciona una Imagen";
+                    archivo.Filter = "Imagenes|*.jpg;*.png;*.jpeg";
+
+                    if (archivo.ShowDialog() != DialogResult.OK) return;
+
+                    ruta = archivo.FileName;
+                    nombreArchivo = Path.GetFileName(ruta);
+                    destinoImagen = Path.Combine(carpetaImagenes, nombreArchivo);
+
+                    File.Copy(ruta, destinoImagen, true);
+
+                    articulo.Imagenes.Add(new Imagen { UrlImagen = nombreArchivo });
+                    lbxImagenes.Items.Add(nombreArchivo);
+                    mostrarImagenLocal(ruta);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDeleteImagen_Click(object sender, EventArgs e)
+        {
+            if (lbxImagenes.SelectedIndex < 0)
+            {
+                MessageBox.Show("Seleccione una imagen para eliminar.", "Aviso",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            DialogResult r = MessageBox.Show("¿Seguro que desea eliminar la imagen seleccionada?","Confirmar eliminación",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+
+            if (r == DialogResult.Yes)
+            {
+                int index = lbxImagenes.SelectedIndex;
+                lbxImagenes.Items.RemoveAt(index);
+                articulo.Imagenes.RemoveAt(index);
+                pbxImagen.Image = null;
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            bool marcaSelected = cbMarca.SelectedItem != null;
+            bool categoriaSelected = cbCategoría.SelectedItem != null;
+
+            bool valido = Validaciones.ValidarArticulo(txtBCódigo.Text, txtBNombre.Text, marcaSelected, categoriaSelected, txtBPrecio.Text, string.Empty);
+
+            if (!valido) return;
+
+            ArticuloNegocio artN = new ArticuloNegocio();
+            try
+            {
+                articulo.Codigo = txtBCódigo.Text.Trim();
+                articulo.Nombre = txtBNombre.Text.Trim();
+                articulo.Descripcion = txtBDescripción.Text.Trim();
+                articulo.Marca = (Marca)cbMarca.SelectedItem;
+                articulo.Categoria = (Categoria)cbCategoría.SelectedItem;
+                articulo.Precio = Validaciones.ParsearPrecio(txtBPrecio.Text);
+
+                artN.modificarArticulo(articulo);
+                //Elimino las de la lista y actualizo con las que se guardaron en la lista
+                artN.eliminarImagenesDeArticulo(articulo.Id);
+
+                // Insertar las imágenes actuales de la lista
+                foreach (Imagen img in articulo.Imagenes)
+                    artN.agregarImagen(img, articulo.Id);
+                MessageBox.Show("Artículo modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                this.Close();
+            }
+        }
+
+        
+
+        private void btnAddImagen_MouseEnter(object sender, EventArgs e)
+        {
+            btnAddImagen.BackColor = Color.LightGreen;
+        }
+
+        private void btnDeleteImagen_MouseEnter(object sender, EventArgs e)
+        {
+            btnDeleteImagen.BackColor = Color.LightCoral;
+        }
+
+        private void btnAddImagen_MouseLeave(object sender, EventArgs e)
+        {
+            btnAddImagen.BackColor = Color.Transparent;
+        }
+
+        private void btnDeleteImagen_MouseLeave(object sender, EventArgs e)
+        {
+            btnDeleteImagen.BackColor = Color.Transparent;
+        }
     }
 }
 

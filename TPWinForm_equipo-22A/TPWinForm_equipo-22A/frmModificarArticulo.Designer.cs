@@ -29,6 +29,9 @@ namespace TPWinForm_equipo_22A
         private void InitializeComponent()
         {
             this.grpBDetalleArticulo = new System.Windows.Forms.GroupBox();
+            this.rbPorPC = new System.Windows.Forms.RadioButton();
+            this.txtUrlImagen = new System.Windows.Forms.TextBox();
+            this.rbPorUrl = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -73,6 +76,9 @@ namespace TPWinForm_equipo_22A
             // grpBDetalleArticulo
             // 
             this.grpBDetalleArticulo.AutoSize = true;
+            this.grpBDetalleArticulo.Controls.Add(this.rbPorPC);
+            this.grpBDetalleArticulo.Controls.Add(this.txtUrlImagen);
+            this.grpBDetalleArticulo.Controls.Add(this.rbPorUrl);
             this.grpBDetalleArticulo.Controls.Add(this.panel2);
             this.grpBDetalleArticulo.Controls.Add(this.grpbDetalleActual);
             this.grpBDetalleArticulo.Controls.Add(this.lblCódigo);
@@ -100,6 +106,37 @@ namespace TPWinForm_equipo_22A
             this.grpBDetalleArticulo.TabStop = false;
             this.grpBDetalleArticulo.Text = "Modificar datos del Articulo ";
             // 
+            // rbPorPC
+            // 
+            this.rbPorPC.AutoSize = true;
+            this.rbPorPC.Location = new System.Drawing.Point(97, 277);
+            this.rbPorPC.Name = "rbPorPC";
+            this.rbPorPC.Size = new System.Drawing.Size(101, 17);
+            this.rbPorPC.TabIndex = 71;
+            this.rbPorPC.TabStop = true;
+            this.rbPorPC.Text = "Por PC / Local :";
+            this.rbPorPC.UseVisualStyleBackColor = true;
+            this.rbPorPC.CheckedChanged += new System.EventHandler(this.rbPorPC_CheckedChanged);
+            // 
+            // txtUrlImagen
+            // 
+            this.txtUrlImagen.Location = new System.Drawing.Point(171, 242);
+            this.txtUrlImagen.Name = "txtUrlImagen";
+            this.txtUrlImagen.Size = new System.Drawing.Size(164, 20);
+            this.txtUrlImagen.TabIndex = 70;
+            // 
+            // rbPorUrl
+            // 
+            this.rbPorUrl.AutoSize = true;
+            this.rbPorUrl.Location = new System.Drawing.Point(97, 242);
+            this.rbPorUrl.Name = "rbPorUrl";
+            this.rbPorUrl.Size = new System.Drawing.Size(72, 17);
+            this.rbPorUrl.TabIndex = 69;
+            this.rbPorUrl.TabStop = true;
+            this.rbPorUrl.Text = "Por URL :";
+            this.rbPorUrl.UseVisualStyleBackColor = true;
+            this.rbPorUrl.CheckedChanged += new System.EventHandler(this.rbPorUrl_CheckedChanged);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnGuardar);
@@ -120,6 +157,7 @@ namespace TPWinForm_equipo_22A
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -317,17 +355,20 @@ namespace TPWinForm_equipo_22A
             // 
             // btnDeleteImagen
             // 
-            this.btnDeleteImagen.Location = new System.Drawing.Point(258, 307);
+            this.btnDeleteImagen.Location = new System.Drawing.Point(235, 369);
             this.btnDeleteImagen.Name = "btnDeleteImagen";
             this.btnDeleteImagen.Size = new System.Drawing.Size(77, 39);
             this.btnDeleteImagen.TabIndex = 61;
             this.btnDeleteImagen.Text = "Eliminar Imagen";
             this.btnDeleteImagen.UseVisualStyleBackColor = true;
+            this.btnDeleteImagen.Click += new System.EventHandler(this.btnDeleteImagen_Click);
+            this.btnDeleteImagen.MouseEnter += new System.EventHandler(this.btnDeleteImagen_MouseEnter);
+            this.btnDeleteImagen.MouseLeave += new System.EventHandler(this.btnDeleteImagen_MouseLeave);
             // 
             // lbxImagenes
             // 
             this.lbxImagenes.FormattingEnabled = true;
-            this.lbxImagenes.Location = new System.Drawing.Point(97, 238);
+            this.lbxImagenes.Location = new System.Drawing.Point(98, 300);
             this.lbxImagenes.Name = "lbxImagenes";
             this.lbxImagenes.Size = new System.Drawing.Size(122, 108);
             this.lbxImagenes.TabIndex = 56;
@@ -352,17 +393,20 @@ namespace TPWinForm_equipo_22A
             // 
             // btnAddImagen
             // 
-            this.btnAddImagen.Location = new System.Drawing.Point(258, 238);
+            this.btnAddImagen.Location = new System.Drawing.Point(235, 300);
             this.btnAddImagen.Name = "btnAddImagen";
             this.btnAddImagen.Size = new System.Drawing.Size(77, 38);
             this.btnAddImagen.TabIndex = 6;
             this.btnAddImagen.Text = "Agregar Imagen";
             this.btnAddImagen.UseVisualStyleBackColor = true;
+            this.btnAddImagen.Click += new System.EventHandler(this.btnAddImagen_Click);
+            this.btnAddImagen.MouseEnter += new System.EventHandler(this.btnAddImagen_MouseEnter);
+            this.btnAddImagen.MouseLeave += new System.EventHandler(this.btnAddImagen_MouseLeave);
             // 
             // pbxImagen
             // 
             this.pbxImagen.InitialImage = null;
-            this.pbxImagen.Location = new System.Drawing.Point(341, 238);
+            this.pbxImagen.Location = new System.Drawing.Point(335, 300);
             this.pbxImagen.Name = "pbxImagen";
             this.pbxImagen.Size = new System.Drawing.Size(120, 108);
             this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -486,5 +530,8 @@ namespace TPWinForm_equipo_22A
         private System.Windows.Forms.TextBox txtbCódigoActual;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton rbPorPC;
+        private System.Windows.Forms.TextBox txtUrlImagen;
+        private System.Windows.Forms.RadioButton rbPorUrl;
     }
 }

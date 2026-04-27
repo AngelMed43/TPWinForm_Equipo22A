@@ -117,7 +117,44 @@ namespace negocio
             }
         }
 
+        public void eliminarImagen(string urlImagen, int idArticulo)
+        {
+            AccesoDatos acceso = new AccesoDatos();
+            try
+            {
+                acceso.setearConsulta("DELETE FROM IMAGENES WHERE ImagenUrl = @Url AND IdArticulo = @Id");
+                acceso.setearParametros("@Url", urlImagen);
+                acceso.setearParametros("@Id", idArticulo);
+                acceso.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                acceso.cerrarConexion();
+            }
+        }
 
+        public void eliminarImagenesDeArticulo(int idArticulo)
+        {
+            AccesoDatos acceso = new AccesoDatos();
+            try
+            {
+                acceso.setearConsulta("DELETE FROM IMAGENES WHERE IdArticulo = @Id");
+                acceso.setearParametros("@Id", idArticulo);
+                acceso.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                acceso.cerrarConexion();
+            }
+        }
         public List<Imagen> listarImagenes(int idArticulo)
         {
             List<Imagen> lista = new List<Imagen>();
@@ -146,6 +183,33 @@ namespace negocio
             }
 
             return lista;
+        }
+
+        public void modificarArticulo(Articulo art)
+        {
+            AccesoDatos acceso = new AccesoDatos();
+
+            try
+            {
+                acceso.setearConsulta("UPDATE ARTICULOS SET Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IdCategoria = @IdCategoria, Precio = @Precio WHERE Id = @Id");
+                acceso.setearParametros("@Codigo", art.Codigo);
+                acceso.setearParametros("@Nombre", art.Nombre);
+                acceso.setearParametros("@Descripcion", art.Descripcion);
+                acceso.setearParametros("@IdMarca", art.Marca.IdMarca);
+                acceso.setearParametros("@IdCategoria", art.Categoria.IdCategoria);
+                acceso.setearParametros("@Precio", art.Precio);
+                acceso.setearParametros("@Id", art.Id);
+
+                acceso.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                acceso.cerrarConexion();
+            }
         }
 
         // AUN NO SE IMPLEMENTA PERO SE DEJA DIAGRAMADA

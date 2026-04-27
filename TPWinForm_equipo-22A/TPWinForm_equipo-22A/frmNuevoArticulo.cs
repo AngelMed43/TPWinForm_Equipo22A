@@ -190,17 +190,32 @@ namespace TPWinForm_equipo_22A
         {
             if (lbxImagenes.SelectedIndex >= 0)
             {
-                DialogResult resultado = MessageBox.Show("¿Seguro que desea eliminar la imagen seleccionada?","Confirmar eliminación",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                DialogResult resultado = MessageBox.Show("¿Seguro que desea eliminar la imagen seleccionada?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (resultado == DialogResult.Yes)
                 {
+                    string urlImagen = lbxImagenes.SelectedItem.ToString();
                     int index = lbxImagenes.SelectedIndex;
-                    
-                    lbxImagenes.Items.RemoveAt(index);
-                    articulo.Imagenes.RemoveAt(index);
-                    pbxImagen.Image = null;
+
+                    try
+                    {
+                        ArticuloNegocio artN = new ArticuloNegocio();
+                        artN.eliminarImagen(urlImagen, articulo.Id);
+
+                        lbxImagenes.Items.RemoveAt(index);
+                        articulo.Imagenes.RemoveAt(index);
+                        pbxImagen.Image = null;
+
+                        MessageBox.Show("Imagen eliminada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al eliminar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-            }else{
+            }
+            else
+            {
                 MessageBox.Show("Seleccione una imagen para eliminar.");
             }
         }

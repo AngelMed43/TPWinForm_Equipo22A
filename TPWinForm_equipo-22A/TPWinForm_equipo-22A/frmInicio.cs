@@ -178,7 +178,9 @@ namespace TPWinForm_equipo_22A
                     ArticuloNegocio artnegocio= new ArticuloNegocio();
                     artS.Imagenes = artnegocio.listarImagenes(artS.Id);
 
-                    MostrarFormularioEnPanel(new frmModificarArticulo(this,artS));
+                    frmModificarArticulo frmN = new frmModificarArticulo(this,artS);
+                    frmN.FormClosed += (s, args) => cargarArticulos();
+                    MostrarFormularioEnPanel(frmN);
                     break;
                 case "Categorias":
                     if (dgvCategorias.CurrentRow == null)
