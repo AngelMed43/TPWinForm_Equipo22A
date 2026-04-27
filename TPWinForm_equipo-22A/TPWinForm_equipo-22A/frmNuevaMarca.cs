@@ -14,6 +14,7 @@ namespace TPWinForm_equipo_22A
 {
     public partial class frmNuevaMarca : Form
     {
+        private const int MaxDescripcion = 50;
         private frmInicio frmInicio;
 
         private Marca marca = null;
@@ -35,10 +36,11 @@ namespace TPWinForm_equipo_22A
             this.Close();
         }
 
-
-
         private void btnGuardarMarca_Click(object sender, EventArgs e)
         {
+            if (!Validaciones.ValidarMarca(txtBDescripcionNuevaMarca.Text, out string descripcionNormalizada, MaxDescripcion))
+                return;
+
             MarcaNegocio negocio = new MarcaNegocio();
 
             try
@@ -47,7 +49,9 @@ namespace TPWinForm_equipo_22A
                 {
                     marca = new Marca();
                 }
-                marca.Descripcion = txtBDescripcionNuevaMarca.Text;
+
+                txtBDescripcionNuevaMarca.Text = descripcionNormalizada;
+                marca.Descripcion = descripcionNormalizada;
 
                 if (marca.IdMarca != 0)
                 {
@@ -66,12 +70,14 @@ namespace TPWinForm_equipo_22A
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
         private void frmNuevaMarca_Load(object sender, EventArgs e)
         {
+            txtBDescripcionNuevaMarca.MaxLength = MaxDescripcion;
+
             if (marca != null)
             {
                 grpBAgregarMarca.Text = "Modificar Marca";
