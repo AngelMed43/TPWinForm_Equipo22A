@@ -427,6 +427,8 @@ namespace TPWinForm_equipo_22A
                 dgvArticulos.RowHeadersVisible = false;
                 dgvArticulos.ReadOnly = true;
                 dgvArticulos.DataSource = _articulosCache;
+                //Format Moneda $
+                dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "C2";
 
                 ReaplicarFiltroActual();
             }
