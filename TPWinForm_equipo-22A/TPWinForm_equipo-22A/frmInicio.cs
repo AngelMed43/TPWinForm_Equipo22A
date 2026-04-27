@@ -17,6 +17,10 @@ namespace TPWinForm_equipo_22A
 {
     public partial class frmInicio : Form
     {
+        private List<Articulo> _articulosCache = new List<Articulo>();
+        private List<Marca> _marcasCache = new List<Marca>();
+        private List<Categoria> _categoriasCache = new List<Categoria>();
+
         public frmInicio()
         {
             this.AutoScaleMode = AutoScaleMode.Font;
@@ -43,13 +47,9 @@ namespace TPWinForm_equipo_22A
 
         private void ActualizarVisibilidadBarraBusqueda()
         {
-            bool esPestanaArticulos = (ObtenerPestanaActual() == "Articulos");
-
             grBBarraBusqueda.Visible = true;
-            grBBarraBusqueda.Enabled = esPestanaArticulos;
-            grBBarraBusqueda.BackColor = esPestanaArticulos
-                ? SystemColors.Control
-                : SystemColors.ControlLight;
+            grBBarraBusqueda.Enabled = true;
+            grBBarraBusqueda.BackColor = SystemColors.Control;
         }
 
         private void LimpiarPanelUniversal()
@@ -108,23 +108,36 @@ namespace TPWinForm_equipo_22A
         //Método que decide qué controles se pueden usar y cuáles se limpian según el filtro seleccionado.
         private void ActualizarEstadoFiltros()
         {
-            bool filtroMarca = rdBFiltroXMarca.Checked;
-            bool filtroCategoria = rdBFiltroXCategoria.Checked;
+            bool esArticulos = ObtenerPestanaActual() == "Articulos";
+            bool filtroMarca = esArticulos && rdBFiltroXMarca.Checked;
+            bool filtroCategoria = esArticulos && rdBFiltroXCategoria.Checked;
             bool filtroBuscar = rdBFiltroXBuscar.Checked;
+
+            rdBFiltroXMarca.Enabled = esArticulos;
+            rdBFiltroXCategoria.Enabled = esArticulos;
+            rdBFiltroXBuscar.Enabled = true;
 
             cboMarca.Enabled = filtroMarca;
             cboCategoria.Enabled = filtroCategoria;
-            txtBBuscarSuperior.Enabled = filtroBuscar;
+            txtBBuscarSuperior.Enabled = !esArticulos || filtroBuscar;
 
-            if (!filtroMarca && cboMarca.SelectedIndex > 0)
-                cboMarca.SelectedIndex = 0;
+            if (esArticulos)
+            {
+                if (!filtroMarca && cboMarca.SelectedIndex > 0)
+                    cboMarca.SelectedIndex = 0;
 
-            if (!filtroCategoria && cboCategoria.SelectedIndex > 0)
-                cboCategoria.SelectedIndex = 0;
+                if (!filtroCategoria && cboCategoria.SelectedIndex > 0)
+                    cboCategoria.SelectedIndex = 0;
 
-            if (!filtroBuscar)
-                txtBBuscarSuperior.Clear();
+                if (!filtroBuscar)
+                    txtBBuscarSuperior.Clear();
+            }
 
+            AplicarFiltroSuperior();
+        }
+
+        private void ReaplicarFiltroActual()
+        {
             AplicarFiltroSuperior();
         }
 
@@ -199,6 +212,7 @@ namespace TPWinForm_equipo_22A
             LimpiarPanelUniversal();
             ActualizarBotonesPorPestana();
             ActualizarVisibilidadBarraBusqueda();
+            ActualizarEstadoFiltros();
         }
 
         private void btnEliminarArticulo_Click(object sender, EventArgs e)
@@ -332,6 +346,8 @@ namespace TPWinForm_equipo_22A
 
             try
             {
+                _marcasCache = negocio.listar();
+
                 dgvMarcas.AutoGenerateColumns = true;
                 dgvMarcas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dgvMarcas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -340,10 +356,12 @@ namespace TPWinForm_equipo_22A
                 dgvMarcas.AllowUserToAddRows = false;
                 dgvMarcas.AllowUserToDeleteRows = false;
                 dgvMarcas.BackgroundColor = SystemColors.AppWorkspace;
-                dgvMarcas.DataSource = negocio.listar();
+                dgvMarcas.DataSource = _marcasCache;
 
                 if (dgvMarcas.Columns["IdMarca"] != null)
                     dgvMarcas.Columns["IdMarca"].Visible = false;
+
+                ReaplicarFiltroActual();
             }
             catch (Exception ex)
             {
@@ -357,6 +375,8 @@ namespace TPWinForm_equipo_22A
 
             try
             {
+                _categoriasCache = negocio.listar();
+
                 dgvCategorias.AutoGenerateColumns = true;
                 dgvCategorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dgvCategorias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;  // ✅ Ocupa todo el ancho
@@ -365,10 +385,12 @@ namespace TPWinForm_equipo_22A
                 dgvCategorias.AllowUserToAddRows = false;
                 dgvCategorias.AllowUserToDeleteRows = false;
                 dgvCategorias.BackgroundColor = SystemColors.AppWorkspace;
-                dgvCategorias.DataSource = negocio.listar();
+                dgvCategorias.DataSource = _categoriasCache;
 
                 if (dgvCategorias.Columns["IdCategoria"] != null)
                     dgvCategorias.Columns["IdCategoria"].Visible = false;  // ✅ Oculta el ID
+
+                ReaplicarFiltroActual();
             }
             catch (Exception ex)
             {
@@ -387,12 +409,16 @@ namespace TPWinForm_equipo_22A
 
             try
             {
+                _articulosCache = artN.listarArticulos();
+
                 dgvArticulos.AutoGenerateColumns = false;
                 dgvArticulos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dgvArticulos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgvArticulos.RowHeadersVisible = false;
                 dgvArticulos.ReadOnly = true;
-                dgvArticulos.DataSource = artN.listarArticulos();
+                dgvArticulos.DataSource = _articulosCache;
+
+                ReaplicarFiltroActual();
             }
             catch (Exception ex)
             {
@@ -402,8 +428,7 @@ namespace TPWinForm_equipo_22A
 
         private void txtBBuscarSuperior_TextChanged(object sender, EventArgs e)
         {
-            if (rdBFiltroXBuscar.Checked)
-                AplicarFiltroSuperior();
+            AplicarFiltroSuperior();
         }
 
         private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
@@ -420,40 +445,84 @@ namespace TPWinForm_equipo_22A
 
         private void AplicarFiltroSuperior()
         {
-            if (ObtenerPestanaActual() != "Articulos")
-                return;
+            string pestana = ObtenerPestanaActual();
+            string texto = txtBBuscarSuperior.Text.Trim();
 
-            dgvArticulos.AutoGenerateColumns = false;
+            if (pestana == "Articulos")
+            {
+                List<Articulo> listaFiltrada = new List<Articulo>();
 
-            ArticuloNegocio artN = new ArticuloNegocio();
-            List<Articulo> listaArticulos = artN.listarArticulos();
-            List<Articulo> listaFiltrada = listaArticulos;
-
-            if (rdBFiltroXMarca.Checked)
-            {
-                Marca marcaSeleccionada = cboMarca.SelectedItem as Marca;
-                if (marcaSeleccionada != null && marcaSeleccionada.IdMarca > 0)
-                    listaFiltrada = listaArticulos.FindAll(x => x.Marca != null && x.Marca.IdMarca == marcaSeleccionada.IdMarca);
-            }
-            else if (rdBFiltroXCategoria.Checked)
-            {
-                Categoria categoriaSeleccionada = cboCategoria.SelectedItem as Categoria;
-                if (categoriaSeleccionada != null && categoriaSeleccionada.IdCategoria > 0)
-                    listaFiltrada = listaArticulos.FindAll(x => x.Categoria != null && x.Categoria.IdCategoria == categoriaSeleccionada.IdCategoria);
-            }
-            else if (rdBFiltroXBuscar.Checked)
-            {
-                string filtro = txtBBuscarSuperior.Text;
-                if (!string.IsNullOrWhiteSpace(filtro))
+                if (rdBFiltroXMarca.Checked)
                 {
-                    listaFiltrada = listaArticulos.FindAll(x =>
-                        x.Nombre.ToUpper().Contains(filtro.ToUpper()) ||
-                        x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                    Marca marcaSeleccionada = cboMarca.SelectedItem as Marca;
+                    if (marcaSeleccionada != null && marcaSeleccionada.IdMarca > 0)
+                        listaFiltrada = _articulosCache.FindAll(x => x.Marca != null && x.Marca.IdMarca == marcaSeleccionada.IdMarca);
+                    else
+                        listaFiltrada.AddRange(_articulosCache);
                 }
+                else if (rdBFiltroXCategoria.Checked)
+                {
+                    Categoria categoriaSeleccionada = cboCategoria.SelectedItem as Categoria;
+                    if (categoriaSeleccionada != null && categoriaSeleccionada.IdCategoria > 0)
+                        listaFiltrada = _articulosCache.FindAll(x => x.Categoria != null && x.Categoria.IdCategoria == categoriaSeleccionada.IdCategoria);
+                    else
+                        listaFiltrada.AddRange(_articulosCache);
+                }
+                else if (rdBFiltroXBuscar.Checked)
+                {
+                    if (!string.IsNullOrWhiteSpace(texto))
+                    {
+                        listaFiltrada = _articulosCache.FindAll(x =>
+                            (x.Nombre != null && x.Nombre.IndexOf(texto, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                            (x.Descripcion != null && x.Descripcion.IndexOf(texto, StringComparison.OrdinalIgnoreCase) >= 0));
+                    }
+                    else
+                    {
+                        listaFiltrada.AddRange(_articulosCache);
+                    }
+                }
+                else
+                {
+                    listaFiltrada.AddRange(_articulosCache);
+                }
+
+                dgvArticulos.DataSource = null;
+                dgvArticulos.DataSource = listaFiltrada;
+                return;
             }
 
-            dgvArticulos.DataSource = null;
-            dgvArticulos.DataSource = listaFiltrada;
+            if (pestana == "Marcas")
+            {
+                List<Marca> listaFiltrada = new List<Marca>();
+                if (!string.IsNullOrWhiteSpace(texto))
+                {
+                    listaFiltrada = _marcasCache.FindAll(x => x.Descripcion != null && x.Descripcion.IndexOf(texto, StringComparison.OrdinalIgnoreCase) >= 0);
+                }
+                else
+                {
+                    listaFiltrada.AddRange(_marcasCache);
+                }
+
+                dgvMarcas.DataSource = null;
+                dgvMarcas.DataSource = listaFiltrada;
+                return;
+            }
+
+            if (pestana == "Categorias")
+            {
+                List<Categoria> listaFiltrada = new List<Categoria>();
+                if (!string.IsNullOrWhiteSpace(texto))
+                {
+                    listaFiltrada = _categoriasCache.FindAll(x => x.Descripcion != null && x.Descripcion.IndexOf(texto, StringComparison.OrdinalIgnoreCase) >= 0);
+                }
+                else
+                {
+                    listaFiltrada.AddRange(_categoriasCache);
+                }
+
+                dgvCategorias.DataSource = null;
+                dgvCategorias.DataSource = listaFiltrada;
+            }
         }
 
         private bool ValidarBusquedaAvanzada()
