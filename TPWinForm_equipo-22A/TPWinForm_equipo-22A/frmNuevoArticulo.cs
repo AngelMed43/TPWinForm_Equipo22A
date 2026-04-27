@@ -38,11 +38,10 @@ namespace TPWinForm_equipo_22A
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
             bool marcaSelected = cbMarca.SelectedItem != null;
             bool categoriaSelected = cbCategoria.SelectedItem != null;
 
-            bool valido = Validaciones.ValidarArticulo(txtBCodigo.Text,txtBNombre.Text,marcaSelected,categoriaSelected,txtBPrecio.Text,string.Empty);
+            bool valido = Validaciones.ValidarArticulo(txtBCodigo.Text, txtBNombre.Text, marcaSelected, categoriaSelected, txtBPrecio.Text, string.Empty);
 
             if (!valido) return;
 
@@ -56,16 +55,20 @@ namespace TPWinForm_equipo_22A
                 articulo.Categoria = (Categoria)cbCategoria.SelectedItem;
                 articulo.Precio = Validaciones.ParsearPrecio(txtBPrecio.Text);
 
-                artN.insertArticulo(articulo);
-                foreach (Imagen img in articulo.Imagenes)
-                    artN.agregarImagen(img, articulo.Id);
+                int idArticuloGenerado = artN.insertArticulo(articulo);
 
-                MessageBox.Show("Artículo guardado correctamente.", "Éxito",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                foreach (Imagen img in articulo.Imagenes)
+                    artN.agregarImagen(img, idArticuloGenerado);
+
+                MessageBox.Show("Artículo guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar: " + ex.Message, "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al guardar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                this.Close();
             }
         }
 

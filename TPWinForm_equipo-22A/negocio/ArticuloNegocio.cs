@@ -71,36 +71,31 @@ namespace negocio
             }
         }
 
-        public void insertArticulo(Articulo art)
+        public int insertArticulo(Articulo art)
         {
-
-            AccesoDatos acceso = new AccesoDatos();
+            AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                acceso.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) values (@Codigo,@Nombre,@Descripcion,@IdMarca, @IdCategoria,@Precio)");
-                acceso.setearParametros("@Codigo", art.Codigo);
-                acceso.setearParametros("@Nombre", art.Nombre);
-                acceso.setearParametros("@Descripcion", art.Descripcion);
-                acceso.setearParametros("@IdMarca", art.Marca.IdMarca);
-                acceso.setearParametros("@IdCategoria",art.Categoria.IdCategoria);
-                acceso.setearParametros("@Precio",art.Precio);
-                
-                
-                acceso.ejecutarAccion();
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (@cod, @nom, @desc, @idMarca, @idCat, @precio); SELECT CAST(SCOPE_IDENTITY() AS INT)");
+                datos.setearParametros("@cod", art.Codigo);
+                datos.setearParametros("@nom", art.Nombre);
+                datos.setearParametros("@desc", art.Descripcion);
+                datos.setearParametros("@idMarca", art.Marca.IdMarca);
+                datos.setearParametros("@idCat", art.Categoria.IdCategoria);
+                datos.setearParametros("@precio", art.Precio);
+
+                int idGenerado = (int)datos.ejecutarAccionConRetorno();
+
+                return idGenerado;
             }
             catch (Exception ex)
             {
-                
-                //Por el momento
-                //Por el momento
-                //Por el momento
-                MessageBox.Show(ex.ToString());
-                //throw ex;
+                throw ex;
             }
             finally
             {
-                acceso.cerrarConexion();
+                datos.cerrarConexion();
             }
         }
 

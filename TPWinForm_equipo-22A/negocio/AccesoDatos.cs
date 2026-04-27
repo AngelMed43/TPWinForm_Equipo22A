@@ -72,11 +72,13 @@ namespace negocio
             {
                 conexion.Open();
                 return comando.ExecuteScalar();
+                conexion.Close();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+            finally { conexion.Close(); }
         }
 
 
