@@ -331,6 +331,7 @@ namespace TPWinForm_equipo_22A
             this.lbxImagenes.Name = "lbxImagenes";
             this.lbxImagenes.Size = new System.Drawing.Size(122, 108);
             this.lbxImagenes.TabIndex = 56;
+            this.lbxImagenes.SelectedIndexChanged += new System.EventHandler(this.lbxImagenes_SelectedIndexChanged);
             // 
             // lblDescripción
             // 

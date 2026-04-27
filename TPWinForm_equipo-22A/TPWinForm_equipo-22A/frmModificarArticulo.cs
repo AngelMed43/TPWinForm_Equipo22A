@@ -25,8 +25,6 @@ namespace TPWinForm_equipo_22A
             InitializeComponent();
             frmInicio = formInicio;
             this.articulo = art;
-            //Me pisaba la lista --- No va
-            //articulo.Imagenes = new List<Imagen>();
             string baseDocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             carpetaImagenes = Path.Combine(baseDocs, "Imagenes_APPGestion");
         }
@@ -77,6 +75,7 @@ namespace TPWinForm_equipo_22A
 
                 if (articulo.Categoria != null)
                     cbCategoría.SelectedValue = articulo.Categoria.IdCategoria;
+
                 lbxImagenes.Items.Clear();
                 if (articulo.Imagenes != null && articulo.Imagenes.Count > 0)
                 {
@@ -86,6 +85,7 @@ namespace TPWinForm_equipo_22A
                     }
 
                     lbxImagenes.SelectedIndex = 0;
+                    lbxImagenes_SelectedIndexChanged(null, null);
                 }
                 
             }
