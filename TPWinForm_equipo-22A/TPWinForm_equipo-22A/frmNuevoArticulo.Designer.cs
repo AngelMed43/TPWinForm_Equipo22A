@@ -106,7 +106,7 @@ namespace TPWinForm_equipo_22A
             this.rbPorPC.Location = new System.Drawing.Point(77, 304);
             this.rbPorPC.Name = "rbPorPC";
             this.rbPorPC.Size = new System.Drawing.Size(76, 17);
-            this.rbPorPC.TabIndex = 65;
+            this.rbPorPC.TabIndex = 6;
             this.rbPorPC.TabStop = true;
             this.rbPorPC.Text = "Local / PC";
             this.rbPorPC.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@ namespace TPWinForm_equipo_22A
             this.rbPorUrl.Location = new System.Drawing.Point(77, 245);
             this.rbPorUrl.Name = "rbPorUrl";
             this.rbPorUrl.Size = new System.Drawing.Size(66, 17);
-            this.rbPorUrl.TabIndex = 64;
+            this.rbPorUrl.TabIndex = 7;
             this.rbPorUrl.TabStop = true;
             this.rbPorUrl.Text = "Por URL";
             this.rbPorUrl.UseVisualStyleBackColor = true;
@@ -151,7 +151,7 @@ namespace TPWinForm_equipo_22A
             this.btnGuardar.Location = new System.Drawing.Point(184, 5);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(77, 23);
-            this.btnGuardar.TabIndex = 7;
+            this.btnGuardar.TabIndex = 1;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -164,7 +164,7 @@ namespace TPWinForm_equipo_22A
             this.btnCancelar.Location = new System.Drawing.Point(331, 5);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(77, 23);
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -227,7 +227,7 @@ namespace TPWinForm_equipo_22A
             this.btnDeleteImagen.Location = new System.Drawing.Point(223, 400);
             this.btnDeleteImagen.Name = "btnDeleteImagen";
             this.btnDeleteImagen.Size = new System.Drawing.Size(77, 39);
-            this.btnDeleteImagen.TabIndex = 61;
+            this.btnDeleteImagen.TabIndex = 9;
             this.btnDeleteImagen.Text = "Eliminar Imagen";
             this.btnDeleteImagen.UseVisualStyleBackColor = true;
             this.btnDeleteImagen.Click += new System.EventHandler(this.btnDeleteImagen_Click);
@@ -263,7 +263,7 @@ namespace TPWinForm_equipo_22A
             this.btnAddImagen.Location = new System.Drawing.Point(223, 331);
             this.btnAddImagen.Name = "btnAddImagen";
             this.btnAddImagen.Size = new System.Drawing.Size(77, 38);
-            this.btnAddImagen.TabIndex = 6;
+            this.btnAddImagen.TabIndex = 8;
             this.btnAddImagen.Text = "Agregar Imagen";
             this.btnAddImagen.UseVisualStyleBackColor = true;
             this.btnAddImagen.Click += new System.EventHandler(this.btnAddImagen_Click);

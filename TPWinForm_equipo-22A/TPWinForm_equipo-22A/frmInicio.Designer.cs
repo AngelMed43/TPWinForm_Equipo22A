@@ -139,7 +139,7 @@ namespace TPWinForm_equipo_22A
             this.txtBBuscarSuperior.Margin = new System.Windows.Forms.Padding(1);
             this.txtBBuscarSuperior.Name = "txtBBuscarSuperior";
             this.txtBBuscarSuperior.Size = new System.Drawing.Size(157, 20);
-            this.txtBBuscarSuperior.TabIndex = 4;
+            this.txtBBuscarSuperior.TabIndex = 2;
             this.txtBBuscarSuperior.TextChanged += new System.EventHandler(this.txtBBuscarSuperior_TextChanged);
             // 
             // cboMarca
@@ -179,7 +179,7 @@ namespace TPWinForm_equipo_22A
             this.rdBFiltroXMarca.Margin = new System.Windows.Forms.Padding(2);
             this.rdBFiltroXMarca.Name = "rdBFiltroXMarca";
             this.rdBFiltroXMarca.Size = new System.Drawing.Size(55, 17);
-            this.rdBFiltroXMarca.TabIndex = 6;
+            this.rdBFiltroXMarca.TabIndex = 0;
             this.rdBFiltroXMarca.TabStop = true;
             this.rdBFiltroXMarca.Text = "Marca";
             this.rdBFiltroXMarca.UseVisualStyleBackColor = false;
@@ -201,7 +201,7 @@ namespace TPWinForm_equipo_22A
             this.rdBFiltroXCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.rdBFiltroXCategoria.Name = "rdBFiltroXCategoria";
             this.rdBFiltroXCategoria.Size = new System.Drawing.Size(70, 17);
-            this.rdBFiltroXCategoria.TabIndex = 8;
+            this.rdBFiltroXCategoria.TabIndex = 1;
             this.rdBFiltroXCategoria.TabStop = true;
             this.rdBFiltroXCategoria.Text = "Categoria";
             this.rdBFiltroXCategoria.UseVisualStyleBackColor = false;
@@ -273,7 +273,7 @@ namespace TPWinForm_equipo_22A
             this.tcMenu.Name = "tcMenu";
             this.tcMenu.SelectedIndex = 0;
             this.tcMenu.Size = new System.Drawing.Size(632, 572);
-            this.tcMenu.TabIndex = 5;
+            this.tcMenu.TabIndex = 0;
             this.tcMenu.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // Articulos
@@ -306,6 +306,8 @@ namespace TPWinForm_equipo_22A
             // 
             this.dgvArticulos.AllowUserToAddRows = false;
             this.dgvArticulos.AllowUserToDeleteRows = false;
+            this.dgvArticulos.AllowUserToResizeColumns = false;
+            this.dgvArticulos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.NullValue = "0";
             this.dgvArticulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -579,7 +581,7 @@ namespace TPWinForm_equipo_22A
             this.btnNuevoArticulo.Location = new System.Drawing.Point(6, 209);
             this.btnNuevoArticulo.Name = "btnNuevoArticulo";
             this.btnNuevoArticulo.Size = new System.Drawing.Size(75, 24);
-            this.btnNuevoArticulo.TabIndex = 8;
+            this.btnNuevoArticulo.TabIndex = 0;
             this.btnNuevoArticulo.Text = "Nuevo";
             this.btnNuevoArticulo.UseVisualStyleBackColor = false;
             this.btnNuevoArticulo.Click += new System.EventHandler(this.btnNuevoArticulo_Click);
@@ -591,7 +593,7 @@ namespace TPWinForm_equipo_22A
             this.btnEliminarArticulo.Location = new System.Drawing.Point(6, 295);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
             this.btnEliminarArticulo.Size = new System.Drawing.Size(75, 24);
-            this.btnEliminarArticulo.TabIndex = 11;
+            this.btnEliminarArticulo.TabIndex = 3;
             this.btnEliminarArticulo.Text = "Eliminar";
             this.btnEliminarArticulo.UseVisualStyleBackColor = false;
             this.btnEliminarArticulo.Click += new System.EventHandler(this.btnEliminarArticulo_Click);
@@ -603,7 +605,7 @@ namespace TPWinForm_equipo_22A
             this.btnModificarArticulo.Location = new System.Drawing.Point(6, 252);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
             this.btnModificarArticulo.Size = new System.Drawing.Size(75, 24);
-            this.btnModificarArticulo.TabIndex = 9;
+            this.btnModificarArticulo.TabIndex = 1;
             this.btnModificarArticulo.Text = "Modificar";
             this.btnModificarArticulo.UseVisualStyleBackColor = false;
             this.btnModificarArticulo.Click += new System.EventHandler(this.btnModificarArticulo_Click);
@@ -615,7 +617,7 @@ namespace TPWinForm_equipo_22A
             this.btnDetallesArticulo.Location = new System.Drawing.Point(6, 338);
             this.btnDetallesArticulo.Name = "btnDetallesArticulo";
             this.btnDetallesArticulo.Size = new System.Drawing.Size(75, 24);
-            this.btnDetallesArticulo.TabIndex = 10;
+            this.btnDetallesArticulo.TabIndex = 2;
             this.btnDetallesArticulo.Text = "Detalles";
             this.btnDetallesArticulo.UseVisualStyleBackColor = false;
             this.btnDetallesArticulo.Click += new System.EventHandler(this.btnDetallesArticulo_Click);

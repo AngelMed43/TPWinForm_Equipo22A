@@ -205,7 +205,9 @@ namespace TPWinForm_equipo_22A
         }
         private void btnDetallesArticulo_Click(object sender, EventArgs e)
         {
-            MostrarFormularioEnPanel(new frmDetalleArticulo());
+            Articulo artS = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            artS.Imagenes = new ArticuloNegocio().listarImagenes(artS.Id);
+            MostrarFormularioEnPanel(new frmDetalleArticulo(artS));
         }
 
         //Metodo que modifica atributos del Form inicio depende en que pestaña estemos situados
