@@ -445,40 +445,36 @@ namespace TPWinForm_equipo_22A
             this.Marcas.Margin = new System.Windows.Forms.Padding(1);
             this.Marcas.Name = "Marcas";
             this.Marcas.Padding = new System.Windows.Forms.Padding(1);
-            this.Marcas.Size = new System.Drawing.Size(473, 417);
+            this.Marcas.Size = new System.Drawing.Size(624, 546);
             this.Marcas.TabIndex = 1;
             this.Marcas.Text = "Marcas";
             this.Marcas.UseVisualStyleBackColor = true;
             // 
             // grpBListaMarcas
             // 
-            this.grpBListaMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpBListaMarcas.Controls.Add(this.dgvMarcas);
-            this.grpBListaMarcas.Location = new System.Drawing.Point(2, 3);
+            this.grpBListaMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpBListaMarcas.Location = new System.Drawing.Point(1, 1);
             this.grpBListaMarcas.Margin = new System.Windows.Forms.Padding(2);
             this.grpBListaMarcas.Name = "grpBListaMarcas";
             this.grpBListaMarcas.Padding = new System.Windows.Forms.Padding(2);
-            this.grpBListaMarcas.Size = new System.Drawing.Size(344, 393);
+            this.grpBListaMarcas.Size = new System.Drawing.Size(622, 544);
             this.grpBListaMarcas.TabIndex = 0;
             this.grpBListaMarcas.TabStop = false;
             this.grpBListaMarcas.Text = "Listado de Marcas";
             // 
             // dgvMarcas
             // 
-            this.dgvMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarcas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMarcas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvMarcas.Location = new System.Drawing.Point(2, 16);
+            this.dgvMarcas.Location = new System.Drawing.Point(2, 15);
             this.dgvMarcas.Margin = new System.Windows.Forms.Padding(1);
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.RowHeadersWidth = 82;
             this.dgvMarcas.RowTemplate.Height = 33;
             this.dgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMarcas.Size = new System.Drawing.Size(339, 374);
+            this.dgvMarcas.Size = new System.Drawing.Size(618, 527);
             this.dgvMarcas.TabIndex = 1;
             // 
             // Categorias
@@ -487,7 +483,7 @@ namespace TPWinForm_equipo_22A
             this.Categorias.Location = new System.Drawing.Point(4, 22);
             this.Categorias.Margin = new System.Windows.Forms.Padding(1);
             this.Categorias.Name = "Categorias";
-            this.Categorias.Size = new System.Drawing.Size(473, 417);
+            this.Categorias.Size = new System.Drawing.Size(624, 546);
             this.Categorias.TabIndex = 2;
             this.Categorias.Text = "Categorias";
             this.Categorias.UseVisualStyleBackColor = true;
@@ -592,7 +588,7 @@ namespace TPWinForm_equipo_22A
             // 
             this.btnEliminarArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminarArticulo.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminarArticulo.Location = new System.Drawing.Point(6, 339);
+            this.btnEliminarArticulo.Location = new System.Drawing.Point(6, 295);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
             this.btnEliminarArticulo.Size = new System.Drawing.Size(75, 24);
             this.btnEliminarArticulo.TabIndex = 11;
@@ -604,7 +600,7 @@ namespace TPWinForm_equipo_22A
             // 
             this.btnModificarArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnModificarArticulo.BackColor = System.Drawing.Color.Transparent;
-            this.btnModificarArticulo.Location = new System.Drawing.Point(6, 256);
+            this.btnModificarArticulo.Location = new System.Drawing.Point(6, 252);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
             this.btnModificarArticulo.Size = new System.Drawing.Size(75, 24);
             this.btnModificarArticulo.TabIndex = 9;
@@ -616,7 +612,7 @@ namespace TPWinForm_equipo_22A
             // 
             this.btnDetallesArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDetallesArticulo.BackColor = System.Drawing.Color.Transparent;
-            this.btnDetallesArticulo.Location = new System.Drawing.Point(6, 295);
+            this.btnDetallesArticulo.Location = new System.Drawing.Point(6, 338);
             this.btnDetallesArticulo.Name = "btnDetallesArticulo";
             this.btnDetallesArticulo.Size = new System.Drawing.Size(75, 24);
             this.btnDetallesArticulo.TabIndex = 10;

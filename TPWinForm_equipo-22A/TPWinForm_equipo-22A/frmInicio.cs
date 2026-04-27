@@ -340,6 +340,18 @@ namespace TPWinForm_equipo_22A
             cboCategoria.SelectedIndex = 0;
         }
 
+        private void OcultarIdMarcas()
+        {
+            if (dgvMarcas.Columns["IdMarca"] != null)
+                dgvMarcas.Columns["IdMarca"].Visible = false;
+        }
+
+        private void OcultarIdCategorias()
+        {
+            if (dgvCategorias.Columns["IdCategoria"] != null)
+                dgvCategorias.Columns["IdCategoria"].Visible = false;
+        }
+
         public void cargarListadoMarcas()
         {
             MarcaNegocio negocio = new MarcaNegocio();
@@ -358,8 +370,7 @@ namespace TPWinForm_equipo_22A
                 dgvMarcas.BackgroundColor = SystemColors.AppWorkspace;
                 dgvMarcas.DataSource = _marcasCache;
 
-                if (dgvMarcas.Columns["IdMarca"] != null)
-                    dgvMarcas.Columns["IdMarca"].Visible = false;
+                OcultarIdMarcas();
 
                 ReaplicarFiltroActual();
             }
@@ -387,8 +398,7 @@ namespace TPWinForm_equipo_22A
                 dgvCategorias.BackgroundColor = SystemColors.AppWorkspace;
                 dgvCategorias.DataSource = _categoriasCache;
 
-                if (dgvCategorias.Columns["IdCategoria"] != null)
-                    dgvCategorias.Columns["IdCategoria"].Visible = false;  // ✅ Oculta el ID
+                OcultarIdCategorias();
 
                 ReaplicarFiltroActual();
             }
@@ -505,6 +515,7 @@ namespace TPWinForm_equipo_22A
 
                 dgvMarcas.DataSource = null;
                 dgvMarcas.DataSource = listaFiltrada;
+                OcultarIdMarcas();
                 return;
             }
 
@@ -522,6 +533,7 @@ namespace TPWinForm_equipo_22A
 
                 dgvCategorias.DataSource = null;
                 dgvCategorias.DataSource = listaFiltrada;
+                OcultarIdCategorias();
             }
         }
 
